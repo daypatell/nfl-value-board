@@ -18,7 +18,7 @@ sys.path.insert(0, os.path.dirname(__file__))
 from state import load_state, save_state
 from elo import update_ratings, regress_to_mean
 from espn import fetch_scoreboard_json, fetch_current_pointer, parse_games
-from odds_api import get_current_odds
+from odds_api import OddsConfigError, get_current_odds
 from model import evaluate_game
 from site_builder import render_site
 
@@ -97,11 +97,18 @@ def main() -> None:
     upcoming = [g for g in _parse(upcoming_payload) if not g.is_completed]
 
     # Odds
+    # A misconfigured key is fatal: publishing a board with no market prices while
+    # still exiting 0 hides the breakage behind a green check. Transient network
+    # trouble is different - warn, publish the Elo side, try again tomorrow.
     try:
         odds_quotes = get_current_odds()
+    except OddsConfigError as e:
+        print(f"FATAL: {e}")
+        raise SystemExit(1)
     except Exception as e:
-        print(f"Warning: odds fetch failed ({e}); building site with no market lines.")
+        print(f"Warning: transient odds fetch failure ({e}); building site with no market lines.")
         odds_quotes = []
+    print(f"Odds API returned prices for {len(odds_quotes)} game(s)")
 
     def find_odds(home_abbr: str, away_abbr: str):
         home_name = state["team_names"].get(home_abbr, home_abbr)
@@ -132,6 +139,13 @@ def main() -> None:
                 "week": week, "season_type": season_type, "year": year,
                 "resolved": False,  # filled in by a later run once the game completes
             })
+
+    matched = sum(1 for p in picks if p.market_home_win_prob is not None)
+    print(f"{matched}/{len(picks)} upcoming game(s) matched to a market price")
+    if picks and matched == 0 and odds_quotes:
+        # Odds arrived but nothing matched - almost always a team-name mismatch
+        # between ESPN abbreviations and The Odds API's full names.
+        print("Warning: odds were returned but none matched the slate; check team_names mapping.")
 
     render_site(state, picks, week, season_type, year)
     save_state(state)

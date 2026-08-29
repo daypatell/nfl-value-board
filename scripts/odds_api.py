@@ -7,12 +7,22 @@ GitHub Actions secret — see README_DEPLOY.md.
 from __future__ import annotations
 import json
 import os
+import urllib.error
 import urllib.request
 import urllib.parse
 from dataclasses import dataclass
 from typing import List, Optional
 
 BASE_URL = "https://api.the-odds-api.com/v4/sports/americanfootball_nfl/odds"
+
+
+class OddsConfigError(RuntimeError):
+    """Key is missing, empty, invalid, or out of quota.
+
+    Kept distinct from transient network errors on purpose: the daily job
+    treats this as fatal. A silently key-less run still exits 0 and publishes
+    a board with no market prices, which is worse than a visibly failed run.
+    """
 
 
 @dataclass
@@ -37,8 +47,15 @@ def fetch_odds_json(api_key: str, regions: str = "us", markets: str = "h2h,sprea
     }
     url = f"{BASE_URL}?{urllib.parse.urlencode(params)}"
     req = urllib.request.Request(url, headers={"User-Agent": "nfl-value-board/1.0"})
-    with urllib.request.urlopen(req, timeout=timeout) as resp:
-        return json.loads(resp.read().decode("utf-8"))
+    try:
+        with urllib.request.urlopen(req, timeout=timeout) as resp:
+            return json.loads(resp.read().decode("utf-8"))
+    except urllib.error.HTTPError as e:
+        # 401 = bad/missing key, 422 = malformed request, 429 = monthly quota gone.
+        if e.code in (401, 422, 429):
+            detail = e.read().decode("utf-8", "replace")[:200]
+            raise OddsConfigError(f"The Odds API rejected the request (HTTP {e.code}): {detail}") from e
+        raise
 
 
 def parse_odds(payload: list, preferred_bookmaker: str = "draftkings") -> List[OddsQuote]:
@@ -77,8 +94,11 @@ def parse_odds(payload: list, preferred_bookmaker: str = "draftkings") -> List[O
 
 
 def get_current_odds(preferred_bookmaker: str = "draftkings") -> List[OddsQuote]:
-    api_key = os.environ.get("ODDS_API_KEY")
+    api_key = (os.environ.get("ODDS_API_KEY") or "").strip()
     if not api_key:
-        raise RuntimeError("ODDS_API_KEY environment variable is not set. See README_DEPLOY.md.")
+        raise OddsConfigError(
+            "ODDS_API_KEY is not set (or is empty). In GitHub Actions this usually means the "
+            "repo secret was never set, or was set to an empty string. See README_DEPLOY.md."
+        )
     payload = fetch_odds_json(api_key)
     return parse_odds(payload, preferred_bookmaker)
