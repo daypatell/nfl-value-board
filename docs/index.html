@@ -1,6 +1,303 @@
 <!DOCTYPE html>
-<html><head><meta charset="UTF-8"><title>NFL Value Board</title></head>
-<body style="font-family:sans-serif;background:#0B1210;color:#EDF2EF;padding:40px;">
-<h1>Not built yet</h1>
-<p>Run the "Update NFL Value Board" GitHub Action once (Actions tab &rarr; Run workflow) to generate the real page here.</p>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NFL Value Board &mdash; live</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root { --bg-deep:#0B1210; --bg-panel:#121C19; --bg-panel-2:#17221E; --hairline:#24332E;
+  --text-primary:#EDF2EF; --text-muted:#7E948B; --amber:#F2B705; --green:#5FCB8C; --rose:#D9678C; }
+*{box-sizing:border-box;} body{margin:0;background:var(--bg-deep);color:var(--text-primary);font-family:'Inter',sans-serif;line-height:1.5;}
+.mono{font-family:'JetBrains Mono',monospace;} .wrap{max-width:1080px;margin:0 auto;padding:0 24px 80px;}
+.hero{background:radial-gradient(ellipse at top left, rgba(242,183,5,0.08), transparent 60%), linear-gradient(180deg,#0E1613 0%,var(--bg-deep) 100%); border-bottom:1px solid var(--hairline); padding:56px 24px 40px;}
+.hero-inner{max-width:1080px;margin:0 auto;}
+.eyebrow{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--amber);margin:0 0 14px;}
+h1{font-family:'Oswald',sans-serif;font-weight:700;font-size:clamp(36px,6vw,64px);margin:0 0 8px;text-transform:uppercase;line-height:.98;}
+.sub{color:var(--text-muted);font-size:15px;max-width:600px;margin:0 0 32px;}
+.stat-strip{display:grid;grid-template-columns:repeat(5,1fr);border:1px solid var(--hairline);border-radius:4px;overflow:hidden;}
+.stat-strip div{padding:14px 16px;border-right:1px solid var(--hairline);} .stat-strip div:last-child{border-right:none;}
+.stat-strip .num{display:block;font-family:'Oswald',sans-serif;font-size:24px;font-weight:600;}
+.stat-strip .lbl{display:block;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted);margin-top:4px;}
+.section{padding:48px 0 0;} .section-head{display:flex;align-items:baseline;gap:12px;margin-bottom:20px;border-bottom:1px solid var(--hairline);padding-bottom:10px;}
+.section-head h2{font-family:'Oswald',sans-serif;text-transform:uppercase;font-size:20px;letter-spacing:.03em;margin:0;color:var(--amber);}
+.section-head .count{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--text-muted);}
+.picks-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;}
+.pick-card{background:var(--bg-panel);border:1px solid var(--hairline);border-left:3px solid var(--text-muted);border-radius:4px;padding:18px 20px;}
+.pick-card.tier-elite{border-left-color:var(--amber);} .pick-card.tier-strong{border-left-color:var(--green);}
+.pick-card.tier-moderate{border-left-color:var(--amber);} .pick-card.tier-low{border-left-color:var(--text-muted);}
+.pick-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;}
+.pick-tier{font-size:11px;letter-spacing:.05em;color:var(--text-muted);text-transform:uppercase;}
+.pick-score{font-family:'JetBrains Mono',monospace;font-size:16px;} .pick-score .unit{color:var(--text-muted);font-size:11px;}
+.pick-team{font-family:'Oswald',sans-serif;font-size:22px;margin:0 0 2px;text-transform:uppercase;}
+.side-tag{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--bg-deep);background:var(--amber);padding:2px 6px;border-radius:2px;vertical-align:middle;}
+.pick-sub{color:var(--text-muted);font-size:13px;margin:0 0 14px;}
+.pick-stats{display:flex;align-items:center;gap:10px;} .pick-stats>div:not(.arrow):not(.edge-pill){text-align:center;}
+.pick-stats .num{display:block;font-family:'JetBrains Mono',monospace;font-size:20px;} .pick-stats .num.accent{color:var(--amber);}
+.pick-stats .lbl{font-size:10px;color:var(--text-muted);text-transform:uppercase;} .pick-stats .arrow{color:var(--text-muted);}
+.edge-pill{margin-left:auto;font-family:'JetBrains Mono',monospace;font-size:13px;background:rgba(95,203,140,0.12);color:var(--green);padding:4px 10px;border-radius:999px;}
+table{width:100%;border-collapse:collapse;font-size:13px;}
+thead th{text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--text-muted);border-bottom:1px solid var(--hairline);padding:8px 10px;}
+tbody td{padding:9px 10px;border-bottom:1px solid var(--hairline);} tbody tr:hover{background:var(--bg-panel);}
+.rank{color:var(--text-muted);} .matchup .at{opacity:.5;margin:0 2px;} td.pos{color:var(--green);} td.neg{color:var(--rose);}
+.action{color:var(--text-muted);font-size:12px;}
+.ladder-row{display:grid;grid-template-columns:32px 1fr 200px 56px;align-items:center;gap:12px;padding:6px 0;border-bottom:1px solid var(--hairline);}
+.ladder-rank{font-family:'JetBrains Mono',monospace;color:var(--text-muted);font-size:12px;} .ladder-name{font-size:13px;}
+.ladder-bar-track{height:5px;background:var(--bg-panel-2);border-radius:3px;overflow:hidden;}
+.ladder-bar{height:100%;background:linear-gradient(90deg,var(--amber),var(--green));}
+.ladder-score{font-size:12px;text-align:right;}
+footer{margin-top:64px;padding-top:24px;border-top:1px solid var(--hairline);color:var(--text-muted);font-size:12px;}
+footer p{margin:0 0 10px;} footer strong{color:var(--text-primary);}
+@media (max-width:640px){ .stat-strip{grid-template-columns:repeat(2,1fr);} table{font-size:11px;} .ladder-row{grid-template-columns:24px 1fr 90px 44px;} }
+</style>
+</head>
+<body>
+<div class="hero"><div class="hero-inner">
+  <p class="eyebrow">2026 NFL Season &middot; Preseason Week 4 &middot; Model vs Market</p>
+  <h1>The Value Board</h1>
+  <p class="sub">Elo-based model vs. current DraftKings prices. Updates automatically every day. Season record: 0-0 (season just started).</p>
+  <div class="stat-strip">
+    <div><span class="num">2</span><span class="lbl">Games this week</span></div>
+    <div><span class="num">0</span><span class="lbl">Value calls</span></div>
+    <div><span class="num">0.0pp</span><span class="lbl">Avg |edge|</span></div>
+    <div><span class="num">0-0 (season just started)</span><span class="lbl">Season record</span></div>
+    <div><span class="num" style="font-size:14px;">2026-08-29 19:53 UTC</span><span class="lbl">Last updated</span></div>
+  </div>
+</div></div>
+<div class="wrap">
+  <div class="section"><div class="section-head"><h2>Top Picks</h2><span class="count">0 value calls this week</span></div>
+    <div class="picks-grid"><p style="color:var(--text-muted);">No value calls clear the bar this week &mdash; every game is either efficiently priced or below the confidence threshold.</p></div>
+  </div>
+  <div class="section"><div class="section-head"><h2>Full Slate</h2><span class="count">all 2 games this week</span></div>
+    <table><thead><tr><th>#</th><th>Matchup</th><th>Side</th><th>Market %</th><th>Model %</th><th>Edge</th><th>EV</th><th>Score</th><th>Action</th></tr></thead>
+    <tbody>
+        <tr class="tier-low">
+          <td class="rank">1</td>
+          <td class="matchup">DET<span class="at">@</span>IND</td>
+          <td>—</td>
+          <td class="mono">—</td>
+          <td class="mono">28%</td>
+          <td class="mono pos">—</td>
+          <td class="mono pos">—</td>
+          <td class="mono">0.0</td>
+          <td class="action">PASS - no market price available</td>
+        </tr>
+        <tr class="tier-low">
+          <td class="rank">2</td>
+          <td class="matchup">CHI<span class="at">@</span>TEN</td>
+          <td>—</td>
+          <td class="mono">—</td>
+          <td class="mono">31%</td>
+          <td class="mono pos">—</td>
+          <td class="mono pos">—</td>
+          <td class="mono">0.0</td>
+          <td class="action">PASS - no market price available</td>
+        </tr></tbody></table>
+  </div>
+  <div class="section"><div class="section-head"><h2>Elo Power Ladder</h2><span class="count">updates after every completed game</span></div>
+    <div class="ladder">
+        <div class="ladder-row">
+          <span class="ladder-rank">01</span>
+          <span class="ladder-name">Seattle Seahawks</span>
+          <div class="ladder-bar-track"><div class="ladder-bar" style="width:100.0%"></div></div>
+          <span class="ladder-score mono">1707</span>
+        </div>
+        <div class="ladder-row">
+          <span class="ladder-rank">02</span>
+          <span class="ladder-name">Los Angeles Rams</span>
+          <div class="ladder-bar-track"><div class="ladder-bar" style="width:91.6%"></div></div>
+          <span class="ladder-score mono">1670</span>
+        </div>
+        <div class="ladder-row">
+          <span class="ladder-rank">03</span>
+          <span class="ladder-name">Baltimore Ravens</span>
+          <div class="ladder-bar-track"><div class="ladder-bar" style="width:80.6%"></div></div>
+          <span class="ladder-score mono">1622</span>
+        </div>
+        <div class="ladder-row">
+          <span class="ladder-rank">04</span>
+          <span class="ladder-name">Los Angeles Chargers</span>
+          <div class="ladder-bar-track"><div class="ladder-bar" style="width:80.6%"></div></div>
+          <span class="ladder-score mono">1622</span>
+        </div>
+        <div class="ladder-row">
+          <span class="ladder-rank">05</span>
+          <span class="ladder-name">Jacksonville Jaguars</span>
+          <div class="ladder-bar-track"><div class="ladder-bar" style="width:80.6%"></div></div>
+          <span class="ladder-score mono">1622</span>
+        </div>
+        <div class="ladder-row">
+          <span class="ladder-rank">06</span>
+          <span class="ladder-name">New England Patriots</span>
+          <div class="ladder-bar-track"><div class="ladder-bar" style="width:75.2%"></div></div>
+          <span class="ladder-score mono">1598</span>
+        </div>
+        <div class="ladder-row">
+          <span class="ladder-rank">07</span>
+          <span class="ladder-name">San Francisco 49ers</span>
+          <div class="ladder-bar-track"><div class="ladder-bar" style="width:75.2%"></div></div>
+          <span class="ladder-score mono">1598</span>
+        </div>
+        <div class="ladder-row">
+          <span class="ladder-rank">08</span>
+          <span class="ladder-name">Kansas City Chiefs</span>
+          <div class="ladder-bar-track"><div class="ladder-bar" style="width:74.5%"></div></div>
+          <span class="ladder-score mono">1595</span>
+        </div>
+        <div class="ladder-row">
+          <span class="ladder-rank">09</span>
+          <span class="ladder-name">Philadelphia Eagles</span>
+          <div class="ladder-bar-track"><div class="ladder-bar" style="width:72.9%"></div></div>
+          <span class="ladder-score mono">1588</span>
+        </div>
+        <div class="ladder-row">
+          <span class="ladder-rank">10</span>
+          <span class="ladder-name">Detroit Lions</span>
+          <div class="ladder-bar-track"><div class="ladder-bar" style="width:72.9%"></div></div>
+          <span class="ladder-score mono">1588</span>
+        </div>
+        <div class="ladder-row">
+          <span class="ladder-rank">11</span>
+          <span class="ladder-name">Chicago Bears</span>
+          <div class="ladder-bar-track"><div class="ladder-bar" style="width:72.9%"></div></div>
+          <span class="ladder-score mono">1588</span>
+        </div>
+        <div class="ladder-row">
+          <span class="ladder-rank">12</span>
+          <span class="ladder-name">Green Bay Packers</span>
+          <div class="ladder-bar-track"><div class="ladder-bar" style="width:69.9%"></div></div>
+          <span class="ladder-score mono">1575</span>
+        </div>
+        <div class="ladder-row">
+          <span class="ladder-rank">13</span>
+          <span class="ladder-name">Cincinnati Bengals</span>
+          <div class="ladder-bar-track"><div class="ladder-bar" style="width:69.5%"></div></div>
+          <span class="ladder-score mono">1573</span>
+        </div>
+        <div class="ladder-row">
+          <span class="ladder-rank">14</span>
+          <span class="ladder-name">Buffalo Bills</span>
+          <div class="ladder-bar-track"><div class="ladder-bar" style="width:68.1%"></div></div>
+          <span class="ladder-score mono">1567</span>
+        </div>
+        <div class="ladder-row">
+          <span class="ladder-rank">15</span>
+          <span class="ladder-name">Dallas Cowboys</span>
+          <div class="ladder-bar-track"><div class="ladder-bar" style="width:68.1%"></div></div>
+          <span class="ladder-score mono">1567</span>
+        </div>
+        <div class="ladder-row">
+          <span class="ladder-rank">16</span>
+          <span class="ladder-name">Denver Broncos</span>
+          <div class="ladder-bar-track"><div class="ladder-bar" style="width:59.2%"></div></div>
+          <span class="ladder-score mono">1528</span>
+        </div>
+        <div class="ladder-row">
+          <span class="ladder-rank">17</span>
+          <span class="ladder-name">Pittsburgh Steelers</span>
+          <div class="ladder-bar-track"><div class="ladder-bar" style="width:55.8%"></div></div>
+          <span class="ladder-score mono">1513</span>
+        </div>
+        <div class="ladder-row">
+          <span class="ladder-rank">18</span>
+          <span class="ladder-name">Tampa Bay Buccaneers</span>
+          <div class="ladder-bar-track"><div class="ladder-bar" style="width:51.7%"></div></div>
+          <span class="ladder-score mono">1495</span>
+        </div>
+        <div class="ladder-row">
+          <span class="ladder-rank">19</span>
+          <span class="ladder-name">Minnesota Vikings</span>
+          <div class="ladder-bar-track"><div class="ladder-bar" style="width:50.6%"></div></div>
+          <span class="ladder-score mono">1490</span>
+        </div>
+        <div class="ladder-row">
+          <span class="ladder-rank">20</span>
+          <span class="ladder-name">Atlanta Falcons</span>
+          <div class="ladder-bar-track"><div class="ladder-bar" style="width:49.4%"></div></div>
+          <span class="ladder-score mono">1485</span>
+        </div>
+        <div class="ladder-row">
+          <span class="ladder-rank">21</span>
+          <span class="ladder-name">Carolina Panthers</span>
+          <div class="ladder-bar-track"><div class="ladder-bar" style="width:48.3%"></div></div>
+          <span class="ladder-score mono">1480</span>
+        </div>
+        <div class="ladder-row">
+          <span class="ladder-rank">22</span>
+          <span class="ladder-name">Houston Texans</span>
+          <div class="ladder-bar-track"><div class="ladder-bar" style="width:47.2%"></div></div>
+          <span class="ladder-score mono">1475</span>
+        </div>
+        <div class="ladder-row">
+          <span class="ladder-rank">23</span>
+          <span class="ladder-name">Las Vegas Raiders</span>
+          <div class="ladder-bar-track"><div class="ladder-bar" style="width:46.7%"></div></div>
+          <span class="ladder-score mono">1473</span>
+        </div>
+        <div class="ladder-row">
+          <span class="ladder-rank">24</span>
+          <span class="ladder-name">Washington Commanders</span>
+          <div class="ladder-bar-track"><div class="ladder-bar" style="width:38.7%"></div></div>
+          <span class="ladder-score mono">1438</span>
+        </div>
+        <div class="ladder-row">
+          <span class="ladder-rank">25</span>
+          <span class="ladder-name">New York Jets</span>
+          <div class="ladder-bar-track"><div class="ladder-bar" style="width:25.5%"></div></div>
+          <span class="ladder-score mono">1380</span>
+        </div>
+        <div class="ladder-row">
+          <span class="ladder-rank">26</span>
+          <span class="ladder-name">Tennessee Titans</span>
+          <div class="ladder-bar-track"><div class="ladder-bar" style="width:24.4%"></div></div>
+          <span class="ladder-score mono">1375</span>
+        </div>
+        <div class="ladder-row">
+          <span class="ladder-rank">27</span>
+          <span class="ladder-name">Cleveland Browns</span>
+          <div class="ladder-bar-track"><div class="ladder-bar" style="width:20.5%"></div></div>
+          <span class="ladder-score mono">1358</span>
+        </div>
+        <div class="ladder-row">
+          <span class="ladder-rank">28</span>
+          <span class="ladder-name">New York Giants</span>
+          <div class="ladder-bar-track"><div class="ladder-bar" style="width:18.7%"></div></div>
+          <span class="ladder-score mono">1350</span>
+        </div>
+        <div class="ladder-row">
+          <span class="ladder-rank">29</span>
+          <span class="ladder-name">Indianapolis Colts</span>
+          <div class="ladder-bar-track"><div class="ladder-bar" style="width:16.9%"></div></div>
+          <span class="ladder-score mono">1342</span>
+        </div>
+        <div class="ladder-row">
+          <span class="ladder-rank">30</span>
+          <span class="ladder-name">New Orleans Saints</span>
+          <div class="ladder-bar-track"><div class="ladder-bar" style="width:16.4%"></div></div>
+          <span class="ladder-score mono">1340</span>
+        </div>
+        <div class="ladder-row">
+          <span class="ladder-rank">31</span>
+          <span class="ladder-name">Miami Dolphins</span>
+          <div class="ladder-bar-track"><div class="ladder-bar" style="width:13.7%"></div></div>
+          <span class="ladder-score mono">1328</span>
+        </div>
+        <div class="ladder-row">
+          <span class="ladder-rank">32</span>
+          <span class="ladder-name">Arizona Cardinals</span>
+          <div class="ladder-bar-track"><div class="ladder-bar" style="width:0.0%"></div></div>
+          <span class="ladder-score mono">1268</span>
+        </div></div>
+  </div>
+  <footer>
+    <p><strong>Model:</strong> 538-style Elo rating per team (home field +48 Elo, standard margin-of-victory
+    multiplier, K=20) &rarr; expected margin &rarr; 10,000-trial Monte Carlo (SD 13.5 pts) &rarr; win probability,
+    compared against DraftKings' current moneyline via The Odds API.</p>
+    <p><strong>How it updates:</strong> a scheduled job pulls newly-completed games from ESPN's public scoreboard
+    every day, updates every team's Elo rating based on the result, pulls fresh odds, and rebuilds this page.
+    Nothing here is edited by hand after the initial Week 1 seed.</p>
+    <p>Not financial advice. Not backtested beyond what "Season record" above shows. Treat every number as a
+    starting hypothesis, not a guarantee.</p>
+  </footer>
+</div>
 </body></html>
