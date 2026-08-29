@@ -1,0 +1,33 @@
+name: Update NFL Value Board
+
+on:
+  schedule:
+    - cron: "0 13 * * *"   # every day at 13:00 UTC (~9am ET / 6am PT)
+  workflow_dispatch: {}     # lets you also trigger it manually from the Actions tab
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run daily update
+        env:
+          ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
+        run: |
+          python scripts/update_and_build.py
+
+      - name: Commit and push if anything changed
+        run: |
+          git config user.name "nfl-value-board-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add docs data
+          git diff --cached --quiet || git commit -m "Daily update: $(date -u +%Y-%m-%d)"
+          git push

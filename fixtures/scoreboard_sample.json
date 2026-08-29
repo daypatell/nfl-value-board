@@ -1,0 +1,58 @@
+{
+  "events": [
+    {
+      "id": "401873302",
+      "date": "2026-08-28T22:00Z",
+      "week": {"number": 4},
+      "season": {"year": 2026, "type": 1},
+      "competitions": [
+        {
+          "id": "401873302",
+          "date": "2026-08-28T22:00Z",
+          "neutralSite": false,
+          "status": {"type": {"completed": true}},
+          "competitors": [
+            {"homeAway": "home", "score": "41", "team": {"abbreviation": "BAL"}},
+            {"homeAway": "away", "score": "3", "team": {"abbreviation": "WSH"}}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "401873304",
+      "date": "2026-08-28T23:00Z",
+      "week": {"number": 4},
+      "season": {"year": 2026, "type": 1},
+      "competitions": [
+        {
+          "id": "401873304",
+          "date": "2026-08-28T23:00Z",
+          "neutralSite": false,
+          "status": {"type": {"completed": true}},
+          "competitors": [
+            {"homeAway": "home", "score": "12", "team": {"abbreviation": "MIA"}},
+            {"homeAway": "away", "score": "17", "team": {"abbreviation": "ATL"}}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "401874048",
+      "date": "2026-08-29T00:00Z",
+      "week": {"number": 4},
+      "season": {"year": 2026, "type": 1},
+      "competitions": [
+        {
+          "id": "401874048",
+          "date": "2026-08-29T00:00Z",
+          "neutralSite": false,
+          "status": {"type": {"completed": false}},
+          "competitors": [
+            {"homeAway": "home", "score": "24", "team": {"abbreviation": "DAL"}},
+            {"homeAway": "away", "score": "24", "team": {"abbreviation": "NO"}}
+          ]
+        }
+      ]
+    }
+  ]
+}

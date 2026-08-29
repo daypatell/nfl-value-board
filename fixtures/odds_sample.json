@@ -1,0 +1,38 @@
+[
+  {
+    "id": "abc123",
+    "sport_key": "americanfootball_nfl",
+    "commence_time": "2026-09-14T00:15:00Z",
+    "home_team": "Kansas City Chiefs",
+    "away_team": "Denver Broncos",
+    "bookmakers": [
+      {
+        "key": "draftkings",
+        "title": "DraftKings",
+        "markets": [
+          {
+            "key": "h2h",
+            "outcomes": [
+              {"name": "Kansas City Chiefs", "price": -155},
+              {"name": "Denver Broncos", "price": 130}
+            ]
+          },
+          {
+            "key": "spreads",
+            "outcomes": [
+              {"name": "Kansas City Chiefs", "point": -2.5, "price": -110},
+              {"name": "Denver Broncos", "point": 2.5, "price": -110}
+            ]
+          },
+          {
+            "key": "totals",
+            "outcomes": [
+              {"name": "Over", "point": 42.5, "price": -110},
+              {"name": "Under", "point": 42.5, "price": -110}
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,4 @@
+# No external dependencies - everything uses Python's standard library
+# (urllib for HTTP, json for parsing). Kept this way on purpose so the
+# GitHub Actions job needs no pip install step and can't break from a
+# dependency update.
