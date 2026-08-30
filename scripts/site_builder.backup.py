@@ -129,11 +129,11 @@ def render_site(
         edge_str = (
             f"{p.edge_pct:+.1f}pp"
             if p.edge_pct is not None
-            else "-"
+            else "—"
         )
 
         ev_str = (
-            f"{("—" if p.ev_per_unit is None else f"{p.ev_per_unit:+.2f}")}"
+            f"{p.ev_per_unit:+.2f}"
             if p.ev_per_unit is not None
             else "—"
         )
@@ -206,12 +206,6 @@ def render_site(
 
     for p in value_picks:
 
-        edge_display = (
-            f"{p.edge_pct:+.1f}pp"
-            if p.edge_pct is not None
-            else "—"
-        )
-
         home_name = names.get(
             p.home_team,
             p.home_team,
@@ -228,26 +222,9 @@ def render_site(
             else away_name
         )
 
-        # Show the probability for the team actually being picked
-        model_prob = (
-            p.model_home_win_prob
-            if p.side == "home"
-            else 1.0 - p.model_home_win_prob
-        )
-
-        # Market probability for the picked team
-        if p.market_home_win_prob is not None:
-            market_prob = (
-                p.market_home_win_prob
-                if p.side == "home"
-                else 1.0 - p.market_home_win_prob
-            )
-        else:
-            market_prob = None
-
         market_pct = (
-            f"{market_prob:.0%}"
-            if market_prob is not None
+            f"{p.market_home_win_prob:.0%}"
+            if p.market_home_win_prob is not None
             else "—"
         )
 
@@ -288,20 +265,20 @@ def render_site(
 
                 <div>
                     <strong class="model-number">
-                        {model_prob:.0%}
+                        {p.model_home_win_prob:.0%}
                     </strong>
                     <small>MODEL</small>
                 </div>
 
                 <div class="edge-badge">
-                    {edge_display}
+                    {p.edge_pct:+.1f}pp
                 </div>
             </div>
 
             <div class="value-bottom">
                 <span>EV</span>
                 <strong>
-                    {("—" if p.ev_per_unit is None else f"{p.ev_per_unit:+.2f}")}
+                    {p.ev_per_unit:+.2f}
                 </strong>
             </div>
 
@@ -320,6 +297,7 @@ def render_site(
         </div>
         """)
 
+    # ---------------------------------------------------------
     # LINES TABLE
     # ---------------------------------------------------------
 
@@ -343,12 +321,6 @@ def render_site(
             else "negative"
         )
 
-        edge_display = (
-            f"{p.edge_pct:+.1f}pp"
-            if p.edge_pct is not None
-            else "-"
-        )
-
         line_rows.append(f"""
         <div class="line-row">
 
@@ -367,11 +339,11 @@ def render_site(
             </div>
 
             <div class="{edge_cls}">
-                {edge_display}
+                {p.edge_pct:+.1f}pp
             </div>
 
             <div class="{edge_cls}">
-                {("—" if p.ev_per_unit is None else f"{p.ev_per_unit:+.2f}")}
+                {p.ev_per_unit:+.2f}
             </div>
 
             <div>

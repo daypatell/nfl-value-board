@@ -199,13 +199,6 @@ def main() -> None:
             state["elo"][away_team],
             q.home_moneyline if q else None,
             q.away_moneyline if q else None,
-            q.home_spread if q else None,
-            q.away_spread if q else None,
-            q.home_spread_odds if q else None,
-            q.away_spread_odds if q else None,
-            q.total_points if q else None,
-            q.over_odds if q else None,
-            q.under_odds if q else None,
             g.get("is_neutral_site", False),
             seed=1000 + i,
         )
@@ -227,25 +220,15 @@ def main() -> None:
                 "resolved": False,
             })
 
-    matched = sum(
-        1 for p in picks
-        if p.market_home_win_prob is not None
-    )
-
-    print(
-        f"{matched}/{len(picks)} upcoming game(s) "
-        "matched to a market price"
-    )
-
+    matched = sum(1 for p in picks if p.market_home_win_prob is not None)
+    print(f"{matched}/{len(picks)} upcoming game(s) matched to a market price")
     if picks and matched == 0 and odds_quotes:
-        print(
-            "Warning: odds were returned but none matched the slate; "
-            "check team_names mapping."
-        )
+        # Odds arrived but nothing matched - almost always a team-name mismatch
+        # between ESPN abbreviations and The Odds API's full names.
+        print("Warning: odds were returned but none matched the slate; check team_names mapping.")
 
     render_site(state, picks, week, season_type, year)
     save_state(state)
-
     print(f"Done. {len(picks)} upcoming games evaluated.")
 
 

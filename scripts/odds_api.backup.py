@@ -34,12 +34,7 @@ class OddsQuote:
     home_moneyline: Optional[int]
     away_moneyline: Optional[int]
     home_spread: Optional[float]
-    away_spread: Optional[float]
-    home_spread_odds: Optional[int]
-    away_spread_odds: Optional[int]
     total_points: Optional[float]
-    over_odds: Optional[int]
-    under_odds: Optional[int]
 
 
 def fetch_odds_json(api_key: str, regions: str = "us", markets: str = "h2h,spreads,totals",
@@ -72,11 +67,7 @@ def parse_odds(payload: list, preferred_bookmaker: str = "draftkings") -> List[O
             continue
         book = next((b for b in books if b["key"] == preferred_bookmaker), books[0])
 
-        home_ml = away_ml = None
-        home_spread = away_spread = None
-        home_spread_odds = away_spread_odds = None
-        total_points = None
-        over_odds = under_odds = None
+        home_ml = away_ml = home_spread = total_points = None
         for market in book.get("markets", []):
             if market["key"] == "h2h":
                 for outcome in market["outcomes"]:
@@ -88,30 +79,16 @@ def parse_odds(payload: list, preferred_bookmaker: str = "draftkings") -> List[O
                 for outcome in market["outcomes"]:
                     if outcome["name"] == game["home_team"]:
                         home_spread = float(outcome["point"])
-                        home_spread_odds = int(outcome["price"])
-                    elif outcome["name"] == game["away_team"]:
-                        away_spread = float(outcome["point"])
-                        away_spread_odds = int(outcome["price"])
-
             elif market["key"] == "totals":
                 for outcome in market["outcomes"]:
                     if outcome["name"].lower().startswith("over"):
                         total_points = float(outcome["point"])
-                        over_odds = int(outcome["price"])
-                    elif outcome["name"].lower().startswith("under"):
-                        under_odds = int(outcome["price"])
 
         quotes.append(OddsQuote(
             home_team=game["home_team"], away_team=game["away_team"],
             commence_time_iso=game["commence_time"], bookmaker=book["key"],
             home_moneyline=home_ml, away_moneyline=away_ml,
-            home_spread=home_spread,
-            away_spread=away_spread,
-            home_spread_odds=home_spread_odds,
-            away_spread_odds=away_spread_odds,
-            total_points=total_points,
-            over_odds=over_odds,
-            under_odds=under_odds,
+            home_spread=home_spread, total_points=total_points,
         ))
     return quotes
 
