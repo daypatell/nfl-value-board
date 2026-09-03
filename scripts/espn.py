@@ -17,6 +17,8 @@ import urllib.request
 from dataclasses import dataclass
 from typing import List, Optional
 
+from teams import normalize_abbr
+
 BASE_URL = "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard"
 
 # ESPN sits behind Akamai, which 403s unrecognised User-Agent strings (a custom
@@ -81,8 +83,12 @@ def parse_games(payload: dict) -> List[EspnGame]:
             game_id=event["id"],
             week=event.get("week", {}).get("number", 0),
             season_type=event.get("season", {}).get("type", 0),
-            home_team=home["team"]["abbreviation"],
-            away_team=away["team"]["abbreviation"],
+            # ESPN spells Washington "WSH" while data/elo_seed.json uses "WAS".
+            # update_elo_from_results skips any abbreviation it can't find in
+            # state["elo"], so without this every Washington result was dropped
+            # and their rating never moved all season.
+            home_team=normalize_abbr(home["team"]["abbreviation"]),
+            away_team=normalize_abbr(away["team"]["abbreviation"]),
             is_completed=completed,
             is_neutral_site=bool(comp.get("neutralSite", False)),
             home_score=int(home["score"]) if completed and "score" in home else None,

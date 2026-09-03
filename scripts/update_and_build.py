@@ -19,6 +19,7 @@ from state import load_state, save_state
 from elo import update_ratings, regress_to_mean
 from espn import fetch_scoreboard_json, fetch_current_pointer, parse_games
 from odds_api import OddsConfigError, get_current_odds
+from line_movement import refresh as refresh_line_movement, lookup as lookup_line_movement
 from model import evaluate_game
 from site_builder import render_site
 
@@ -174,6 +175,16 @@ def main() -> None:
         odds_quotes = []
     print(f"Odds API returned prices for {len(odds_quotes)} game(s)")
 
+    # Line movement (sharp-action proxy). Refreshed before the model runs so
+    # the board is built from today's numbers. Never fatal: it's a secondary
+    # signal, and refresh() falls back to the last good file on failure.
+    line_moves = refresh_line_movement()
+    print(
+        f"Line movement: {len(line_moves.get('games', {}))} game(s) "
+        f"(upstream_stale={line_moves.get('upstream_stale')}, "
+        f"error={line_moves.get('error')})"
+    )
+
     def find_odds(home_abbr: str, away_abbr: str):
         home_name = state["team_names"].get(home_abbr, home_abbr)
         away_name = state["team_names"].get(away_abbr, away_abbr)
@@ -192,6 +203,8 @@ def main() -> None:
 
         q = find_odds(home_team, away_team)
 
+        move = lookup_line_movement(line_moves, away_team, home_team)
+
         pick = evaluate_game(
             home_team,
             away_team,
@@ -208,6 +221,7 @@ def main() -> None:
             q.under_odds if q else None,
             g.get("is_neutral_site", False),
             seed=1000 + i,
+            line_move_pp=move["line_move_pp"] if move else None,
         )
 
         picks.append(pick)
@@ -237,13 +251,28 @@ def main() -> None:
         "matched to a market price"
     )
 
+    with_move = sum(1 for p in picks if p.line_move_pp is not None)
+    flips = sum(1 for p in picks if p.disagreement == "FAVORITE FLIP")
+    aligned = sum(
+        1 for p in picks if p.disagreement == "MODEL + SHARP ALIGNMENT"
+    )
+    margins = sum(1 for p in picks if p.disagreement == "MARGIN MISMATCH")
+    print(
+        f"{with_move}/{len(picks)} game(s) have line movement | "
+        f"mismatches: {aligned} sharp-aligned, {flips} favourite flip, "
+        f"{margins} margin"
+    )
+
     if picks and matched == 0 and odds_quotes:
         print(
             "Warning: odds were returned but none matched the slate; "
             "check team_names mapping."
         )
 
-    render_site(state, picks, week, season_type, year)
+    render_site(
+        state, picks, week, season_type, year,
+        line_movement_meta=line_moves,
+    )
     save_state(state)
 
     print(f"Done. {len(picks)} upcoming games evaluated.")

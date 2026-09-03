@@ -4,9 +4,15 @@ import os
 import json
 import html
 import datetime
-from typing import List
+from typing import List, Optional
 
-from model import GamePick
+from model import (
+    DISAGREE_FLIP,
+    DISAGREE_MARGIN,
+    DISAGREE_SHARP_ALIGNED,
+    MISMATCH_THRESHOLD_PP,
+    GamePick,
+)
 
 DOCS_DIR = os.path.join(os.path.dirname(__file__), "..", "docs")
 DATA_DIR = os.path.join(os.path.dirname(__file__), "..", "data")
@@ -29,9 +35,12 @@ def render_site(
     week: int,
     season_type: int,
     year: int,
+    line_movement_meta: Optional[dict] = None,
 ) -> None:
 
     names = state["team_names"]
+
+    line_movement_meta = line_movement_meta or {}
 
     season_label = {
         1: "Preseason",
@@ -228,22 +237,42 @@ def render_site(
             else away_name
         )
 
-        # Show the probability for the team actually being picked
-        model_prob = (
-            p.model_home_win_prob
-            if p.side == "home"
-            else 1.0 - p.model_home_win_prob
-        )
+        # Show the probabilities belonging to the bet this card is actually
+        # displaying. edge_pct/ev come from p.best_bet, which is often the
+        # SPREAD, so pairing them with moneyline win probabilities made the
+        # card contradict itself: LAC read "MARKET 84% -> MODEL 89%" beside a
+        # "+45.2pp" edge, where 89 - 84 is 4.3. Reading both numbers off
+        # best_bet makes edge = model - market true by construction, and also
+        # removes the home/away orientation guesswork, since a MarketPick is
+        # already stated from the picked side's point of view.
+        bet = p.best_bet
 
-        # Market probability for the picked team
-        if p.market_home_win_prob is not None:
-            market_prob = (
-                p.market_home_win_prob
-                if p.side == "home"
-                else 1.0 - p.market_home_win_prob
-            )
+        if bet is not None:
+            model_prob = bet.model_probability
+            market_prob = bet.market_probability
+            bet_label = bet.market
+            bet_detail = bet.pick
         else:
-            market_prob = None
+            model_prob = (
+                p.model_home_win_prob
+                if p.side == "home"
+                else 1.0 - p.model_home_win_prob
+            )
+            market_prob = (
+                None
+                if p.market_home_win_prob is None
+                else (
+                    p.market_home_win_prob
+                    if p.side == "home"
+                    else 1.0 - p.market_home_win_prob
+                )
+            )
+            bet_label = "Moneyline"
+            bet_detail = ""
+
+        model_pct = (
+            f"{model_prob:.0%}" if model_prob is not None else "—"
+        )
 
         market_pct = (
             f"{market_prob:.0%}"
@@ -278,6 +307,10 @@ def render_site(
                 {esc(away_name)} @ {esc(home_name)}
             </div>
 
+            <div class="value-market">
+                {esc(bet_label)}{f" &middot; {esc(bet_detail)}" if bet_detail else ""}
+            </div>
+
             <div class="value-line">
                 <div>
                     <strong>{market_pct}</strong>
@@ -288,7 +321,7 @@ def render_site(
 
                 <div>
                     <strong class="model-number">
-                        {model_prob:.0%}
+                        {model_pct}
                     </strong>
                     <small>MODEL</small>
                 </div>
@@ -581,12 +614,169 @@ def render_site(
             """)
 
     # ---------------------------------------------------------
+    # FAVORITE MISMATCHES  +  SHARP ACTION
+    # ---------------------------------------------------------
+
+    # Severity order, most severe first. MODEL + SHARP ALIGNMENT outranks a
+    # plain flip because it is a flip that line movement agrees with.
+    mismatch_order = {
+        DISAGREE_SHARP_ALIGNED: 0,
+        DISAGREE_FLIP: 1,
+        DISAGREE_MARGIN: 2,
+    }
+
+    MISMATCH_LABEL_CLASS = {
+        DISAGREE_SHARP_ALIGNED: "mm-aligned",
+        DISAGREE_FLIP: "mm-flip",
+        DISAGREE_MARGIN: "mm-margin",
+    }
+
+    mismatches = sorted(
+        (p for p in picks if p.disagreement in mismatch_order),
+        key=lambda p: (
+            mismatch_order[p.disagreement],
+            -(p.mismatch_pp or 0.0),
+        ),
+    )
+
+    n_flip = sum(1 for p in picks if p.disagreement == DISAGREE_FLIP)
+    n_aligned = sum(
+        1 for p in picks if p.disagreement == DISAGREE_SHARP_ALIGNED
+    )
+    n_margin = sum(1 for p in picks if p.disagreement == DISAGREE_MARGIN)
+
+    mismatch_cards = []
+
+    for p in mismatches:
+        home_name = names.get(p.home_team, p.home_team)
+        away_name = names.get(p.away_team, p.away_team)
+
+        # Which team each side actually favours, spelled out - "the model
+        # disagrees" is only useful if you can see who it disagrees about.
+        model_fav = (
+            home_name
+            if p.model_home_win_prob > 0.5
+            else away_name
+        )
+
+        market_fav = (
+            home_name
+            if (p.market_home_win_prob_devig or 0.0) > 0.5
+            else away_name
+        )
+
+        model_fav_prob = max(
+            p.model_home_win_prob,
+            1.0 - p.model_home_win_prob,
+        )
+
+        market_fav_prob = max(
+            p.market_home_win_prob_devig or 0.0,
+            1.0 - (p.market_home_win_prob_devig or 0.0),
+        )
+
+        if p.sharp_side == "home":
+            sharp_note = f"Line moving toward {esc(home_name)}"
+        elif p.sharp_side == "away":
+            sharp_note = f"Line moving toward {esc(away_name)}"
+        else:
+            sharp_note = "No meaningful line movement"
+
+        if p.line_move_pp is not None:
+            sharp_note += f" ({p.line_move_pp:+.2f}pp)"
+
+        mismatch_cards.append(f"""
+        <article class="mm-card {MISMATCH_LABEL_CLASS[p.disagreement]}">
+
+            <div class="mm-top">
+                <span class="mm-badge">{esc(p.disagreement)}</span>
+                <span class="mm-gap">{p.mismatch_pp:.1f}pp apart</span>
+            </div>
+
+            <div class="mm-matchup">
+                {esc(away_name)} @ {esc(home_name)}
+            </div>
+
+            <div class="mm-split">
+                <div class="mm-col">
+                    <span class="mm-lbl">Market favours</span>
+                    <strong>{esc(market_fav)}</strong>
+                    <span class="mm-pct">{market_fav_prob:.0%}</span>
+                </div>
+                <span class="mm-vs">vs</span>
+                <div class="mm-col mm-col-model">
+                    <span class="mm-lbl">Model favours</span>
+                    <strong>{esc(model_fav)}</strong>
+                    <span class="mm-pct">{model_fav_prob:.0%}</span>
+                </div>
+            </div>
+
+            <div class="mm-sharp">{sharp_note}</div>
+
+        </article>""")
+
+    if not mismatch_cards:
+        mismatch_body = (
+            '<p class="mm-empty">No mismatches this week &mdash; the model '
+            'and the market agree on every priced game, within the '
+            f'{MISMATCH_THRESHOLD_PP:.0f}pp threshold.</p>'
+        )
+    else:
+        mismatch_body = (
+            '<div class="mm-grid">' + "".join(mismatch_cards) + "</div>"
+        )
+
+    # ---- Sharp action / line movement table ----
+
+    sharp_rows = []
+
+    for p in sorted(
+        (x for x in picks if x.line_move_pp is not None),
+        key=lambda x: -abs(x.line_move_pp),
+    ):
+        home_name = names.get(p.home_team, p.home_team)
+        away_name = names.get(p.away_team, p.away_team)
+
+        gaining = home_name if p.line_move_pp > 0 else away_name
+        move_cls = "positive" if p.line_move_pp > 0 else "negative"
+
+        sharp_rows.append(f"""
+        <div class="sharp-row">
+            <div class="sharp-matchup">{esc(away_name)} @ {esc(home_name)}</div>
+            <div class="sharp-move {move_cls}">{p.line_move_pp:+.2f}pp</div>
+            <div class="sharp-toward">{esc(gaining)}</div>
+            <div class="sharp-label">{esc(p.disagreement)}</div>
+        </div>""")
+
+    if sharp_rows:
+        sharp_body = "".join(sharp_rows)
+    else:
+        sharp_body = (
+            '<p class="mm-empty">No public data available &mdash; the '
+            'line-movement feed returned nothing for this slate.</p>'
+        )
+
+    sharp_meta_parts = []
+    if line_movement_meta.get("upstream_fetched_at"):
+        sharp_meta_parts.append(
+            f"feed timestamped {esc(line_movement_meta['upstream_fetched_at'])}"
+        )
+    if line_movement_meta.get("upstream_stale"):
+        sharp_meta_parts.append("upstream reports this data as stale")
+    if line_movement_meta.get("error"):
+        sharp_meta_parts.append(
+            f"last fetch failed: {esc(line_movement_meta['error'])}"
+        )
+    sharp_meta = " &middot; ".join(sharp_meta_parts)
+
+    # ---------------------------------------------------------
     # STATS
     # ---------------------------------------------------------
 
     n_games = len(picks)
     n_value = len(value_picks)
     n_lined = len(lined_games)
+    n_with_move = sum(1 for p in picks if p.line_move_pp is not None)
 
     edges = [
         abs(p.edge_pct)
@@ -644,6 +834,53 @@ rel="stylesheet"
     --gold:#f2b705;
     --green:#5fcb8c;
     --red:#df718f;
+}}
+
+/* ---- Favorite mismatches ---- */
+.mm-band{{border-bottom:1px solid var(--border);background:
+  radial-gradient(ellipse at top left,rgba(242,183,5,.07),transparent 60%),var(--panel);}}
+.mm-inner{{max-width:1180px;margin:0 auto;padding:28px 28px 32px;}}
+.mm-head{{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:16px;}}
+.mm-head h2{{font-family:'Oswald',sans-serif;text-transform:uppercase;font-size:19px;
+  letter-spacing:.04em;margin:0;color:var(--gold);}}
+.mm-head span{{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted);}}
+.mm-grid{{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:14px;}}
+.mm-card{{background:var(--panel2);border:1px solid var(--border);
+  border-left:3px solid var(--muted);border-radius:5px;padding:15px 17px;}}
+.mm-card.mm-aligned{{border-left-color:var(--gold);}}
+.mm-card.mm-flip{{border-left-color:var(--red);}}
+.mm-card.mm-margin{{border-left-color:var(--green);}}
+.mm-top{{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:9px;}}
+.mm-badge{{font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.09em;
+  text-transform:uppercase;color:var(--text);}}
+.mm-gap{{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted);white-space:nowrap;}}
+.mm-matchup{{font-family:'Oswald',sans-serif;font-size:17px;text-transform:uppercase;
+  margin-bottom:12px;}}
+.mm-split{{display:flex;align-items:center;gap:10px;}}
+.mm-col{{display:flex;flex-direction:column;gap:1px;min-width:0;flex:1;}}
+.mm-col strong{{font-size:13px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}}
+.mm-col-model strong{{color:var(--gold);}}
+.mm-lbl{{font-size:9px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);}}
+.mm-pct{{font-family:'JetBrains Mono',monospace;font-size:14px;}}
+.mm-vs{{font-size:10px;color:var(--muted);text-transform:uppercase;}}
+.mm-sharp{{margin-top:11px;padding-top:9px;border-top:1px solid var(--border);
+  font-size:11px;color:var(--muted);}}
+.mm-empty{{color:var(--muted);font-size:13px;margin:0;}}
+.value-market{{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.06em;
+  text-transform:uppercase;color:var(--gold);margin:-6px 0 10px;}}
+
+/* ---- Sharp action ---- */
+.sharp-row{{display:grid;grid-template-columns:1fr 92px 1fr 190px;gap:12px;align-items:center;
+  padding:9px 0;border-bottom:1px solid var(--border);font-size:13px;}}
+.sharp-move{{font-family:'JetBrains Mono',monospace;text-align:right;}}
+.sharp-move.positive{{color:var(--green);}} .sharp-move.negative{{color:var(--red);}}
+.sharp-toward{{color:var(--text);}}
+.sharp-label{{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.06em;
+  text-transform:uppercase;color:var(--muted);text-align:right;}}
+.sharp-note{{color:var(--muted);font-size:11px;margin:10px 0 0;}}
+@media (max-width:720px){{
+  .sharp-row{{grid-template-columns:1fr 80px;row-gap:2px;}}
+  .sharp-toward,.sharp-label{{text-align:left;grid-column:1 / -1;font-size:11px;}}
 }}
 
 * {{
@@ -1246,6 +1483,22 @@ win probabilities against current sportsbook pricing.
 </header>
 
 
+<div class="mm-band">
+<div class="mm-inner">
+
+<div class="mm-head">
+<h2>Favorite Mismatches</h2>
+<span>
+{n_aligned} sharp-aligned &middot; {n_flip} favourite flip &middot; {n_margin} margin
+</span>
+</div>
+
+{mismatch_body}
+
+</div>
+</div>
+
+
 <nav class="nav">
 
 <div class="nav-inner">
@@ -1273,6 +1526,12 @@ GAMES WITH LINES
 onclick="showSection('teams', this)"
 >
 TEAM SCHEDULES
+</button>
+
+<button
+onclick="showSection('sharp', this)"
+>
+SHARP ACTION
 </button>
 
 <button
@@ -1405,6 +1664,35 @@ style="display:none"
 </div>
 
 {''.join(team_panels)}
+
+</section>
+
+
+<section
+id="sharp"
+class="section site-section"
+style="display:none"
+>
+
+<div class="section-title">
+
+<h2>Sharp vs Public Split</h2>
+
+<span>
+Line movement as a sharp-action proxy &mdash; {n_with_move} of {n_games} games
+</span>
+
+</div>
+
+{sharp_body}
+
+<p class="sharp-note">
+Positive means the home team's implied probability has risen since the line
+opened; money arriving on a side is what moves its price, so the direction of
+travel stands in for where the sharp money is going. This is line movement from
+CLEATZ's public odds-movers feed, <strong>not</strong> ticket%/handle% betting
+splits &mdash; no free source for those was available. {sharp_meta}
+</p>
 
 </section>
 
