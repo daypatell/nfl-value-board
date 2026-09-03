@@ -34,6 +34,53 @@ rel="stylesheet"
     --red:#df718f;
 }
 
+/* ---- Favorite mismatches ---- */
+.mm-band{border-bottom:1px solid var(--border);background:
+  radial-gradient(ellipse at top left,rgba(242,183,5,.07),transparent 60%),var(--panel);}
+.mm-inner{max-width:1180px;margin:0 auto;padding:28px 28px 32px;}
+.mm-head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:16px;}
+.mm-head h2{font-family:'Oswald',sans-serif;text-transform:uppercase;font-size:19px;
+  letter-spacing:.04em;margin:0;color:var(--gold);}
+.mm-head span{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted);}
+.mm-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:14px;}
+.mm-card{background:var(--panel2);border:1px solid var(--border);
+  border-left:3px solid var(--muted);border-radius:5px;padding:15px 17px;}
+.mm-card.mm-aligned{border-left-color:var(--gold);}
+.mm-card.mm-flip{border-left-color:var(--red);}
+.mm-card.mm-margin{border-left-color:var(--green);}
+.mm-top{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:9px;}
+.mm-badge{font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.09em;
+  text-transform:uppercase;color:var(--text);}
+.mm-gap{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted);white-space:nowrap;}
+.mm-matchup{font-family:'Oswald',sans-serif;font-size:17px;text-transform:uppercase;
+  margin-bottom:12px;}
+.mm-split{display:flex;align-items:center;gap:10px;}
+.mm-col{display:flex;flex-direction:column;gap:1px;min-width:0;flex:1;}
+.mm-col strong{font-size:13px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.mm-col-model strong{color:var(--gold);}
+.mm-lbl{font-size:9px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);}
+.mm-pct{font-family:'JetBrains Mono',monospace;font-size:14px;}
+.mm-vs{font-size:10px;color:var(--muted);text-transform:uppercase;}
+.mm-sharp{margin-top:11px;padding-top:9px;border-top:1px solid var(--border);
+  font-size:11px;color:var(--muted);}
+.mm-empty{color:var(--muted);font-size:13px;margin:0;}
+.value-market{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.06em;
+  text-transform:uppercase;color:var(--gold);margin:-6px 0 10px;}
+
+/* ---- Sharp action ---- */
+.sharp-row{display:grid;grid-template-columns:1fr 92px 1fr 190px;gap:12px;align-items:center;
+  padding:9px 0;border-bottom:1px solid var(--border);font-size:13px;}
+.sharp-move{font-family:'JetBrains Mono',monospace;text-align:right;}
+.sharp-move.positive{color:var(--green);} .sharp-move.negative{color:var(--red);}
+.sharp-toward{color:var(--text);}
+.sharp-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.06em;
+  text-transform:uppercase;color:var(--muted);text-align:right;}
+.sharp-note{color:var(--muted);font-size:11px;margin:10px 0 0;}
+@media (max-width:720px){
+  .sharp-row{grid-template-columns:1fr 80px;row-gap:2px;}
+  .sharp-toward,.sharp-label{text-align:left;grid-column:1 / -1;font-size:11px;}
+}
+
 * {
     box-sizing:border-box;
 }
@@ -613,12 +660,12 @@ win probabilities against current sportsbook pricing.
 </div>
 
 <div class="stat">
-<strong>15</strong>
+<strong>4</strong>
 <span>Value Picks</span>
 </div>
 
 <div class="stat">
-<strong>20.9pp</strong>
+<strong>3.9pp</strong>
 <span>Avg Edge</span>
 </div>
 
@@ -632,6 +679,218 @@ win probabilities against current sportsbook pricing.
 </div>
 
 </header>
+
+
+<div class="mm-band">
+<div class="mm-inner">
+
+<div class="mm-head">
+<h2>Favorite Mismatches</h2>
+<span>
+0 sharp-aligned &middot; 1 favourite flip &middot; 6 margin
+</span>
+</div>
+
+<div class="mm-grid">
+        <article class="mm-card mm-flip">
+
+            <div class="mm-top">
+                <span class="mm-badge">FAVORITE FLIP</span>
+                <span class="mm-gap">2.7pp apart</span>
+            </div>
+
+            <div class="mm-matchup">
+                Green Bay Packers @ Minnesota Vikings
+            </div>
+
+            <div class="mm-split">
+                <div class="mm-col">
+                    <span class="mm-lbl">Market favours</span>
+                    <strong>Minnesota Vikings</strong>
+                    <span class="mm-pct">52%</span>
+                </div>
+                <span class="mm-vs">vs</span>
+                <div class="mm-col mm-col-model">
+                    <span class="mm-lbl">Model favours</span>
+                    <strong>Green Bay Packers</strong>
+                    <span class="mm-pct">51%</span>
+                </div>
+            </div>
+
+            <div class="mm-sharp">Line moving toward Minnesota Vikings (+5.76pp)</div>
+
+        </article>
+        <article class="mm-card mm-margin">
+
+            <div class="mm-top">
+                <span class="mm-badge">MARGIN MISMATCH</span>
+                <span class="mm-gap">5.2pp apart</span>
+            </div>
+
+            <div class="mm-matchup">
+                Chicago Bears @ Carolina Panthers
+            </div>
+
+            <div class="mm-split">
+                <div class="mm-col">
+                    <span class="mm-lbl">Market favours</span>
+                    <strong>Chicago Bears</strong>
+                    <span class="mm-pct">58%</span>
+                </div>
+                <span class="mm-vs">vs</span>
+                <div class="mm-col mm-col-model">
+                    <span class="mm-lbl">Model favours</span>
+                    <strong>Chicago Bears</strong>
+                    <span class="mm-pct">53%</span>
+                </div>
+            </div>
+
+            <div class="mm-sharp">Line moving toward Chicago Bears (-3.03pp)</div>
+
+        </article>
+        <article class="mm-card mm-margin">
+
+            <div class="mm-top">
+                <span class="mm-badge">MARGIN MISMATCH</span>
+                <span class="mm-gap">5.1pp apart</span>
+            </div>
+
+            <div class="mm-matchup">
+                Baltimore Ravens @ Indianapolis Colts
+            </div>
+
+            <div class="mm-split">
+                <div class="mm-col">
+                    <span class="mm-lbl">Market favours</span>
+                    <strong>Baltimore Ravens</strong>
+                    <span class="mm-pct">61%</span>
+                </div>
+                <span class="mm-vs">vs</span>
+                <div class="mm-col mm-col-model">
+                    <span class="mm-lbl">Model favours</span>
+                    <strong>Baltimore Ravens</strong>
+                    <span class="mm-pct">66%</span>
+                </div>
+            </div>
+
+            <div class="mm-sharp">Line moving toward Indianapolis Colts (+2.26pp)</div>
+
+        </article>
+        <article class="mm-card mm-margin">
+
+            <div class="mm-top">
+                <span class="mm-badge">MARGIN MISMATCH</span>
+                <span class="mm-gap">4.8pp apart</span>
+            </div>
+
+            <div class="mm-matchup">
+                Atlanta Falcons @ Pittsburgh Steelers
+            </div>
+
+            <div class="mm-split">
+                <div class="mm-col">
+                    <span class="mm-lbl">Market favours</span>
+                    <strong>Pittsburgh Steelers</strong>
+                    <span class="mm-pct">62%</span>
+                </div>
+                <span class="mm-vs">vs</span>
+                <div class="mm-col mm-col-model">
+                    <span class="mm-lbl">Model favours</span>
+                    <strong>Pittsburgh Steelers</strong>
+                    <span class="mm-pct">57%</span>
+                </div>
+            </div>
+
+            <div class="mm-sharp">No meaningful line movement</div>
+
+        </article>
+        <article class="mm-card mm-margin">
+
+            <div class="mm-top">
+                <span class="mm-badge">MARGIN MISMATCH</span>
+                <span class="mm-gap">3.7pp apart</span>
+            </div>
+
+            <div class="mm-matchup">
+                Dallas Cowboys @ New York Giants
+            </div>
+
+            <div class="mm-split">
+                <div class="mm-col">
+                    <span class="mm-lbl">Market favours</span>
+                    <strong>Dallas Cowboys</strong>
+                    <span class="mm-pct">57%</span>
+                </div>
+                <span class="mm-vs">vs</span>
+                <div class="mm-col mm-col-model">
+                    <span class="mm-lbl">Model favours</span>
+                    <strong>Dallas Cowboys</strong>
+                    <span class="mm-pct">61%</span>
+                </div>
+            </div>
+
+            <div class="mm-sharp">Line moving toward Dallas Cowboys (-2.82pp)</div>
+
+        </article>
+        <article class="mm-card mm-margin">
+
+            <div class="mm-top">
+                <span class="mm-badge">MARGIN MISMATCH</span>
+                <span class="mm-gap">3.4pp apart</span>
+            </div>
+
+            <div class="mm-matchup">
+                Denver Broncos @ Kansas City Chiefs
+            </div>
+
+            <div class="mm-split">
+                <div class="mm-col">
+                    <span class="mm-lbl">Market favours</span>
+                    <strong>Kansas City Chiefs</strong>
+                    <span class="mm-pct">57%</span>
+                </div>
+                <span class="mm-vs">vs</span>
+                <div class="mm-col mm-col-model">
+                    <span class="mm-lbl">Model favours</span>
+                    <strong>Kansas City Chiefs</strong>
+                    <span class="mm-pct">61%</span>
+                </div>
+            </div>
+
+            <div class="mm-sharp">No meaningful line movement</div>
+
+        </article>
+        <article class="mm-card mm-margin">
+
+            <div class="mm-top">
+                <span class="mm-badge">MARGIN MISMATCH</span>
+                <span class="mm-gap">3.3pp apart</span>
+            </div>
+
+            <div class="mm-matchup">
+                San Francisco 49ers @ Los Angeles Rams
+            </div>
+
+            <div class="mm-split">
+                <div class="mm-col">
+                    <span class="mm-lbl">Market favours</span>
+                    <strong>Los Angeles Rams</strong>
+                    <span class="mm-pct">64%</span>
+                </div>
+                <span class="mm-vs">vs</span>
+                <div class="mm-col mm-col-model">
+                    <span class="mm-lbl">Model favours</span>
+                    <strong>Los Angeles Rams</strong>
+                    <span class="mm-pct">61%</span>
+                </div>
+            </div>
+
+            <div class="mm-sharp">No meaningful line movement</div>
+
+        </article></div>
+
+</div>
+</div>
 
 
 <nav class="nav">
@@ -661,6 +920,12 @@ GAMES WITH LINES
 onclick="showSection('teams', this)"
 >
 TEAM SCHEDULES
+</button>
+
+<button
+onclick="showSection('sharp', this)"
+>
+SHARP ACTION
 </button>
 
 <button
@@ -707,213 +972,8 @@ class="section site-section"
 </div>
 
 
-        <div class="game-row tier-elite">
+        <div class="game-row tier-low">
             <div class="game-rank">01</div>
-
-            <div class="game-matchup">
-                <div class="away">New England Patriots</div>
-                <div class="at">@</div>
-                <div class="home">Seattle Seahawks</div>
-            </div>
-
-            <div class="game-pick">
-                <span class="pick-label">MODEL PICK</span>
-                <strong>Seattle Seahawks</strong>
-            </div>
-
-            <div class="prob">
-                <span>64%</span>
-                <small>MARKET</small>
-            </div>
-
-            <div class="prob model">
-                <span>65%</span>
-                <small>MODEL</small>
-            </div>
-
-            <div class="edge positive">
-                +21.9pp
-            </div>
-
-            <div class="ev positive">
-                +0.43
-            </div>
-
-            <div class="score">
-                100.0
-            </div>
-
-            <div class="action-value">
-                VALUE
-            </div>
-        </div>
-        
-        <div class="game-row tier-elite">
-            <div class="game-rank">02</div>
-
-            <div class="game-matchup">
-                <div class="away">Baltimore Ravens</div>
-                <div class="at">@</div>
-                <div class="home">Indianapolis Colts</div>
-            </div>
-
-            <div class="game-pick">
-                <span class="pick-label">MODEL PICK</span>
-                <strong>Baltimore Ravens</strong>
-            </div>
-
-            <div class="prob">
-                <span>64%</span>
-                <small>MARKET</small>
-            </div>
-
-            <div class="prob model">
-                <span>34%</span>
-                <small>MODEL</small>
-            </div>
-
-            <div class="edge positive">
-                +22.9pp
-            </div>
-
-            <div class="ev positive">
-                +0.44
-            </div>
-
-            <div class="score">
-                100.0
-            </div>
-
-            <div class="action-value">
-                VALUE
-            </div>
-        </div>
-        
-        <div class="game-row tier-elite">
-            <div class="game-rank">03</div>
-
-            <div class="game-matchup">
-                <div class="away">Cleveland Browns</div>
-                <div class="at">@</div>
-                <div class="home">Jacksonville Jaguars</div>
-            </div>
-
-            <div class="game-pick">
-                <span class="pick-label">MODEL PICK</span>
-                <strong>Jacksonville Jaguars</strong>
-            </div>
-
-            <div class="prob">
-                <span>24%</span>
-                <small>MARKET</small>
-            </div>
-
-            <div class="prob model">
-                <span>75%</span>
-                <small>MODEL</small>
-            </div>
-
-            <div class="edge positive">
-                +36.5pp
-            </div>
-
-            <div class="ev positive">
-                +0.70
-            </div>
-
-            <div class="score">
-                100.0
-            </div>
-
-            <div class="action-value">
-                VALUE
-            </div>
-        </div>
-        
-        <div class="game-row tier-elite">
-            <div class="game-rank">04</div>
-
-            <div class="game-matchup">
-                <div class="away">New Orleans Saints</div>
-                <div class="at">@</div>
-                <div class="home">Detroit Lions</div>
-            </div>
-
-            <div class="game-pick">
-                <span class="pick-label">MODEL PICK</span>
-                <strong>Detroit Lions</strong>
-            </div>
-
-            <div class="prob">
-                <span>75%</span>
-                <small>MARKET</small>
-            </div>
-
-            <div class="prob model">
-                <span>74%</span>
-                <small>MODEL</small>
-            </div>
-
-            <div class="edge positive">
-                +35.1pp
-            </div>
-
-            <div class="ev positive">
-                +0.67
-            </div>
-
-            <div class="score">
-                100.0
-            </div>
-
-            <div class="action-value">
-                VALUE
-            </div>
-        </div>
-        
-        <div class="game-row tier-elite">
-            <div class="game-rank">05</div>
-
-            <div class="game-matchup">
-                <div class="away">Arizona Cardinals</div>
-                <div class="at">@</div>
-                <div class="home">Los Angeles Chargers</div>
-            </div>
-
-            <div class="game-pick">
-                <span class="pick-label">MODEL PICK</span>
-                <strong>Los Angeles Chargers</strong>
-            </div>
-
-            <div class="prob">
-                <span>20%</span>
-                <small>MARKET</small>
-            </div>
-
-            <div class="prob model">
-                <span>80%</span>
-                <small>MODEL</small>
-            </div>
-
-            <div class="edge positive">
-                +42.3pp
-            </div>
-
-            <div class="ev positive">
-                +0.81
-            </div>
-
-            <div class="score">
-                100.0
-            </div>
-
-            <div class="action-value">
-                VALUE
-            </div>
-        </div>
-        
-        <div class="game-row tier-elite">
-            <div class="game-rank">06</div>
 
             <div class="game-matchup">
                 <div class="away">Miami Dolphins</div>
@@ -937,261 +997,15 @@ class="section site-section"
             </div>
 
             <div class="edge positive">
-                +23.0pp
+                +4.3pp
             </div>
 
             <div class="ev positive">
-                +0.44
+                +0.08
             </div>
 
             <div class="score">
-                100.0
-            </div>
-
-            <div class="action-value">
-                VALUE
-            </div>
-        </div>
-        
-        <div class="game-row tier-elite">
-            <div class="game-rank">07</div>
-
-            <div class="game-matchup">
-                <div class="away">Washington Commanders</div>
-                <div class="at">@</div>
-                <div class="home">Philadelphia Eagles</div>
-            </div>
-
-            <div class="game-pick">
-                <span class="pick-label">MODEL PICK</span>
-                <strong>Philadelphia Eagles</strong>
-            </div>
-
-            <div class="prob">
-                <span>36%</span>
-                <small>MARKET</small>
-            </div>
-
-            <div class="prob model">
-                <span>66%</span>
-                <small>MODEL</small>
-            </div>
-
-            <div class="edge positive">
-                +28.9pp
-            </div>
-
-            <div class="ev positive">
-                +0.56
-            </div>
-
-            <div class="score">
-                100.0
-            </div>
-
-            <div class="action-value">
-                VALUE
-            </div>
-        </div>
-        
-        <div class="game-row tier-elite">
-            <div class="game-rank">08</div>
-
-            <div class="game-matchup">
-                <div class="away">Denver Broncos</div>
-                <div class="at">@</div>
-                <div class="home">Kansas City Chiefs</div>
-            </div>
-
-            <div class="game-pick">
-                <span class="pick-label">MODEL PICK</span>
-                <strong>Kansas City Chiefs</strong>
-            </div>
-
-            <div class="prob">
-                <span>60%</span>
-                <small>MARKET</small>
-            </div>
-
-            <div class="prob model">
-                <span>60%</span>
-                <small>MODEL</small>
-            </div>
-
-            <div class="edge positive">
-                +19.0pp
-            </div>
-
-            <div class="ev positive">
-                +0.38
-            </div>
-
-            <div class="score">
-                96.6
-            </div>
-
-            <div class="action-value">
-                VALUE
-            </div>
-        </div>
-        
-        <div class="game-row tier-elite">
-            <div class="game-rank">09</div>
-
-            <div class="game-matchup">
-                <div class="away">San Francisco 49ers</div>
-                <div class="at">@</div>
-                <div class="home">Los Angeles Rams</div>
-            </div>
-
-            <div class="game-pick">
-                <span class="pick-label">MODEL PICK</span>
-                <strong>Los Angeles Rams</strong>
-            </div>
-
-            <div class="prob">
-                <span>38%</span>
-                <small>MARKET</small>
-            </div>
-
-            <div class="prob model">
-                <span>61%</span>
-                <small>MODEL</small>
-            </div>
-
-            <div class="edge positive">
-                +17.8pp
-            </div>
-
-            <div class="ev positive">
-                +0.34
-            </div>
-
-            <div class="score">
-                92.4
-            </div>
-
-            <div class="action-value">
-                VALUE
-            </div>
-        </div>
-        
-        <div class="game-row tier-elite">
-            <div class="game-rank">10</div>
-
-            <div class="game-matchup">
-                <div class="away">Tampa Bay Buccaneers</div>
-                <div class="at">@</div>
-                <div class="home">Cincinnati Bengals</div>
-            </div>
-
-            <div class="game-pick">
-                <span class="pick-label">MODEL PICK</span>
-                <strong>Cincinnati Bengals</strong>
-            </div>
-
-            <div class="prob">
-                <span>38%</span>
-                <small>MARKET</small>
-            </div>
-
-            <div class="prob model">
-                <span>62%</span>
-                <small>MODEL</small>
-            </div>
-
-            <div class="edge positive">
-                +17.6pp
-            </div>
-
-            <div class="ev positive">
-                +0.33
-            </div>
-
-            <div class="score">
-                91.6
-            </div>
-
-            <div class="action-value">
-                VALUE
-            </div>
-        </div>
-        
-        <div class="game-row tier-elite">
-            <div class="game-rank">11</div>
-
-            <div class="game-matchup">
-                <div class="away">Atlanta Falcons</div>
-                <div class="at">@</div>
-                <div class="home">Pittsburgh Steelers</div>
-            </div>
-
-            <div class="game-pick">
-                <span class="pick-label">MODEL PICK</span>
-                <strong>Pittsburgh Steelers</strong>
-            </div>
-
-            <div class="prob">
-                <span>39%</span>
-                <small>MARKET</small>
-            </div>
-
-            <div class="prob model">
-                <span>57%</span>
-                <small>MODEL</small>
-            </div>
-
-            <div class="edge positive">
-                +17.1pp
-            </div>
-
-            <div class="ev positive">
-                +0.34
-            </div>
-
-            <div class="score">
-                89.9
-            </div>
-
-            <div class="action-value">
-                VALUE
-            </div>
-        </div>
-        
-        <div class="game-row tier-elite">
-            <div class="game-rank">12</div>
-
-            <div class="game-matchup">
-                <div class="away">Dallas Cowboys</div>
-                <div class="at">@</div>
-                <div class="home">New York Giants</div>
-            </div>
-
-            <div class="game-pick">
-                <span class="pick-label">MODEL PICK</span>
-                <strong>Dallas Cowboys</strong>
-            </div>
-
-            <div class="prob">
-                <span>60%</span>
-                <small>MARKET</small>
-            </div>
-
-            <div class="prob model">
-                <span>39%</span>
-                <small>MODEL</small>
-            </div>
-
-            <div class="edge positive">
-                +14.6pp
-            </div>
-
-            <div class="ev positive">
-                +0.27
-            </div>
-
-            <div class="score">
-                81.3
+                37.8
             </div>
 
             <div class="action-value">
@@ -1200,39 +1014,39 @@ class="section site-section"
         </div>
         
         <div class="game-row tier-low">
-            <div class="game-rank">13</div>
+            <div class="game-rank">02</div>
 
             <div class="game-matchup">
-                <div class="away">New York Jets</div>
+                <div class="away">Baltimore Ravens</div>
                 <div class="at">@</div>
-                <div class="home">Tennessee Titans</div>
+                <div class="home">Indianapolis Colts</div>
             </div>
 
             <div class="game-pick">
                 <span class="pick-label">MODEL PICK</span>
-                <strong>Tennessee Titans</strong>
+                <strong>Baltimore Ravens</strong>
             </div>
 
             <div class="prob">
-                <span>57%</span>
+                <span>41%</span>
                 <small>MARKET</small>
             </div>
 
             <div class="prob model">
-                <span>55%</span>
+                <span>34%</span>
                 <small>MODEL</small>
             </div>
 
             <div class="edge positive">
-                +6.1pp
+                +4.1pp
             </div>
 
             <div class="ev positive">
-                +0.11
+                +0.08
             </div>
 
             <div class="score">
-                38.6
+                35.8
             </div>
 
             <div class="action-value">
@@ -1241,7 +1055,7 @@ class="section site-section"
         </div>
         
         <div class="game-row tier-low">
-            <div class="game-rank">14</div>
+            <div class="game-rank">03</div>
 
             <div class="game-matchup">
                 <div class="away">Chicago Bears</div>
@@ -1251,7 +1065,7 @@ class="section site-section"
 
             <div class="game-pick">
                 <span class="pick-label">MODEL PICK</span>
-                <strong>Chicago Bears</strong>
+                <strong>Carolina Panthers</strong>
             </div>
 
             <div class="prob">
@@ -1260,20 +1074,20 @@ class="section site-section"
             </div>
 
             <div class="prob model">
-                <span>46%</span>
+                <span>47%</span>
                 <small>MODEL</small>
             </div>
 
             <div class="edge positive">
-                +6.0pp
+                +4.0pp
             </div>
 
             <div class="ev positive">
-                +0.11
+                +0.08
             </div>
 
             <div class="score">
-                37.5
+                35.6
             </div>
 
             <div class="action-value">
@@ -1282,53 +1096,135 @@ class="section site-section"
         </div>
         
         <div class="game-row tier-low">
-            <div class="game-rank">15</div>
+            <div class="game-rank">04</div>
+
+            <div class="game-matchup">
+                <div class="away">Atlanta Falcons</div>
+                <div class="at">@</div>
+                <div class="home">Pittsburgh Steelers</div>
+            </div>
+
+            <div class="game-pick">
+                <span class="pick-label">MODEL PICK</span>
+                <strong>Atlanta Falcons</strong>
+            </div>
+
+            <div class="prob">
+                <span>65%</span>
+                <small>MARKET</small>
+            </div>
+
+            <div class="prob model">
+                <span>57%</span>
+                <small>MODEL</small>
+            </div>
+
+            <div class="edge positive">
+                +3.2pp
+            </div>
+
+            <div class="ev positive">
+                +0.08
+            </div>
+
+            <div class="score">
+                30.8
+            </div>
+
+            <div class="action-value">
+                VALUE
+            </div>
+        </div>
+        
+        <div class="game-row tier-low">
+            <div class="game-rank">05</div>
+
+            <div class="game-matchup">
+                <div class="away">New England Patriots</div>
+                <div class="at">@</div>
+                <div class="home">Seattle Seahawks</div>
+            </div>
+
+            <div class="game-pick">
+                <span class="pick-label">MODEL PICK</span>
+                <strong>—</strong>
+            </div>
+
+            <div class="prob">
+                <span>64%</span>
+                <small>MARKET</small>
+            </div>
+
+            <div class="prob model">
+                <span>64%</span>
+                <small>MODEL</small>
+            </div>
+
+            <div class="edge positive">
+                -
+            </div>
+
+            <div class="ev positive">
+                —
+            </div>
+
+            <div class="score">
+                0.0
+            </div>
+
+            <div class="action-pass">
+                PASS
+            </div>
+        </div>
+        
+        <div class="game-row tier-low">
+            <div class="game-rank">06</div>
+
+            <div class="game-matchup">
+                <div class="away">San Francisco 49ers</div>
+                <div class="at">@</div>
+                <div class="home">Los Angeles Rams</div>
+            </div>
+
+            <div class="game-pick">
+                <span class="pick-label">MODEL PICK</span>
+                <strong>—</strong>
+            </div>
+
+            <div class="prob">
+                <span>67%</span>
+                <small>MARKET</small>
+            </div>
+
+            <div class="prob model">
+                <span>61%</span>
+                <small>MODEL</small>
+            </div>
+
+            <div class="edge positive">
+                -
+            </div>
+
+            <div class="ev positive">
+                —
+            </div>
+
+            <div class="score">
+                0.0
+            </div>
+
+            <div class="action-pass">
+                PASS
+            </div>
+        </div>
+        
+        <div class="game-row tier-low">
+            <div class="game-rank">07</div>
 
             <div class="game-matchup">
                 <div class="away">Buffalo Bills</div>
                 <div class="at">@</div>
                 <div class="home">Houston Texans</div>
-            </div>
-
-            <div class="game-pick">
-                <span class="pick-label">MODEL PICK</span>
-                <strong>Buffalo Bills</strong>
-            </div>
-
-            <div class="prob">
-                <span>54%</span>
-                <small>MARKET</small>
-            </div>
-
-            <div class="prob model">
-                <span>48%</span>
-                <small>MODEL</small>
-            </div>
-
-            <div class="edge positive">
-                +4.8pp
-            </div>
-
-            <div class="ev positive">
-                +0.09
-            </div>
-
-            <div class="score">
-                30.6
-            </div>
-
-            <div class="action-value">
-                VALUE
-            </div>
-        </div>
-        
-        <div class="game-row tier-low">
-            <div class="game-rank">16</div>
-
-            <div class="game-matchup">
-                <div class="away">Green Bay Packers</div>
-                <div class="at">@</div>
-                <div class="home">Minnesota Vikings</div>
             </div>
 
             <div class="game-pick">
@@ -1342,7 +1238,376 @@ class="section site-section"
             </div>
 
             <div class="prob model">
+                <span>48%</span>
+                <small>MODEL</small>
+            </div>
+
+            <div class="edge positive">
+                -
+            </div>
+
+            <div class="ev positive">
+                —
+            </div>
+
+            <div class="score">
+                0.0
+            </div>
+
+            <div class="action-pass">
+                PASS
+            </div>
+        </div>
+        
+        <div class="game-row tier-low">
+            <div class="game-rank">08</div>
+
+            <div class="game-matchup">
+                <div class="away">Tampa Bay Buccaneers</div>
+                <div class="at">@</div>
+                <div class="home">Cincinnati Bengals</div>
+            </div>
+
+            <div class="game-pick">
+                <span class="pick-label">MODEL PICK</span>
+                <strong>—</strong>
+            </div>
+
+            <div class="prob">
+                <span>66%</span>
+                <small>MARKET</small>
+            </div>
+
+            <div class="prob model">
+                <span>62%</span>
+                <small>MODEL</small>
+            </div>
+
+            <div class="edge positive">
+                -
+            </div>
+
+            <div class="ev positive">
+                —
+            </div>
+
+            <div class="score">
+                0.0
+            </div>
+
+            <div class="action-pass">
+                PASS
+            </div>
+        </div>
+        
+        <div class="game-row tier-low">
+            <div class="game-rank">09</div>
+
+            <div class="game-matchup">
+                <div class="away">Cleveland Browns</div>
+                <div class="at">@</div>
+                <div class="home">Jacksonville Jaguars</div>
+            </div>
+
+            <div class="game-pick">
+                <span class="pick-label">MODEL PICK</span>
+                <strong>—</strong>
+            </div>
+
+            <div class="prob">
+                <span>80%</span>
+                <small>MARKET</small>
+            </div>
+
+            <div class="prob model">
+                <span>74%</span>
+                <small>MODEL</small>
+            </div>
+
+            <div class="edge positive">
+                -
+            </div>
+
+            <div class="ev positive">
+                —
+            </div>
+
+            <div class="score">
+                0.0
+            </div>
+
+            <div class="action-pass">
+                PASS
+            </div>
+        </div>
+        
+        <div class="game-row tier-low">
+            <div class="game-rank">10</div>
+
+            <div class="game-matchup">
+                <div class="away">New Orleans Saints</div>
+                <div class="at">@</div>
+                <div class="home">Detroit Lions</div>
+            </div>
+
+            <div class="game-pick">
+                <span class="pick-label">MODEL PICK</span>
+                <strong>—</strong>
+            </div>
+
+            <div class="prob">
+                <span>75%</span>
+                <small>MARKET</small>
+            </div>
+
+            <div class="prob model">
+                <span>74%</span>
+                <small>MODEL</small>
+            </div>
+
+            <div class="edge positive">
+                -
+            </div>
+
+            <div class="ev positive">
+                —
+            </div>
+
+            <div class="score">
+                0.0
+            </div>
+
+            <div class="action-pass">
+                PASS
+            </div>
+        </div>
+        
+        <div class="game-row tier-low">
+            <div class="game-rank">11</div>
+
+            <div class="game-matchup">
+                <div class="away">New York Jets</div>
+                <div class="at">@</div>
+                <div class="home">Tennessee Titans</div>
+            </div>
+
+            <div class="game-pick">
+                <span class="pick-label">MODEL PICK</span>
+                <strong>—</strong>
+            </div>
+
+            <div class="prob">
+                <span>57%</span>
+                <small>MARKET</small>
+            </div>
+
+            <div class="prob model">
+                <span>55%</span>
+                <small>MODEL</small>
+            </div>
+
+            <div class="edge positive">
+                -
+            </div>
+
+            <div class="ev positive">
+                —
+            </div>
+
+            <div class="score">
+                0.0
+            </div>
+
+            <div class="action-pass">
+                PASS
+            </div>
+        </div>
+        
+        <div class="game-row tier-low">
+            <div class="game-rank">12</div>
+
+            <div class="game-matchup">
+                <div class="away">Arizona Cardinals</div>
+                <div class="at">@</div>
+                <div class="home">Los Angeles Chargers</div>
+            </div>
+
+            <div class="game-pick">
+                <span class="pick-label">MODEL PICK</span>
+                <strong>—</strong>
+            </div>
+
+            <div class="prob">
+                <span>85%</span>
+                <small>MARKET</small>
+            </div>
+
+            <div class="prob model">
+                <span>80%</span>
+                <small>MODEL</small>
+            </div>
+
+            <div class="edge positive">
+                -
+            </div>
+
+            <div class="ev positive">
+                —
+            </div>
+
+            <div class="score">
+                0.0
+            </div>
+
+            <div class="action-pass">
+                PASS
+            </div>
+        </div>
+        
+        <div class="game-row tier-low">
+            <div class="game-rank">13</div>
+
+            <div class="game-matchup">
+                <div class="away">Green Bay Packers</div>
+                <div class="at">@</div>
+                <div class="home">Minnesota Vikings</div>
+            </div>
+
+            <div class="game-pick">
+                <span class="pick-label">MODEL PICK</span>
+                <strong>—</strong>
+            </div>
+
+            <div class="prob">
+                <span>54%</span>
+                <small>MARKET</small>
+            </div>
+
+            <div class="prob model">
                 <span>49%</span>
+                <small>MODEL</small>
+            </div>
+
+            <div class="edge positive">
+                -
+            </div>
+
+            <div class="ev positive">
+                —
+            </div>
+
+            <div class="score">
+                0.0
+            </div>
+
+            <div class="action-pass">
+                PASS
+            </div>
+        </div>
+        
+        <div class="game-row tier-low">
+            <div class="game-rank">14</div>
+
+            <div class="game-matchup">
+                <div class="away">Washington Commanders</div>
+                <div class="at">@</div>
+                <div class="home">Philadelphia Eagles</div>
+            </div>
+
+            <div class="game-pick">
+                <span class="pick-label">MODEL PICK</span>
+                <strong>—</strong>
+            </div>
+
+            <div class="prob">
+                <span>69%</span>
+                <small>MARKET</small>
+            </div>
+
+            <div class="prob model">
+                <span>67%</span>
+                <small>MODEL</small>
+            </div>
+
+            <div class="edge positive">
+                -
+            </div>
+
+            <div class="ev positive">
+                —
+            </div>
+
+            <div class="score">
+                0.0
+            </div>
+
+            <div class="action-pass">
+                PASS
+            </div>
+        </div>
+        
+        <div class="game-row tier-low">
+            <div class="game-rank">15</div>
+
+            <div class="game-matchup">
+                <div class="away">Dallas Cowboys</div>
+                <div class="at">@</div>
+                <div class="home">New York Giants</div>
+            </div>
+
+            <div class="game-pick">
+                <span class="pick-label">MODEL PICK</span>
+                <strong>—</strong>
+            </div>
+
+            <div class="prob">
+                <span>45%</span>
+                <small>MARKET</small>
+            </div>
+
+            <div class="prob model">
+                <span>39%</span>
+                <small>MODEL</small>
+            </div>
+
+            <div class="edge positive">
+                -
+            </div>
+
+            <div class="ev positive">
+                —
+            </div>
+
+            <div class="score">
+                0.0
+            </div>
+
+            <div class="action-pass">
+                PASS
+            </div>
+        </div>
+        
+        <div class="game-row tier-low">
+            <div class="game-rank">16</div>
+
+            <div class="game-matchup">
+                <div class="away">Denver Broncos</div>
+                <div class="at">@</div>
+                <div class="home">Kansas City Chiefs</div>
+            </div>
+
+            <div class="game-pick">
+                <span class="pick-label">MODEL PICK</span>
+                <strong>—</strong>
+            </div>
+
+            <div class="prob">
+                <span>60%</span>
+                <small>MARKET</small>
+            </div>
+
+            <div class="prob model">
+                <span>61%</span>
                 <small>MODEL</small>
             </div>
 
@@ -1386,265 +1651,15 @@ Live model opportunities for Week 1
 <div class="value-grid">
 
 
-        <article class="value-card tier-elite">
+        <article class="value-card tier-low">
 
             <div class="value-top">
                 <span class="tier">
-                    🔥 ELITE VALUE
+                    LEAN
                 </span>
 
                 <span class="value-score">
-                    100.0
-                    <small>/100</small>
-                </span>
-            </div>
-
-            <div class="value-team">
-                Seattle Seahawks
-            </div>
-
-            <div class="value-matchup">
-                New England Patriots @ Seattle Seahawks
-            </div>
-
-            <div class="value-line">
-                <div>
-                    <strong>64%</strong>
-                    <small>MARKET</small>
-                </div>
-
-                <span class="arrow">→</span>
-
-                <div>
-                    <strong class="model-number">
-                        65%
-                    </strong>
-                    <small>MODEL</small>
-                </div>
-
-                <div class="edge-badge">
-                    +21.9pp
-                </div>
-            </div>
-
-            <div class="value-bottom">
-                <span>EV</span>
-                <strong>
-                    +0.43
-                </strong>
-            </div>
-
-        </article>
-        
-        <article class="value-card tier-elite">
-
-            <div class="value-top">
-                <span class="tier">
-                    🔥 ELITE VALUE
-                </span>
-
-                <span class="value-score">
-                    100.0
-                    <small>/100</small>
-                </span>
-            </div>
-
-            <div class="value-team">
-                Baltimore Ravens
-            </div>
-
-            <div class="value-matchup">
-                Baltimore Ravens @ Indianapolis Colts
-            </div>
-
-            <div class="value-line">
-                <div>
-                    <strong>36%</strong>
-                    <small>MARKET</small>
-                </div>
-
-                <span class="arrow">→</span>
-
-                <div>
-                    <strong class="model-number">
-                        66%
-                    </strong>
-                    <small>MODEL</small>
-                </div>
-
-                <div class="edge-badge">
-                    +22.9pp
-                </div>
-            </div>
-
-            <div class="value-bottom">
-                <span>EV</span>
-                <strong>
-                    +0.44
-                </strong>
-            </div>
-
-        </article>
-        
-        <article class="value-card tier-elite">
-
-            <div class="value-top">
-                <span class="tier">
-                    🔥 ELITE VALUE
-                </span>
-
-                <span class="value-score">
-                    100.0
-                    <small>/100</small>
-                </span>
-            </div>
-
-            <div class="value-team">
-                Jacksonville Jaguars
-            </div>
-
-            <div class="value-matchup">
-                Cleveland Browns @ Jacksonville Jaguars
-            </div>
-
-            <div class="value-line">
-                <div>
-                    <strong>24%</strong>
-                    <small>MARKET</small>
-                </div>
-
-                <span class="arrow">→</span>
-
-                <div>
-                    <strong class="model-number">
-                        75%
-                    </strong>
-                    <small>MODEL</small>
-                </div>
-
-                <div class="edge-badge">
-                    +36.5pp
-                </div>
-            </div>
-
-            <div class="value-bottom">
-                <span>EV</span>
-                <strong>
-                    +0.70
-                </strong>
-            </div>
-
-        </article>
-        
-        <article class="value-card tier-elite">
-
-            <div class="value-top">
-                <span class="tier">
-                    🔥 ELITE VALUE
-                </span>
-
-                <span class="value-score">
-                    100.0
-                    <small>/100</small>
-                </span>
-            </div>
-
-            <div class="value-team">
-                Detroit Lions
-            </div>
-
-            <div class="value-matchup">
-                New Orleans Saints @ Detroit Lions
-            </div>
-
-            <div class="value-line">
-                <div>
-                    <strong>75%</strong>
-                    <small>MARKET</small>
-                </div>
-
-                <span class="arrow">→</span>
-
-                <div>
-                    <strong class="model-number">
-                        74%
-                    </strong>
-                    <small>MODEL</small>
-                </div>
-
-                <div class="edge-badge">
-                    +35.1pp
-                </div>
-            </div>
-
-            <div class="value-bottom">
-                <span>EV</span>
-                <strong>
-                    +0.67
-                </strong>
-            </div>
-
-        </article>
-        
-        <article class="value-card tier-elite">
-
-            <div class="value-top">
-                <span class="tier">
-                    🔥 ELITE VALUE
-                </span>
-
-                <span class="value-score">
-                    100.0
-                    <small>/100</small>
-                </span>
-            </div>
-
-            <div class="value-team">
-                Los Angeles Chargers
-            </div>
-
-            <div class="value-matchup">
-                Arizona Cardinals @ Los Angeles Chargers
-            </div>
-
-            <div class="value-line">
-                <div>
-                    <strong>20%</strong>
-                    <small>MARKET</small>
-                </div>
-
-                <span class="arrow">→</span>
-
-                <div>
-                    <strong class="model-number">
-                        80%
-                    </strong>
-                    <small>MODEL</small>
-                </div>
-
-                <div class="edge-badge">
-                    +42.3pp
-                </div>
-            </div>
-
-            <div class="value-bottom">
-                <span>EV</span>
-                <strong>
-                    +0.81
-                </strong>
-            </div>
-
-        </article>
-        
-        <article class="value-card tier-elite">
-
-            <div class="value-top">
-                <span class="tier">
-                    🔥 ELITE VALUE
-                </span>
-
-                <span class="value-score">
-                    100.0
+                    37.8
                     <small>/100</small>
                 </span>
             </div>
@@ -1657,259 +1672,13 @@ Live model opportunities for Week 1
                 Miami Dolphins @ Las Vegas Raiders
             </div>
 
-            <div class="value-line">
-                <div>
-                    <strong>66%</strong>
-                    <small>MARKET</small>
-                </div>
-
-                <span class="arrow">→</span>
-
-                <div>
-                    <strong class="model-number">
-                        66%
-                    </strong>
-                    <small>MODEL</small>
-                </div>
-
-                <div class="edge-badge">
-                    +23.0pp
-                </div>
-            </div>
-
-            <div class="value-bottom">
-                <span>EV</span>
-                <strong>
-                    +0.44
-                </strong>
-            </div>
-
-        </article>
-        
-        <article class="value-card tier-elite">
-
-            <div class="value-top">
-                <span class="tier">
-                    🔥 ELITE VALUE
-                </span>
-
-                <span class="value-score">
-                    100.0
-                    <small>/100</small>
-                </span>
-            </div>
-
-            <div class="value-team">
-                Philadelphia Eagles
-            </div>
-
-            <div class="value-matchup">
-                Washington Commanders @ Philadelphia Eagles
+            <div class="value-market">
+                Spread &middot; LV -3.5
             </div>
 
             <div class="value-line">
                 <div>
-                    <strong>36%</strong>
-                    <small>MARKET</small>
-                </div>
-
-                <span class="arrow">→</span>
-
-                <div>
-                    <strong class="model-number">
-                        66%
-                    </strong>
-                    <small>MODEL</small>
-                </div>
-
-                <div class="edge-badge">
-                    +28.9pp
-                </div>
-            </div>
-
-            <div class="value-bottom">
-                <span>EV</span>
-                <strong>
-                    +0.56
-                </strong>
-            </div>
-
-        </article>
-        
-        <article class="value-card tier-elite">
-
-            <div class="value-top">
-                <span class="tier">
-                    🔥 ELITE VALUE
-                </span>
-
-                <span class="value-score">
-                    96.6
-                    <small>/100</small>
-                </span>
-            </div>
-
-            <div class="value-team">
-                Kansas City Chiefs
-            </div>
-
-            <div class="value-matchup">
-                Denver Broncos @ Kansas City Chiefs
-            </div>
-
-            <div class="value-line">
-                <div>
-                    <strong>60%</strong>
-                    <small>MARKET</small>
-                </div>
-
-                <span class="arrow">→</span>
-
-                <div>
-                    <strong class="model-number">
-                        60%
-                    </strong>
-                    <small>MODEL</small>
-                </div>
-
-                <div class="edge-badge">
-                    +19.0pp
-                </div>
-            </div>
-
-            <div class="value-bottom">
-                <span>EV</span>
-                <strong>
-                    +0.38
-                </strong>
-            </div>
-
-        </article>
-        
-        <article class="value-card tier-elite">
-
-            <div class="value-top">
-                <span class="tier">
-                    🔥 ELITE VALUE
-                </span>
-
-                <span class="value-score">
-                    92.4
-                    <small>/100</small>
-                </span>
-            </div>
-
-            <div class="value-team">
-                Los Angeles Rams
-            </div>
-
-            <div class="value-matchup">
-                San Francisco 49ers @ Los Angeles Rams
-            </div>
-
-            <div class="value-line">
-                <div>
-                    <strong>38%</strong>
-                    <small>MARKET</small>
-                </div>
-
-                <span class="arrow">→</span>
-
-                <div>
-                    <strong class="model-number">
-                        61%
-                    </strong>
-                    <small>MODEL</small>
-                </div>
-
-                <div class="edge-badge">
-                    +17.8pp
-                </div>
-            </div>
-
-            <div class="value-bottom">
-                <span>EV</span>
-                <strong>
-                    +0.34
-                </strong>
-            </div>
-
-        </article>
-        
-        <article class="value-card tier-elite">
-
-            <div class="value-top">
-                <span class="tier">
-                    🔥 ELITE VALUE
-                </span>
-
-                <span class="value-score">
-                    91.6
-                    <small>/100</small>
-                </span>
-            </div>
-
-            <div class="value-team">
-                Cincinnati Bengals
-            </div>
-
-            <div class="value-matchup">
-                Tampa Bay Buccaneers @ Cincinnati Bengals
-            </div>
-
-            <div class="value-line">
-                <div>
-                    <strong>38%</strong>
-                    <small>MARKET</small>
-                </div>
-
-                <span class="arrow">→</span>
-
-                <div>
-                    <strong class="model-number">
-                        62%
-                    </strong>
-                    <small>MODEL</small>
-                </div>
-
-                <div class="edge-badge">
-                    +17.6pp
-                </div>
-            </div>
-
-            <div class="value-bottom">
-                <span>EV</span>
-                <strong>
-                    +0.33
-                </strong>
-            </div>
-
-        </article>
-        
-        <article class="value-card tier-elite">
-
-            <div class="value-top">
-                <span class="tier">
-                    🔥 ELITE VALUE
-                </span>
-
-                <span class="value-score">
-                    89.9
-                    <small>/100</small>
-                </span>
-            </div>
-
-            <div class="value-team">
-                Pittsburgh Steelers
-            </div>
-
-            <div class="value-matchup">
-                Atlanta Falcons @ Pittsburgh Steelers
-            </div>
-
-            <div class="value-line">
-                <div>
-                    <strong>39%</strong>
+                    <strong>52%</strong>
                     <small>MARKET</small>
                 </div>
 
@@ -1923,64 +1692,14 @@ Live model opportunities for Week 1
                 </div>
 
                 <div class="edge-badge">
-                    +17.1pp
+                    +4.3pp
                 </div>
             </div>
 
             <div class="value-bottom">
                 <span>EV</span>
                 <strong>
-                    +0.34
-                </strong>
-            </div>
-
-        </article>
-        
-        <article class="value-card tier-elite">
-
-            <div class="value-top">
-                <span class="tier">
-                    🔥 ELITE VALUE
-                </span>
-
-                <span class="value-score">
-                    81.3
-                    <small>/100</small>
-                </span>
-            </div>
-
-            <div class="value-team">
-                Dallas Cowboys
-            </div>
-
-            <div class="value-matchup">
-                Dallas Cowboys @ New York Giants
-            </div>
-
-            <div class="value-line">
-                <div>
-                    <strong>40%</strong>
-                    <small>MARKET</small>
-                </div>
-
-                <span class="arrow">→</span>
-
-                <div>
-                    <strong class="model-number">
-                        61%
-                    </strong>
-                    <small>MODEL</small>
-                </div>
-
-                <div class="edge-badge">
-                    +14.6pp
-                </div>
-            </div>
-
-            <div class="value-bottom">
-                <span>EV</span>
-                <strong>
-                    +0.27
+                    +0.08
                 </strong>
             </div>
 
@@ -1990,26 +1709,84 @@ Live model opportunities for Week 1
 
             <div class="value-top">
                 <span class="tier">
-                    ⚪ LOW VALUE
+                    LEAN
                 </span>
 
                 <span class="value-score">
-                    38.6
+                    35.8
                     <small>/100</small>
                 </span>
             </div>
 
             <div class="value-team">
-                Tennessee Titans
+                Baltimore Ravens
             </div>
 
             <div class="value-matchup">
-                New York Jets @ Tennessee Titans
+                Baltimore Ravens @ Indianapolis Colts
+            </div>
+
+            <div class="value-market">
+                Spread &middot; BAL -3.5
             </div>
 
             <div class="value-line">
                 <div>
-                    <strong>57%</strong>
+                    <strong>52%</strong>
+                    <small>MARKET</small>
+                </div>
+
+                <span class="arrow">→</span>
+
+                <div>
+                    <strong class="model-number">
+                        56%
+                    </strong>
+                    <small>MODEL</small>
+                </div>
+
+                <div class="edge-badge">
+                    +4.1pp
+                </div>
+            </div>
+
+            <div class="value-bottom">
+                <span>EV</span>
+                <strong>
+                    +0.08
+                </strong>
+            </div>
+
+        </article>
+        
+        <article class="value-card tier-low">
+
+            <div class="value-top">
+                <span class="tier">
+                    LEAN
+                </span>
+
+                <span class="value-score">
+                    35.6
+                    <small>/100</small>
+                </span>
+            </div>
+
+            <div class="value-team">
+                Carolina Panthers
+            </div>
+
+            <div class="value-matchup">
+                Chicago Bears @ Carolina Panthers
+            </div>
+
+            <div class="value-market">
+                Spread &middot; CAR +2.5
+            </div>
+
+            <div class="value-line">
+                <div>
+                    <strong>50%</strong>
                     <small>MARKET</small>
                 </div>
 
@@ -2023,14 +1800,14 @@ Live model opportunities for Week 1
                 </div>
 
                 <div class="edge-badge">
-                    +6.1pp
+                    +4.0pp
                 </div>
             </div>
 
             <div class="value-bottom">
                 <span>EV</span>
                 <strong>
-                    +0.11
+                    +0.08
                 </strong>
             </div>
 
@@ -2040,26 +1817,30 @@ Live model opportunities for Week 1
 
             <div class="value-top">
                 <span class="tier">
-                    ⚪ LOW VALUE
+                    LEAN
                 </span>
 
                 <span class="value-score">
-                    37.5
+                    30.8
                     <small>/100</small>
                 </span>
             </div>
 
             <div class="value-team">
-                Chicago Bears
+                Atlanta Falcons
             </div>
 
             <div class="value-matchup">
-                Chicago Bears @ Carolina Panthers
+                Atlanta Falcons @ Pittsburgh Steelers
+            </div>
+
+            <div class="value-market">
+                Moneyline &middot; ATL
             </div>
 
             <div class="value-line">
                 <div>
-                    <strong>57%</strong>
+                    <strong>39%</strong>
                     <small>MARKET</small>
                 </div>
 
@@ -2067,70 +1848,20 @@ Live model opportunities for Week 1
 
                 <div>
                     <strong class="model-number">
-                        54%
+                        43%
                     </strong>
                     <small>MODEL</small>
                 </div>
 
                 <div class="edge-badge">
-                    +6.0pp
+                    +3.2pp
                 </div>
             </div>
 
             <div class="value-bottom">
                 <span>EV</span>
                 <strong>
-                    +0.11
-                </strong>
-            </div>
-
-        </article>
-        
-        <article class="value-card tier-low">
-
-            <div class="value-top">
-                <span class="tier">
-                    ⚪ LOW VALUE
-                </span>
-
-                <span class="value-score">
-                    30.6
-                    <small>/100</small>
-                </span>
-            </div>
-
-            <div class="value-team">
-                Buffalo Bills
-            </div>
-
-            <div class="value-matchup">
-                Buffalo Bills @ Houston Texans
-            </div>
-
-            <div class="value-line">
-                <div>
-                    <strong>46%</strong>
-                    <small>MARKET</small>
-                </div>
-
-                <span class="arrow">→</span>
-
-                <div>
-                    <strong class="model-number">
-                        52%
-                    </strong>
-                    <small>MODEL</small>
-                </div>
-
-                <div class="edge-badge">
-                    +4.8pp
-                </div>
-            </div>
-
-            <div class="value-bottom">
-                <span>EV</span>
-                <strong>
-                    +0.09
+                    +0.08
                 </strong>
             </div>
 
@@ -2175,25 +1906,25 @@ style="color:var(--muted);font-size:9px;text-transform:uppercase;"
         <div class="line-row">
 
             <div class="line-game">
-                <strong>New England Patriots</strong>
+                <strong>Miami Dolphins</strong>
                 <span>@</span>
-                <strong>Seattle Seahawks</strong>
+                <strong>Las Vegas Raiders</strong>
             </div>
 
             <div>
-                64%
+                66%
             </div>
 
             <div class="model-cell">
-                65%
+                66%
             </div>
 
             <div class="positive">
-                +21.9pp
+                +4.3pp
             </div>
 
             <div class="positive">
-                +0.43
+                +0.08
             </div>
 
             <div>
@@ -2213,7 +1944,7 @@ style="color:var(--muted);font-size:9px;text-transform:uppercase;"
             </div>
 
             <div>
-                64%
+                41%
             </div>
 
             <div class="model-cell">
@@ -2221,363 +1952,11 @@ style="color:var(--muted);font-size:9px;text-transform:uppercase;"
             </div>
 
             <div class="positive">
-                +22.9pp
+                +4.1pp
             </div>
 
             <div class="positive">
-                +0.44
-            </div>
-
-            <div>
-                <span class="mini-action">
-                    VALUE
-                </span>
-            </div>
-
-        </div>
-        
-        <div class="line-row">
-
-            <div class="line-game">
-                <strong>Cleveland Browns</strong>
-                <span>@</span>
-                <strong>Jacksonville Jaguars</strong>
-            </div>
-
-            <div>
-                24%
-            </div>
-
-            <div class="model-cell">
-                75%
-            </div>
-
-            <div class="positive">
-                +36.5pp
-            </div>
-
-            <div class="positive">
-                +0.70
-            </div>
-
-            <div>
-                <span class="mini-action">
-                    VALUE
-                </span>
-            </div>
-
-        </div>
-        
-        <div class="line-row">
-
-            <div class="line-game">
-                <strong>New Orleans Saints</strong>
-                <span>@</span>
-                <strong>Detroit Lions</strong>
-            </div>
-
-            <div>
-                75%
-            </div>
-
-            <div class="model-cell">
-                74%
-            </div>
-
-            <div class="positive">
-                +35.1pp
-            </div>
-
-            <div class="positive">
-                +0.67
-            </div>
-
-            <div>
-                <span class="mini-action">
-                    VALUE
-                </span>
-            </div>
-
-        </div>
-        
-        <div class="line-row">
-
-            <div class="line-game">
-                <strong>Arizona Cardinals</strong>
-                <span>@</span>
-                <strong>Los Angeles Chargers</strong>
-            </div>
-
-            <div>
-                20%
-            </div>
-
-            <div class="model-cell">
-                80%
-            </div>
-
-            <div class="positive">
-                +42.3pp
-            </div>
-
-            <div class="positive">
-                +0.81
-            </div>
-
-            <div>
-                <span class="mini-action">
-                    VALUE
-                </span>
-            </div>
-
-        </div>
-        
-        <div class="line-row">
-
-            <div class="line-game">
-                <strong>Miami Dolphins</strong>
-                <span>@</span>
-                <strong>Las Vegas Raiders</strong>
-            </div>
-
-            <div>
-                66%
-            </div>
-
-            <div class="model-cell">
-                66%
-            </div>
-
-            <div class="positive">
-                +23.0pp
-            </div>
-
-            <div class="positive">
-                +0.44
-            </div>
-
-            <div>
-                <span class="mini-action">
-                    VALUE
-                </span>
-            </div>
-
-        </div>
-        
-        <div class="line-row">
-
-            <div class="line-game">
-                <strong>Washington Commanders</strong>
-                <span>@</span>
-                <strong>Philadelphia Eagles</strong>
-            </div>
-
-            <div>
-                36%
-            </div>
-
-            <div class="model-cell">
-                66%
-            </div>
-
-            <div class="positive">
-                +28.9pp
-            </div>
-
-            <div class="positive">
-                +0.56
-            </div>
-
-            <div>
-                <span class="mini-action">
-                    VALUE
-                </span>
-            </div>
-
-        </div>
-        
-        <div class="line-row">
-
-            <div class="line-game">
-                <strong>Denver Broncos</strong>
-                <span>@</span>
-                <strong>Kansas City Chiefs</strong>
-            </div>
-
-            <div>
-                60%
-            </div>
-
-            <div class="model-cell">
-                60%
-            </div>
-
-            <div class="positive">
-                +19.0pp
-            </div>
-
-            <div class="positive">
-                +0.38
-            </div>
-
-            <div>
-                <span class="mini-action">
-                    VALUE
-                </span>
-            </div>
-
-        </div>
-        
-        <div class="line-row">
-
-            <div class="line-game">
-                <strong>San Francisco 49ers</strong>
-                <span>@</span>
-                <strong>Los Angeles Rams</strong>
-            </div>
-
-            <div>
-                38%
-            </div>
-
-            <div class="model-cell">
-                61%
-            </div>
-
-            <div class="positive">
-                +17.8pp
-            </div>
-
-            <div class="positive">
-                +0.34
-            </div>
-
-            <div>
-                <span class="mini-action">
-                    VALUE
-                </span>
-            </div>
-
-        </div>
-        
-        <div class="line-row">
-
-            <div class="line-game">
-                <strong>Tampa Bay Buccaneers</strong>
-                <span>@</span>
-                <strong>Cincinnati Bengals</strong>
-            </div>
-
-            <div>
-                38%
-            </div>
-
-            <div class="model-cell">
-                62%
-            </div>
-
-            <div class="positive">
-                +17.6pp
-            </div>
-
-            <div class="positive">
-                +0.33
-            </div>
-
-            <div>
-                <span class="mini-action">
-                    VALUE
-                </span>
-            </div>
-
-        </div>
-        
-        <div class="line-row">
-
-            <div class="line-game">
-                <strong>Atlanta Falcons</strong>
-                <span>@</span>
-                <strong>Pittsburgh Steelers</strong>
-            </div>
-
-            <div>
-                39%
-            </div>
-
-            <div class="model-cell">
-                57%
-            </div>
-
-            <div class="positive">
-                +17.1pp
-            </div>
-
-            <div class="positive">
-                +0.34
-            </div>
-
-            <div>
-                <span class="mini-action">
-                    VALUE
-                </span>
-            </div>
-
-        </div>
-        
-        <div class="line-row">
-
-            <div class="line-game">
-                <strong>Dallas Cowboys</strong>
-                <span>@</span>
-                <strong>New York Giants</strong>
-            </div>
-
-            <div>
-                60%
-            </div>
-
-            <div class="model-cell">
-                39%
-            </div>
-
-            <div class="positive">
-                +14.6pp
-            </div>
-
-            <div class="positive">
-                +0.27
-            </div>
-
-            <div>
-                <span class="mini-action">
-                    VALUE
-                </span>
-            </div>
-
-        </div>
-        
-        <div class="line-row">
-
-            <div class="line-game">
-                <strong>New York Jets</strong>
-                <span>@</span>
-                <strong>Tennessee Titans</strong>
-            </div>
-
-            <div>
-                57%
-            </div>
-
-            <div class="model-cell">
-                55%
-            </div>
-
-            <div class="positive">
-                +6.1pp
-            </div>
-
-            <div class="positive">
-                +0.11
+                +0.08
             </div>
 
             <div>
@@ -2601,20 +1980,116 @@ style="color:var(--muted);font-size:9px;text-transform:uppercase;"
             </div>
 
             <div class="model-cell">
-                46%
+                47%
             </div>
 
             <div class="positive">
-                +6.0pp
+                +4.0pp
             </div>
 
             <div class="positive">
-                +0.11
+                +0.08
             </div>
 
             <div>
                 <span class="mini-action">
                     VALUE
+                </span>
+            </div>
+
+        </div>
+        
+        <div class="line-row">
+
+            <div class="line-game">
+                <strong>Atlanta Falcons</strong>
+                <span>@</span>
+                <strong>Pittsburgh Steelers</strong>
+            </div>
+
+            <div>
+                65%
+            </div>
+
+            <div class="model-cell">
+                57%
+            </div>
+
+            <div class="positive">
+                +3.2pp
+            </div>
+
+            <div class="positive">
+                +0.08
+            </div>
+
+            <div>
+                <span class="mini-action">
+                    VALUE
+                </span>
+            </div>
+
+        </div>
+        
+        <div class="line-row">
+
+            <div class="line-game">
+                <strong>New England Patriots</strong>
+                <span>@</span>
+                <strong>Seattle Seahawks</strong>
+            </div>
+
+            <div>
+                64%
+            </div>
+
+            <div class="model-cell">
+                64%
+            </div>
+
+            <div class="positive">
+                -
+            </div>
+
+            <div class="positive">
+                —
+            </div>
+
+            <div>
+                <span class="mini-action">
+                    PASS
+                </span>
+            </div>
+
+        </div>
+        
+        <div class="line-row">
+
+            <div class="line-game">
+                <strong>San Francisco 49ers</strong>
+                <span>@</span>
+                <strong>Los Angeles Rams</strong>
+            </div>
+
+            <div>
+                67%
+            </div>
+
+            <div class="model-cell">
+                61%
+            </div>
+
+            <div class="positive">
+                -
+            </div>
+
+            <div class="positive">
+                —
+            </div>
+
+            <div>
+                <span class="mini-action">
+                    PASS
                 </span>
             </div>
 
@@ -2629,7 +2104,7 @@ style="color:var(--muted);font-size:9px;text-transform:uppercase;"
             </div>
 
             <div>
-                54%
+                50%
             </div>
 
             <div class="model-cell">
@@ -2637,16 +2112,176 @@ style="color:var(--muted);font-size:9px;text-transform:uppercase;"
             </div>
 
             <div class="positive">
-                +4.8pp
+                -
             </div>
 
             <div class="positive">
-                +0.09
+                —
             </div>
 
             <div>
                 <span class="mini-action">
-                    VALUE
+                    PASS
+                </span>
+            </div>
+
+        </div>
+        
+        <div class="line-row">
+
+            <div class="line-game">
+                <strong>Tampa Bay Buccaneers</strong>
+                <span>@</span>
+                <strong>Cincinnati Bengals</strong>
+            </div>
+
+            <div>
+                66%
+            </div>
+
+            <div class="model-cell">
+                62%
+            </div>
+
+            <div class="positive">
+                -
+            </div>
+
+            <div class="positive">
+                —
+            </div>
+
+            <div>
+                <span class="mini-action">
+                    PASS
+                </span>
+            </div>
+
+        </div>
+        
+        <div class="line-row">
+
+            <div class="line-game">
+                <strong>Cleveland Browns</strong>
+                <span>@</span>
+                <strong>Jacksonville Jaguars</strong>
+            </div>
+
+            <div>
+                80%
+            </div>
+
+            <div class="model-cell">
+                74%
+            </div>
+
+            <div class="positive">
+                -
+            </div>
+
+            <div class="positive">
+                —
+            </div>
+
+            <div>
+                <span class="mini-action">
+                    PASS
+                </span>
+            </div>
+
+        </div>
+        
+        <div class="line-row">
+
+            <div class="line-game">
+                <strong>New Orleans Saints</strong>
+                <span>@</span>
+                <strong>Detroit Lions</strong>
+            </div>
+
+            <div>
+                75%
+            </div>
+
+            <div class="model-cell">
+                74%
+            </div>
+
+            <div class="positive">
+                -
+            </div>
+
+            <div class="positive">
+                —
+            </div>
+
+            <div>
+                <span class="mini-action">
+                    PASS
+                </span>
+            </div>
+
+        </div>
+        
+        <div class="line-row">
+
+            <div class="line-game">
+                <strong>New York Jets</strong>
+                <span>@</span>
+                <strong>Tennessee Titans</strong>
+            </div>
+
+            <div>
+                57%
+            </div>
+
+            <div class="model-cell">
+                55%
+            </div>
+
+            <div class="positive">
+                -
+            </div>
+
+            <div class="positive">
+                —
+            </div>
+
+            <div>
+                <span class="mini-action">
+                    PASS
+                </span>
+            </div>
+
+        </div>
+        
+        <div class="line-row">
+
+            <div class="line-game">
+                <strong>Arizona Cardinals</strong>
+                <span>@</span>
+                <strong>Los Angeles Chargers</strong>
+            </div>
+
+            <div>
+                85%
+            </div>
+
+            <div class="model-cell">
+                80%
+            </div>
+
+            <div class="positive">
+                -
+            </div>
+
+            <div class="positive">
+                —
+            </div>
+
+            <div>
+                <span class="mini-action">
+                    PASS
                 </span>
             </div>
 
@@ -2661,11 +2296,107 @@ style="color:var(--muted);font-size:9px;text-transform:uppercase;"
             </div>
 
             <div>
-                50%
+                54%
             </div>
 
             <div class="model-cell">
                 49%
+            </div>
+
+            <div class="positive">
+                -
+            </div>
+
+            <div class="positive">
+                —
+            </div>
+
+            <div>
+                <span class="mini-action">
+                    PASS
+                </span>
+            </div>
+
+        </div>
+        
+        <div class="line-row">
+
+            <div class="line-game">
+                <strong>Washington Commanders</strong>
+                <span>@</span>
+                <strong>Philadelphia Eagles</strong>
+            </div>
+
+            <div>
+                69%
+            </div>
+
+            <div class="model-cell">
+                67%
+            </div>
+
+            <div class="positive">
+                -
+            </div>
+
+            <div class="positive">
+                —
+            </div>
+
+            <div>
+                <span class="mini-action">
+                    PASS
+                </span>
+            </div>
+
+        </div>
+        
+        <div class="line-row">
+
+            <div class="line-game">
+                <strong>Dallas Cowboys</strong>
+                <span>@</span>
+                <strong>New York Giants</strong>
+            </div>
+
+            <div>
+                45%
+            </div>
+
+            <div class="model-cell">
+                39%
+            </div>
+
+            <div class="positive">
+                -
+            </div>
+
+            <div class="positive">
+                —
+            </div>
+
+            <div>
+                <span class="mini-action">
+                    PASS
+                </span>
+            </div>
+
+        </div>
+        
+        <div class="line-row">
+
+            <div class="line-game">
+                <strong>Denver Broncos</strong>
+                <span>@</span>
+                <strong>Kansas City Chiefs</strong>
+            </div>
+
+            <div>
+                60%
+            </div>
+
+            <div class="model-cell">
+                61%
             </div>
 
             <div class="positive">
@@ -16732,6 +16463,95 @@ style="display:none"
 
 
 <section
+id="sharp"
+class="section site-section"
+style="display:none"
+>
+
+<div class="section-title">
+
+<h2>Sharp vs Public Split</h2>
+
+<span>
+Line movement as a sharp-action proxy &mdash; 10 of 16 games
+</span>
+
+</div>
+
+
+        <div class="sharp-row">
+            <div class="sharp-matchup">Green Bay Packers @ Minnesota Vikings</div>
+            <div class="sharp-move positive">+5.76pp</div>
+            <div class="sharp-toward">Minnesota Vikings</div>
+            <div class="sharp-label">FAVORITE FLIP</div>
+        </div>
+        <div class="sharp-row">
+            <div class="sharp-matchup">Chicago Bears @ Carolina Panthers</div>
+            <div class="sharp-move negative">-3.03pp</div>
+            <div class="sharp-toward">Chicago Bears</div>
+            <div class="sharp-label">MARGIN MISMATCH</div>
+        </div>
+        <div class="sharp-row">
+            <div class="sharp-matchup">Dallas Cowboys @ New York Giants</div>
+            <div class="sharp-move negative">-2.82pp</div>
+            <div class="sharp-toward">Dallas Cowboys</div>
+            <div class="sharp-label">MARGIN MISMATCH</div>
+        </div>
+        <div class="sharp-row">
+            <div class="sharp-matchup">New Orleans Saints @ Detroit Lions</div>
+            <div class="sharp-move negative">-2.42pp</div>
+            <div class="sharp-toward">New Orleans Saints</div>
+            <div class="sharp-label">AGREEMENT</div>
+        </div>
+        <div class="sharp-row">
+            <div class="sharp-matchup">New York Jets @ Tennessee Titans</div>
+            <div class="sharp-move negative">-2.29pp</div>
+            <div class="sharp-toward">New York Jets</div>
+            <div class="sharp-label">AGREEMENT</div>
+        </div>
+        <div class="sharp-row">
+            <div class="sharp-matchup">Baltimore Ravens @ Indianapolis Colts</div>
+            <div class="sharp-move positive">+2.26pp</div>
+            <div class="sharp-toward">Indianapolis Colts</div>
+            <div class="sharp-label">MARGIN MISMATCH</div>
+        </div>
+        <div class="sharp-row">
+            <div class="sharp-matchup">Cleveland Browns @ Jacksonville Jaguars</div>
+            <div class="sharp-move positive">+2.08pp</div>
+            <div class="sharp-toward">Jacksonville Jaguars</div>
+            <div class="sharp-label">AGREEMENT</div>
+        </div>
+        <div class="sharp-row">
+            <div class="sharp-matchup">Miami Dolphins @ Las Vegas Raiders</div>
+            <div class="sharp-move positive">+1.76pp</div>
+            <div class="sharp-toward">Las Vegas Raiders</div>
+            <div class="sharp-label">AGREEMENT</div>
+        </div>
+        <div class="sharp-row">
+            <div class="sharp-matchup">New England Patriots @ Seattle Seahawks</div>
+            <div class="sharp-move negative">-1.70pp</div>
+            <div class="sharp-toward">New England Patriots</div>
+            <div class="sharp-label">AGREEMENT</div>
+        </div>
+        <div class="sharp-row">
+            <div class="sharp-matchup">Tampa Bay Buccaneers @ Cincinnati Bengals</div>
+            <div class="sharp-move positive">+1.54pp</div>
+            <div class="sharp-toward">Cincinnati Bengals</div>
+            <div class="sharp-label">AGREEMENT</div>
+        </div>
+
+<p class="sharp-note">
+Positive means the home team's implied probability has risen since the line
+opened; money arriving on a side is what moves its price, so the direction of
+travel stands in for where the sharp money is going. This is line movement from
+CLEATZ's public odds-movers feed, <strong>not</strong> ticket%/handle% betting
+splits &mdash; no free source for those was available. feed timestamped 2026-09-03T19:03:31+00:00 &middot; upstream reports this data as stale
+</p>
+
+</section>
+
+
+<section
 id="elo"
 class="section site-section"
 style="display:none"
@@ -17514,7 +17334,7 @@ the prediction model, and rebuilds this website.
 </p>
 
 <p>
-Last updated: 2026-09-03 13:08 UTC
+Last updated: 2026-09-03 19:44 UTC
 </p>
 
 <p>
