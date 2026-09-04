@@ -1,26 +1,17 @@
 {
   "source": "https://cleatz.com/wp-json/nfl-odds-movers/v1/movers",
-  "fetched_at": "2026-09-03T19:44:04+00:00",
-  "upstream_fetched_at": "2026-09-03T19:03:31+00:00",
+  "fetched_at": "2026-09-04T13:07:28+00:00",
+  "upstream_fetched_at": "2026-09-04T13:00:53+00:00",
   "upstream_stale": true,
   "games": {
     "GB@MIN": {
       "away": "GB",
       "home": "MIN",
-      "line_move_pp": 5.76,
+      "line_move_pp": 5.97,
       "mover_team": "MIN",
       "open_odds": "+105",
-      "curr_odds": "-120",
+      "curr_odds": "-121",
       "starts_at": "2026-09-13T20:25:00.000Z"
-    },
-    "CHI@CAR": {
-      "away": "CHI",
-      "home": "CAR",
-      "line_move_pp": -3.03,
-      "mover_team": "CAR",
-      "open_odds": "+115",
-      "curr_odds": "+130",
-      "starts_at": "2026-09-13T17:00:00.000Z"
     },
     "DAL@NYG": {
       "away": "DAL",
@@ -34,19 +25,19 @@
     "NO@DET": {
       "away": "NO",
       "home": "DET",
-      "line_move_pp": -2.42,
+      "line_move_pp": -2.81,
       "mover_team": "DET",
       "open_odds": "-380",
-      "curr_odds": "-330",
+      "curr_odds": "-323",
       "starts_at": "2026-09-13T17:00:00.000Z"
     },
     "NYJ@TEN": {
       "away": "NYJ",
       "home": "TEN",
-      "line_move_pp": -2.29,
+      "line_move_pp": -2.66,
       "mover_team": "TEN",
       "open_odds": "-145",
-      "curr_odds": "-132",
+      "curr_odds": "-130",
       "starts_at": "2026-09-13T17:00:00.000Z"
     },
     "BAL@IND": {
@@ -56,6 +47,15 @@
       "mover_team": "IND",
       "open_odds": "+165",
       "curr_odds": "+150",
+      "starts_at": "2026-09-13T17:00:00.000Z"
+    },
+    "CHI@CAR": {
+      "away": "CHI",
+      "home": "CAR",
+      "line_move_pp": -2.26,
+      "mover_team": "CAR",
+      "open_odds": "+115",
+      "curr_odds": "+126",
       "starts_at": "2026-09-13T17:00:00.000Z"
     },
     "CLE@JAX": {
@@ -76,22 +76,22 @@
       "curr_odds": "-189",
       "starts_at": "2026-09-13T20:25:00.000Z"
     },
-    "NE@SEA": {
-      "away": "NE",
-      "home": "SEA",
-      "line_move_pp": -1.7,
-      "mover_team": "SEA",
-      "open_odds": "-205",
-      "curr_odds": "-190",
-      "starts_at": "2026-09-10T00:20:00.000Z"
-    },
     "TB@CIN": {
       "away": "TB",
       "home": "CIN",
-      "line_move_pp": 1.54,
+      "line_move_pp": 1.64,
       "mover_team": "CIN",
       "open_odds": "-195",
-      "curr_odds": "-209",
+      "curr_odds": "-210",
+      "starts_at": "2026-09-13T17:00:00.000Z"
+    },
+    "ATL@PIT": {
+      "away": "ATL",
+      "home": "PIT",
+      "line_move_pp": 1.46,
+      "mover_team": "PIT",
+      "open_odds": "-169",
+      "curr_odds": "-180",
       "starts_at": "2026-09-13T17:00:00.000Z"
     }
   },
