@@ -1,7 +1,7 @@
 {
   "source": "https://cleatz.com/wp-json/nfl-odds-movers/v1/movers",
-  "fetched_at": "2026-09-09T13:09:26+00:00",
-  "upstream_fetched_at": "2026-09-09T13:00:35+00:00",
+  "fetched_at": "2026-09-10T13:08:14+00:00",
+  "upstream_fetched_at": "2026-09-10T13:01:27+00:00",
   "upstream_stale": true,
   "games": {
     "GB@MIN": {
@@ -22,15 +22,6 @@
       "curr_odds": "+140",
       "starts_at": "2026-09-13T17:00:00.000Z"
     },
-    "DAL@NYG": {
-      "away": "DAL",
-      "home": "NYG",
-      "line_move_pp": -3.74,
-      "mover_team": "NYG",
-      "open_odds": "+116",
-      "curr_odds": "+135",
-      "starts_at": "2026-09-14T00:20:00.000Z"
-    },
     "NYJ@TEN": {
       "away": "NYJ",
       "home": "TEN",
@@ -40,32 +31,32 @@
       "curr_odds": "-125",
       "starts_at": "2026-09-13T17:00:00.000Z"
     },
+    "DAL@NYG": {
+      "away": "DAL",
+      "home": "NYG",
+      "line_move_pp": -3.56,
+      "mover_team": "NYG",
+      "open_odds": "+116",
+      "curr_odds": "+134",
+      "starts_at": "2026-09-14T00:20:00.000Z"
+    },
     "CLE@JAX": {
       "away": "CLE",
       "home": "JAX",
-      "line_move_pp": 3.21,
+      "line_move_pp": 2.92,
       "mover_team": "JAX",
       "open_odds": "-353",
-      "curr_odds": "-430",
+      "curr_odds": "-422",
       "starts_at": "2026-09-13T17:00:00.000Z"
     },
     "NO@DET": {
       "away": "NO",
       "home": "DET",
-      "line_move_pp": -2.81,
+      "line_move_pp": -2.42,
       "mover_team": "DET",
       "open_odds": "-380",
-      "curr_odds": "-323",
+      "curr_odds": "-330",
       "starts_at": "2026-09-13T17:00:00.000Z"
-    },
-    "NE@SEA": {
-      "away": "NE",
-      "home": "SEA",
-      "line_move_pp": -2.8,
-      "mover_team": "SEA",
-      "open_odds": "-205",
-      "curr_odds": "-181",
-      "starts_at": "2026-09-10T00:20:00.000Z"
     },
     "ARI@LAC": {
       "away": "ARI",
@@ -88,10 +79,19 @@
     "ATL@PIT": {
       "away": "ATL",
       "home": "PIT",
-      "line_move_pp": 1.96,
+      "line_move_pp": 2.09,
       "mover_team": "PIT",
       "open_odds": "-169",
-      "curr_odds": "-184",
+      "curr_odds": "-185",
+      "starts_at": "2026-09-13T17:00:00.000Z"
+    },
+    "BUF@HOU": {
+      "away": "BUF",
+      "home": "HOU",
+      "line_move_pp": -1.22,
+      "mover_team": "HOU",
+      "open_odds": "-105",
+      "curr_odds": "+100",
       "starts_at": "2026-09-13T17:00:00.000Z"
     }
   },

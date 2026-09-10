@@ -4,11 +4,11 @@
   "elo": {
     "LAR": 1615.0,
     "BUF": 1546.3,
-    "SEA": 1639.7,
+    "SEA": 1648.5,
     "BAL": 1583.0,
     "KC": 1565.0,
     "LAC": 1583.0,
-    "NE": 1567.0,
+    "NE": 1558.2,
     "DEN": 1520.3,
     "HOU": 1485.0,
     "CIN": 1550.3,
@@ -69,7 +69,9 @@
     "MIA": "Miami Dolphins",
     "ARI": "Arizona Cardinals"
   },
-  "processed_game_ids": [],
+  "processed_game_ids": [
+    "401872656"
+  ],
   "bet_log": [
     {
       "date": "2026-08-29",
@@ -4850,6 +4852,71 @@
       "edge_pct": 5.509590940545039,
       "model_prob": 0.6642,
       "score": 48.3,
+      "week": 1,
+      "season_type": 2,
+      "year": 2026,
+      "resolved": false
+    },
+    {
+      "date": "2026-09-10",
+      "home": "PIT",
+      "away": "ATL",
+      "side": "away",
+      "edge_pct": 3.1949212598425145,
+      "model_prob": 0.57435,
+      "score": 30.8,
+      "week": 1,
+      "season_type": 2,
+      "year": 2026,
+      "resolved": false
+    },
+    {
+      "date": "2026-09-10",
+      "home": "IND",
+      "away": "BAL",
+      "side": "away",
+      "edge_pct": 4.809456012200952,
+      "model_prob": 0.3396,
+      "score": 42.1,
+      "week": 1,
+      "season_type": 2,
+      "year": 2026,
+      "resolved": false
+    },
+    {
+      "date": "2026-09-10",
+      "home": "CAR",
+      "away": "CHI",
+      "side": "home",
+      "edge_pct": 5.510547107440211,
+      "model_prob": 0.4686,
+      "score": 48.5,
+      "week": 1,
+      "season_type": 2,
+      "year": 2026,
+      "resolved": false
+    },
+    {
+      "date": "2026-09-10",
+      "home": "JAX",
+      "away": "CLE",
+      "side": "away",
+      "edge_pct": 3.2877777777777784,
+      "model_prob": 0.7449,
+      "score": 41.4,
+      "week": 1,
+      "season_type": 2,
+      "year": 2026,
+      "resolved": false
+    },
+    {
+      "date": "2026-09-10",
+      "home": "LV",
+      "away": "MIA",
+      "side": "home",
+      "edge_pct": 5.35051627939056,
+      "model_prob": 0.6642,
+      "score": 46.4,
       "week": 1,
       "season_type": 2,
       "year": 2026,
