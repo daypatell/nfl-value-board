@@ -2,7 +2,7 @@
   "current_season": 2026,
   "current_season_type": 2,
   "elo": {
-    "LAR": 1615.0,
+    "LAR": 1579.6,
     "BUF": 1546.3,
     "SEA": 1648.5,
     "BAL": 1583.0,
@@ -12,7 +12,7 @@
     "DEN": 1520.3,
     "HOU": 1485.0,
     "CIN": 1550.3,
-    "SF": 1567.0,
+    "SF": 1602.4,
     "PHI": 1560.3,
     "JAX": 1583.0,
     "DAL": 1546.3,
@@ -70,7 +70,8 @@
     "ARI": "Arizona Cardinals"
   },
   "processed_game_ids": [
-    "401872656"
+    "401872656",
+    "401872657"
   ],
   "bet_log": [
     {
@@ -4911,6 +4912,71 @@
     },
     {
       "date": "2026-09-10",
+      "home": "LV",
+      "away": "MIA",
+      "side": "home",
+      "edge_pct": 5.35051627939056,
+      "model_prob": 0.6642,
+      "score": 46.4,
+      "week": 1,
+      "season_type": 2,
+      "year": 2026,
+      "resolved": false
+    },
+    {
+      "date": "2026-09-11",
+      "home": "PIT",
+      "away": "ATL",
+      "side": "away",
+      "edge_pct": 8.08224137931034,
+      "model_prob": 0.57435,
+      "score": 77.1,
+      "week": 1,
+      "season_type": 2,
+      "year": 2026,
+      "resolved": false
+    },
+    {
+      "date": "2026-09-11",
+      "home": "IND",
+      "away": "BAL",
+      "side": "away",
+      "edge_pct": 4.809456012200952,
+      "model_prob": 0.3396,
+      "score": 42.1,
+      "week": 1,
+      "season_type": 2,
+      "year": 2026,
+      "resolved": false
+    },
+    {
+      "date": "2026-09-11",
+      "home": "CAR",
+      "away": "CHI",
+      "side": "home",
+      "edge_pct": 5.537685950413223,
+      "model_prob": 0.4686,
+      "score": 52.4,
+      "week": 1,
+      "season_type": 2,
+      "year": 2026,
+      "resolved": false
+    },
+    {
+      "date": "2026-09-11",
+      "home": "JAX",
+      "away": "CLE",
+      "side": "away",
+      "edge_pct": 3.2877777777777784,
+      "model_prob": 0.7449,
+      "score": 41.4,
+      "week": 1,
+      "season_type": 2,
+      "year": 2026,
+      "resolved": false
+    },
+    {
+      "date": "2026-09-11",
       "home": "LV",
       "away": "MIA",
       "side": "home",
