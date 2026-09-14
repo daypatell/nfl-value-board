@@ -1,27 +1,8 @@
 {
   "source": "https://cleatz.com/wp-json/nfl-odds-movers/v1/movers",
-  "fetched_at": "2026-09-13T13:07:28+00:00",
-  "upstream_fetched_at": "2026-09-13T13:00:56+00:00",
+  "fetched_at": "2026-09-14T13:13:35+00:00",
+  "upstream_fetched_at": "2026-09-14T13:00:35+00:00",
   "upstream_stale": true,
-  "games": {
-    "ATL@PIT": {
-      "away": "ATL",
-      "home": "PIT",
-      "line_move_pp": 1.67,
-      "mover_team": "PIT",
-      "open_odds": "-275",
-      "curr_odds": "-300",
-      "starts_at": "2026-09-13T17:00:00.000Z"
-    },
-    "CLE@JAX": {
-      "away": "CLE",
-      "home": "JAX",
-      "line_move_pp": 1.21,
-      "mover_team": "JAX",
-      "open_odds": "-420",
-      "curr_odds": "-455",
-      "starts_at": "2026-09-13T17:00:00.000Z"
-    }
-  },
+  "games": {},
   "error": null
 }
