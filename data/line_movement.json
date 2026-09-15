@@ -1,7 +1,7 @@
 {
   "source": "https://cleatz.com/wp-json/nfl-odds-movers/v1/movers",
-  "fetched_at": "2026-09-14T13:13:35+00:00",
-  "upstream_fetched_at": "2026-09-14T13:00:35+00:00",
+  "fetched_at": "2026-09-15T13:08:54+00:00",
+  "upstream_fetched_at": "2026-09-15T13:00:28+00:00",
   "upstream_stale": true,
   "games": {},
   "error": null
