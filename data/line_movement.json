@@ -1,16 +1,25 @@
 {
   "source": "https://cleatz.com/wp-json/nfl-odds-movers/v1/movers",
-  "fetched_at": "2026-09-16T13:09:36+00:00",
-  "upstream_fetched_at": "2026-09-16T13:00:48+00:00",
+  "fetched_at": "2026-09-17T13:09:41+00:00",
+  "upstream_fetched_at": "2026-09-17T13:00:53+00:00",
   "upstream_stale": true,
   "games": {
     "CAR@ATL": {
       "away": "CAR",
       "home": "ATL",
-      "line_move_pp": -4.34,
+      "line_move_pp": -4.55,
       "mover_team": "ATL",
       "open_odds": "+100",
-      "curr_odds": "+119",
+      "curr_odds": "+120",
+      "starts_at": "2026-09-20T17:00:00.000Z"
+    },
+    "GB@NYJ": {
+      "away": "GB",
+      "home": "NYJ",
+      "line_move_pp": 2.51,
+      "mover_team": "NYJ",
+      "open_odds": "+169",
+      "curr_odds": "+152",
       "starts_at": "2026-09-20T17:00:00.000Z"
     },
     "JAX@DEN": {
@@ -22,6 +31,15 @@
       "curr_odds": "-150",
       "starts_at": "2026-09-20T20:05:00.000Z"
     },
+    "MIN@CHI": {
+      "away": "MIN",
+      "home": "CHI",
+      "line_move_pp": -2.26,
+      "mover_team": "CHI",
+      "open_odds": "-245",
+      "curr_odds": "-220",
+      "starts_at": "2026-09-20T17:00:00.000Z"
+    },
     "SEA@ARI": {
       "away": "SEA",
       "home": "ARI",
@@ -31,32 +49,32 @@
       "curr_odds": "+170",
       "starts_at": "2026-09-20T20:25:00.000Z"
     },
-    "LV@LAC": {
-      "away": "LV",
-      "home": "LAC",
-      "line_move_pp": -1.47,
-      "mover_team": "LAC",
-      "open_odds": "-325",
-      "curr_odds": "-300",
-      "starts_at": "2026-09-20T20:05:00.000Z"
-    },
-    "GB@NYJ": {
-      "away": "GB",
-      "home": "NYJ",
-      "line_move_pp": 1.29,
-      "mover_team": "NYJ",
-      "open_odds": "+169",
-      "curr_odds": "+160",
-      "starts_at": "2026-09-20T17:00:00.000Z"
+    "DET@BUF": {
+      "away": "DET",
+      "home": "BUF",
+      "line_move_pp": 1.36,
+      "mover_team": "BUF",
+      "open_odds": "-225",
+      "curr_odds": "-240",
+      "starts_at": "2026-09-18T00:15:00.000Z"
     },
     "IND@KC": {
       "away": "IND",
       "home": "KC",
-      "line_move_pp": -1.23,
+      "line_move_pp": -1.35,
       "mover_team": "KC",
       "open_odds": "-324",
-      "curr_odds": "-303",
+      "curr_odds": "-301",
       "starts_at": "2026-09-21T00:20:00.000Z"
+    },
+    "LV@LAC": {
+      "away": "LV",
+      "home": "LAC",
+      "line_move_pp": -1.28,
+      "mover_team": "LAC",
+      "open_odds": "-325",
+      "curr_odds": "-303",
+      "starts_at": "2026-09-20T20:05:00.000Z"
     }
   },
   "error": null
