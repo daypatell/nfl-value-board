@@ -1,17 +1,17 @@
 {
   "source": "https://cleatz.com/wp-json/nfl-odds-movers/v1/movers",
-  "fetched_at": "2026-09-21T13:07:02+00:00",
-  "upstream_fetched_at": "2026-09-21T13:01:55+00:00",
+  "fetched_at": "2026-09-22T13:08:27+00:00",
+  "upstream_fetched_at": "2026-09-22T13:00:30+00:00",
   "upstream_stale": true,
   "games": {
-    "NYG@LAR": {
-      "away": "NYG",
-      "home": "LAR",
-      "line_move_pp": -2.64,
-      "mover_team": "LAR",
-      "open_odds": "-356",
-      "curr_odds": "-307",
-      "starts_at": "2026-09-22T00:15:00.000Z"
+    "TEN@NYG": {
+      "away": "TEN",
+      "home": "NYG",
+      "line_move_pp": -2.35,
+      "mover_team": "NYG",
+      "open_odds": "-194",
+      "curr_odds": "-175",
+      "starts_at": "2026-09-27T17:00:00.000Z"
     }
   },
   "error": null
