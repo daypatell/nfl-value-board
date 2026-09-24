@@ -1,53 +1,62 @@
 {
   "source": "https://cleatz.com/wp-json/nfl-odds-movers/v1/movers",
-  "fetched_at": "2026-09-23T13:09:47+00:00",
-  "upstream_fetched_at": "2026-09-23T13:00:38+00:00",
+  "fetched_at": "2026-09-24T13:09:19+00:00",
+  "upstream_fetched_at": "2026-09-24T13:00:53+00:00",
   "upstream_stale": true,
   "games": {
     "TEN@NYG": {
       "away": "TEN",
       "home": "NYG",
-      "line_move_pp": -6.15,
+      "line_move_pp": -6.8,
       "mover_team": "NYG",
       "open_odds": "-194",
-      "curr_odds": "-149",
+      "curr_odds": "-145",
       "starts_at": "2026-09-27T17:00:00.000Z"
     },
     "PHI@CHI": {
       "away": "PHI",
       "home": "CHI",
-      "line_move_pp": -5.85,
+      "line_move_pp": -6.09,
       "mover_team": "CHI",
       "open_odds": "+145",
-      "curr_odds": "+186",
+      "curr_odds": "+188",
       "starts_at": "2026-09-29T00:15:00.000Z"
     },
     "BAL@DAL": {
       "away": "BAL",
       "home": "DAL",
-      "line_move_pp": -3.16,
+      "line_move_pp": -3.48,
       "mover_team": "DAL",
       "open_odds": "+130",
-      "curr_odds": "+148",
+      "curr_odds": "+150",
       "starts_at": "2026-09-27T20:25:00.000Z"
     },
     "ATL@GB": {
       "away": "ATL",
       "home": "GB",
-      "line_move_pp": -1.23,
+      "line_move_pp": -2.26,
       "mover_team": "GB",
       "open_odds": "-280",
-      "curr_odds": "-263",
+      "curr_odds": "-250",
       "starts_at": "2026-09-25T00:15:00.000Z"
     },
-    "LAR@DEN": {
-      "away": "LAR",
-      "home": "DEN",
-      "line_move_pp": -1.06,
-      "mover_team": "DEN",
-      "open_odds": "+115",
+    "SEA@WAS": {
+      "away": "SEA",
+      "home": "WAS",
+      "line_move_pp": -1.32,
+      "mover_team": "WAS",
+      "open_odds": "+250",
+      "curr_odds": "+267",
+      "starts_at": "2026-09-27T17:00:00.000Z"
+    },
+    "HOU@IND": {
+      "away": "HOU",
+      "home": "IND",
+      "line_move_pp": 1.01,
+      "mover_team": "IND",
+      "open_odds": "+125",
       "curr_odds": "+120",
-      "starts_at": "2026-09-28T00:20:00.000Z"
+      "starts_at": "2026-09-27T17:00:00.000Z"
     }
   },
   "error": null
