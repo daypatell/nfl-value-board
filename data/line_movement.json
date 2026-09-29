@@ -1,17 +1,17 @@
 {
   "source": "https://cleatz.com/wp-json/nfl-odds-movers/v1/movers",
-  "fetched_at": "2026-09-28T13:09:31+00:00",
-  "upstream_fetched_at": "2026-09-28T13:00:11+00:00",
+  "fetched_at": "2026-09-29T13:11:12+00:00",
+  "upstream_fetched_at": "2026-09-29T13:00:27+00:00",
   "upstream_stale": true,
   "games": {
-    "PHI@CHI": {
-      "away": "PHI",
+    "NYJ@CHI": {
+      "away": "NYJ",
       "home": "CHI",
-      "line_move_pp": -3.78,
+      "line_move_pp": -1.1,
       "mover_team": "CHI",
-      "open_odds": "+145",
-      "curr_odds": "+170",
-      "starts_at": "2026-09-29T00:15:00.000Z"
+      "open_odds": "-191",
+      "curr_odds": "-182",
+      "starts_at": "2026-10-04T17:00:00.000Z"
     }
   },
   "error": null
