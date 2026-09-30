@@ -1,16 +1,34 @@
 {
   "source": "https://cleatz.com/wp-json/nfl-odds-movers/v1/movers",
-  "fetched_at": "2026-09-29T13:11:12+00:00",
-  "upstream_fetched_at": "2026-09-29T13:00:27+00:00",
+  "fetched_at": "2026-09-30T18:15:19+00:00",
+  "upstream_fetched_at": "2026-09-30T17:14:58+00:00",
   "upstream_stale": true,
   "games": {
+    "ARI@NYG": {
+      "away": "ARI",
+      "home": "NYG",
+      "line_move_pp": -2.44,
+      "mover_team": "NYG",
+      "open_odds": "-105",
+      "curr_odds": "+105",
+      "starts_at": "2026-10-04T17:00:00.000Z"
+    },
+    "LAR@PHI": {
+      "away": "LAR",
+      "home": "PHI",
+      "line_move_pp": -1.89,
+      "mover_team": "PHI",
+      "open_odds": "+125",
+      "curr_odds": "+135",
+      "starts_at": "2026-10-04T17:00:00.000Z"
+    },
     "NYJ@CHI": {
       "away": "NYJ",
       "home": "CHI",
-      "line_move_pp": -1.1,
+      "line_move_pp": -1.35,
       "mover_team": "CHI",
       "open_odds": "-191",
-      "curr_odds": "-182",
+      "curr_odds": "-180",
       "starts_at": "2026-10-04T17:00:00.000Z"
     }
   },
