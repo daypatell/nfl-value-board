@@ -1,71 +1,53 @@
 {
   "source": "https://cleatz.com/wp-json/nfl-odds-movers/v1/movers",
-  "fetched_at": "2026-10-03T16:56:34+00:00",
-  "upstream_fetched_at": "2026-10-03T16:04:07+00:00",
+  "fetched_at": "2026-10-04T17:15:26+00:00",
+  "upstream_fetched_at": "2026-10-04T17:08:41+00:00",
   "upstream_stale": true,
   "games": {
-    "LAR@PHI": {
-      "away": "LAR",
-      "home": "PHI",
-      "line_move_pp": -5.98,
-      "mover_team": "PHI",
-      "open_odds": "+125",
-      "curr_odds": "+160",
-      "starts_at": "2026-10-04T17:00:00.000Z"
-    },
-    "ARI@NYG": {
-      "away": "ARI",
-      "home": "NYG",
-      "line_move_pp": -5.76,
-      "mover_team": "NYG",
-      "open_odds": "-105",
-      "curr_odds": "+120",
-      "starts_at": "2026-10-04T17:00:00.000Z"
-    },
     "ATL@NO": {
       "away": "ATL",
       "home": "NO",
-      "line_move_pp": -2.87,
+      "line_move_pp": -4.18,
       "mover_team": "NO",
       "open_odds": "-152",
-      "curr_odds": "-135",
+      "curr_odds": "-128",
       "starts_at": "2026-10-06T00:15:00.000Z"
-    },
-    "DAL@HOU": {
-      "away": "DAL",
-      "home": "HOU",
-      "line_move_pp": 2.71,
-      "mover_team": "HOU",
-      "open_odds": "-142",
-      "curr_odds": "-159",
-      "starts_at": "2026-10-04T17:00:00.000Z"
-    },
-    "IND@WAS": {
-      "away": "IND",
-      "home": "WAS",
-      "line_move_pp": -2.4,
-      "mover_team": "WAS",
-      "open_odds": "+158",
-      "curr_odds": "+175",
-      "starts_at": "2026-10-04T13:30:00.000Z"
     },
     "MIA@MIN": {
       "away": "MIA",
       "home": "MIN",
-      "line_move_pp": -1.51,
+      "line_move_pp": -2.26,
       "mover_team": "MIN",
       "open_odds": "-670",
-      "curr_odds": "-590",
+      "curr_odds": "-556",
       "starts_at": "2026-10-04T20:05:00.000Z"
     },
-    "NE@BUF": {
-      "away": "NE",
-      "home": "BUF",
-      "line_move_pp": 1.08,
-      "mover_team": "BUF",
-      "open_odds": "-311",
-      "curr_odds": "-330",
-      "starts_at": "2026-10-04T17:00:00.000Z"
+    "DEN@SF": {
+      "away": "DEN",
+      "home": "SF",
+      "line_move_pp": 1.54,
+      "mover_team": "SF",
+      "open_odds": "-150",
+      "curr_odds": "-160",
+      "starts_at": "2026-10-04T20:25:00.000Z"
+    },
+    "DET@CAR": {
+      "away": "DET",
+      "home": "CAR",
+      "line_move_pp": -1.42,
+      "mover_team": "CAR",
+      "open_odds": "+160",
+      "curr_odds": "+170",
+      "starts_at": "2026-10-05T00:20:00.000Z"
+    },
+    "KC@LV": {
+      "away": "KC",
+      "home": "LV",
+      "line_move_pp": -1.14,
+      "mover_team": "LV",
+      "open_odds": "+176",
+      "curr_odds": "+185",
+      "starts_at": "2026-10-04T20:25:00.000Z"
     }
   },
   "error": null
