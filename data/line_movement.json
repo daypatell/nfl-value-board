@@ -1,35 +1,53 @@
 {
   "source": "https://cleatz.com/wp-json/nfl-odds-movers/v1/movers",
-  "fetched_at": "2026-10-06T18:44:42+00:00",
-  "upstream_fetched_at": "2026-10-06T18:03:48+00:00",
+  "fetched_at": "2026-10-07T19:11:01+00:00",
+  "upstream_fetched_at": "2026-10-07T19:03:22+00:00",
   "upstream_stale": true,
   "games": {
     "BAL@ATL": {
       "away": "BAL",
       "home": "ATL",
-      "line_move_pp": 16.72,
+      "line_move_pp": 18.03,
       "mover_team": "ATL",
       "open_odds": "+115",
-      "curr_odds": "-172",
+      "curr_odds": "-182",
       "starts_at": "2026-10-12T00:20:00.000Z"
     },
     "PHI@JAX": {
       "away": "PHI",
       "home": "JAX",
-      "line_move_pp": 1.56,
+      "line_move_pp": 3.54,
       "mover_team": "JAX",
       "open_odds": "-303",
-      "curr_odds": "-330",
+      "curr_odds": "-370",
       "starts_at": "2026-10-11T13:30:00.000Z"
     },
-    "TB@DAL": {
-      "away": "TB",
-      "home": "DAL",
-      "line_move_pp": -1.35,
-      "mover_team": "DAL",
-      "open_odds": "-500",
-      "curr_odds": "-455",
-      "starts_at": "2026-10-09T00:15:00.000Z"
+    "HOU@TEN": {
+      "away": "HOU",
+      "home": "TEN",
+      "line_move_pp": -2.27,
+      "mover_team": "TEN",
+      "open_odds": "+260",
+      "curr_odds": "+292",
+      "starts_at": "2026-10-11T17:00:00.000Z"
+    },
+    "CIN@MIA": {
+      "away": "CIN",
+      "home": "MIA",
+      "line_move_pp": 2.27,
+      "mover_team": "MIA",
+      "open_odds": "+292",
+      "curr_odds": "+260",
+      "starts_at": "2026-10-11T17:00:00.000Z"
+    },
+    "SF@SEA": {
+      "away": "SF",
+      "home": "SEA",
+      "line_move_pp": 1.48,
+      "mover_team": "SEA",
+      "open_odds": "-155",
+      "curr_odds": "-165",
+      "starts_at": "2026-10-11T20:25:00.000Z"
     },
     "MIN@NO": {
       "away": "MIN",
@@ -39,6 +57,15 @@
       "open_odds": "+105",
       "curr_odds": "+110",
       "starts_at": "2026-10-11T17:00:00.000Z"
+    },
+    "BUF@LAR": {
+      "away": "BUF",
+      "home": "LAR",
+      "line_move_pp": 1.05,
+      "mover_team": "LAR",
+      "open_odds": "-155",
+      "curr_odds": "-162",
+      "starts_at": "2026-10-13T00:15:00.000Z"
     }
   },
   "error": null
