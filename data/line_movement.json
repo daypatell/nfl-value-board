@@ -1,7 +1,7 @@
 {
   "source": "https://cleatz.com/wp-json/nfl-odds-movers/v1/movers",
-  "fetched_at": "2026-10-08T19:07:13+00:00",
-  "upstream_fetched_at": "2026-10-08T18:04:09+00:00",
+  "fetched_at": "2026-10-09T18:37:47+00:00",
+  "upstream_fetched_at": "2026-10-09T18:03:25+00:00",
   "upstream_stale": true,
   "games": {
     "BAL@ATL": {
@@ -13,23 +13,41 @@
       "curr_odds": "-175",
       "starts_at": "2026-10-12T00:20:00.000Z"
     },
-    "PHI@JAX": {
-      "away": "PHI",
-      "home": "JAX",
-      "line_move_pp": 3.76,
-      "mover_team": "JAX",
-      "open_odds": "-303",
-      "curr_odds": "-375",
-      "starts_at": "2026-10-11T13:30:00.000Z"
-    },
     "CHI@GB": {
       "away": "CHI",
       "home": "GB",
-      "line_move_pp": 3.17,
+      "line_move_pp": 5.56,
       "mover_team": "GB",
       "open_odds": "+125",
-      "curr_odds": "+110",
+      "curr_odds": "+100",
       "starts_at": "2026-10-11T17:00:00.000Z"
+    },
+    "PHI@JAX": {
+      "away": "PHI",
+      "home": "JAX",
+      "line_move_pp": 4.81,
+      "mover_team": "JAX",
+      "open_odds": "-303",
+      "curr_odds": "-400",
+      "starts_at": "2026-10-11T13:30:00.000Z"
+    },
+    "CIN@MIA": {
+      "away": "CIN",
+      "home": "MIA",
+      "line_move_pp": 2.98,
+      "mover_team": "MIA",
+      "open_odds": "+292",
+      "curr_odds": "+251",
+      "starts_at": "2026-10-11T17:00:00.000Z"
+    },
+    "BUF@LAR": {
+      "away": "BUF",
+      "home": "LAR",
+      "line_move_pp": 2.85,
+      "mover_team": "LAR",
+      "open_odds": "-155",
+      "curr_odds": "-175",
+      "starts_at": "2026-10-13T00:15:00.000Z"
     },
     "HOU@TEN": {
       "away": "HOU",
@@ -49,15 +67,6 @@
       "curr_odds": "+115",
       "starts_at": "2026-10-11T17:00:00.000Z"
     },
-    "CIN@MIA": {
-      "away": "CIN",
-      "home": "MIA",
-      "line_move_pp": 2.27,
-      "mover_team": "MIA",
-      "open_odds": "+292",
-      "curr_odds": "+260",
-      "starts_at": "2026-10-11T17:00:00.000Z"
-    },
     "SF@SEA": {
       "away": "SF",
       "home": "SEA",
@@ -67,22 +76,22 @@
       "curr_odds": "-170",
       "starts_at": "2026-10-11T20:25:00.000Z"
     },
-    "BUF@LAR": {
-      "away": "BUF",
-      "home": "LAR",
-      "line_move_pp": 2.18,
-      "mover_team": "LAR",
-      "open_odds": "-155",
-      "curr_odds": "-170",
-      "starts_at": "2026-10-13T00:15:00.000Z"
-    },
     "NYG@WAS": {
       "away": "NYG",
       "home": "WAS",
-      "line_move_pp": 1.56,
+      "line_move_pp": 2.13,
       "mover_team": "WAS",
       "open_odds": "-182",
-      "curr_odds": "-195",
+      "curr_odds": "-200",
+      "starts_at": "2026-10-11T17:00:00.000Z"
+    },
+    "CLE@NYJ": {
+      "away": "CLE",
+      "home": "NYJ",
+      "line_move_pp": 1.64,
+      "mover_team": "NYJ",
+      "open_odds": "-130",
+      "curr_odds": "-139",
       "starts_at": "2026-10-11T17:00:00.000Z"
     }
   },
