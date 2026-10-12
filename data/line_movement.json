@@ -1,44 +1,17 @@
 {
   "source": "https://cleatz.com/wp-json/nfl-odds-movers/v1/movers",
-  "fetched_at": "2026-10-11T17:53:12+00:00",
-  "upstream_fetched_at": "2026-10-11T17:08:24+00:00",
+  "fetched_at": "2026-10-12T21:31:40+00:00",
+  "upstream_fetched_at": "2026-10-12T21:08:19+00:00",
   "upstream_stale": true,
   "games": {
-    "BAL@ATL": {
-      "away": "BAL",
-      "home": "ATL",
-      "line_move_pp": 17.12,
-      "mover_team": "ATL",
-      "open_odds": "+115",
-      "curr_odds": "-175",
-      "starts_at": "2026-10-12T00:20:00.000Z"
-    },
     "BUF@LAR": {
       "away": "BUF",
       "home": "LAR",
-      "line_move_pp": 2.85,
+      "line_move_pp": 2.98,
       "mover_team": "LAR",
       "open_odds": "-155",
-      "curr_odds": "-175",
+      "curr_odds": "-176",
       "starts_at": "2026-10-13T00:15:00.000Z"
-    },
-    "SF@SEA": {
-      "away": "SF",
-      "home": "SEA",
-      "line_move_pp": 2.18,
-      "mover_team": "SEA",
-      "open_odds": "-155",
-      "curr_odds": "-170",
-      "starts_at": "2026-10-11T20:25:00.000Z"
-    },
-    "DET@ARI": {
-      "away": "DET",
-      "home": "ARI",
-      "line_move_pp": -1.0,
-      "mover_team": "ARI",
-      "open_odds": "+195",
-      "curr_odds": "+204",
-      "starts_at": "2026-10-11T20:25:00.000Z"
     }
   },
   "error": null
