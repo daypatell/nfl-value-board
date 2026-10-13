@@ -1,17 +1,53 @@
 {
   "source": "https://cleatz.com/wp-json/nfl-odds-movers/v1/movers",
-  "fetched_at": "2026-10-12T21:31:40+00:00",
-  "upstream_fetched_at": "2026-10-12T21:08:19+00:00",
+  "fetched_at": "2026-10-13T19:43:31+00:00",
+  "upstream_fetched_at": "2026-10-13T19:03:30+00:00",
   "upstream_stale": true,
   "games": {
-    "BUF@LAR": {
+    "BUF@LV": {
       "away": "BUF",
-      "home": "LAR",
-      "line_move_pp": 2.98,
-      "mover_team": "LAR",
-      "open_odds": "-155",
-      "curr_odds": "-176",
-      "starts_at": "2026-10-13T00:15:00.000Z"
+      "home": "LV",
+      "line_move_pp": 2.68,
+      "mover_team": "LV",
+      "open_odds": "+225",
+      "curr_odds": "+199",
+      "starts_at": "2026-10-18T20:25:00.000Z"
+    },
+    "PIT@TB": {
+      "away": "PIT",
+      "home": "TB",
+      "line_move_pp": 2.07,
+      "mover_team": "TB",
+      "open_odds": "+125",
+      "curr_odds": "+115",
+      "starts_at": "2026-10-18T17:00:00.000Z"
+    },
+    "SEA@DEN": {
+      "away": "SEA",
+      "home": "DEN",
+      "line_move_pp": 1.36,
+      "mover_team": "DEN",
+      "open_odds": "+130",
+      "curr_odds": "+123",
+      "starts_at": "2026-10-16T00:15:00.000Z"
+    },
+    "NO@NYG": {
+      "away": "NO",
+      "home": "NYG",
+      "line_move_pp": -1.16,
+      "mover_team": "NYG",
+      "open_odds": "-110",
+      "curr_odds": "-105",
+      "starts_at": "2026-10-18T17:00:00.000Z"
+    },
+    "DAL@GB": {
+      "away": "DAL",
+      "home": "GB",
+      "line_move_pp": 1.06,
+      "mover_team": "GB",
+      "open_odds": "-115",
+      "curr_odds": "-120",
+      "starts_at": "2026-10-19T00:20:00.000Z"
     }
   },
   "error": null
