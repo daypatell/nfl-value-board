@@ -1,35 +1,53 @@
 {
   "source": "https://cleatz.com/wp-json/nfl-odds-movers/v1/movers",
-  "fetched_at": "2026-10-13T19:43:31+00:00",
-  "upstream_fetched_at": "2026-10-13T19:03:30+00:00",
+  "fetched_at": "2026-10-14T17:45:26+00:00",
+  "upstream_fetched_at": "2026-10-14T17:03:36+00:00",
   "upstream_stale": true,
   "games": {
+    "CHI@ATL": {
+      "away": "CHI",
+      "home": "ATL",
+      "line_move_pp": 4.44,
+      "mover_team": "ATL",
+      "open_odds": "+150",
+      "curr_odds": "+125",
+      "starts_at": "2026-10-18T17:00:00.000Z"
+    },
     "BUF@LV": {
       "away": "BUF",
       "home": "LV",
-      "line_move_pp": 2.68,
+      "line_move_pp": 3.6,
       "mover_team": "LV",
       "open_odds": "+225",
-      "curr_odds": "+199",
+      "curr_odds": "+191",
       "starts_at": "2026-10-18T20:25:00.000Z"
     },
-    "PIT@TB": {
-      "away": "PIT",
-      "home": "TB",
-      "line_move_pp": 2.07,
-      "mover_team": "TB",
-      "open_odds": "+125",
-      "curr_odds": "+115",
+    "BAL@CLE": {
+      "away": "BAL",
+      "home": "CLE",
+      "line_move_pp": -1.94,
+      "mover_team": "CLE",
+      "open_odds": "+188",
+      "curr_odds": "+205",
       "starts_at": "2026-10-18T17:00:00.000Z"
     },
     "SEA@DEN": {
       "away": "SEA",
       "home": "DEN",
-      "line_move_pp": 1.36,
+      "line_move_pp": 1.77,
       "mover_team": "DEN",
       "open_odds": "+130",
-      "curr_odds": "+123",
+      "curr_odds": "+121",
       "starts_at": "2026-10-16T00:15:00.000Z"
+    },
+    "CAR@PHI": {
+      "away": "CAR",
+      "home": "PHI",
+      "line_move_pp": -1.52,
+      "mover_team": "PHI",
+      "open_odds": "-118",
+      "curr_odds": "-111",
+      "starts_at": "2026-10-18T17:00:00.000Z"
     },
     "NO@NYG": {
       "away": "NO",
@@ -48,6 +66,15 @@
       "open_odds": "-115",
       "curr_odds": "-120",
       "starts_at": "2026-10-19T00:20:00.000Z"
+    },
+    "PIT@TB": {
+      "away": "PIT",
+      "home": "TB",
+      "line_move_pp": 1.01,
+      "mover_team": "TB",
+      "open_odds": "+125",
+      "curr_odds": "+120",
+      "starts_at": "2026-10-18T17:00:00.000Z"
     }
   },
   "error": null
