@@ -1,52 +1,52 @@
 {
   "source": "https://cleatz.com/wp-json/nfl-odds-movers/v1/movers",
-  "fetched_at": "2026-10-14T17:45:26+00:00",
-  "upstream_fetched_at": "2026-10-14T17:03:36+00:00",
+  "fetched_at": "2026-10-15T17:34:04+00:00",
+  "upstream_fetched_at": "2026-10-15T17:08:24+00:00",
   "upstream_stale": true,
   "games": {
     "CHI@ATL": {
       "away": "CHI",
       "home": "ATL",
-      "line_move_pp": 4.44,
+      "line_move_pp": 10.74,
       "mover_team": "ATL",
       "open_odds": "+150",
-      "curr_odds": "+125",
+      "curr_odds": "-103",
+      "starts_at": "2026-10-18T17:00:00.000Z"
+    },
+    "CAR@PHI": {
+      "away": "CAR",
+      "home": "PHI",
+      "line_move_pp": -4.13,
+      "mover_team": "PHI",
+      "open_odds": "-118",
+      "curr_odds": "+100",
       "starts_at": "2026-10-18T17:00:00.000Z"
     },
     "BUF@LV": {
       "away": "BUF",
       "home": "LV",
-      "line_move_pp": 3.6,
+      "line_move_pp": 2.9,
       "mover_team": "LV",
       "open_odds": "+225",
-      "curr_odds": "+191",
+      "curr_odds": "+197",
       "starts_at": "2026-10-18T20:25:00.000Z"
-    },
-    "BAL@CLE": {
-      "away": "BAL",
-      "home": "CLE",
-      "line_move_pp": -1.94,
-      "mover_team": "CLE",
-      "open_odds": "+188",
-      "curr_odds": "+205",
-      "starts_at": "2026-10-18T17:00:00.000Z"
     },
     "SEA@DEN": {
       "away": "SEA",
       "home": "DEN",
-      "line_move_pp": 1.77,
+      "line_move_pp": 1.57,
       "mover_team": "DEN",
       "open_odds": "+130",
-      "curr_odds": "+121",
+      "curr_odds": "+122",
       "starts_at": "2026-10-16T00:15:00.000Z"
     },
-    "CAR@PHI": {
-      "away": "CAR",
-      "home": "PHI",
-      "line_move_pp": -1.52,
-      "mover_team": "PHI",
-      "open_odds": "-118",
-      "curr_odds": "-111",
+    "BAL@CLE": {
+      "away": "BAL",
+      "home": "CLE",
+      "line_move_pp": -1.39,
+      "mover_team": "CLE",
+      "open_odds": "+188",
+      "curr_odds": "+200",
       "starts_at": "2026-10-18T17:00:00.000Z"
     },
     "NO@NYG": {
