@@ -1,9 +1,18 @@
 {
   "source": "https://cleatz.com/wp-json/nfl-odds-movers/v1/movers",
-  "fetched_at": "2026-10-15T17:34:04+00:00",
-  "upstream_fetched_at": "2026-10-15T17:08:24+00:00",
+  "fetched_at": "2026-10-16T17:09:07+00:00",
+  "upstream_fetched_at": "2026-10-16T14:03:28+00:00",
   "upstream_stale": true,
   "games": {
+    "CAR@PHI": {
+      "away": "CAR",
+      "home": "PHI",
+      "line_move_pp": -14.91,
+      "mover_team": "PHI",
+      "open_odds": "-118",
+      "curr_odds": "+155",
+      "starts_at": "2026-10-18T17:00:00.000Z"
+    },
     "CHI@ATL": {
       "away": "CHI",
       "home": "ATL",
@@ -13,49 +22,22 @@
       "curr_odds": "-103",
       "starts_at": "2026-10-18T17:00:00.000Z"
     },
-    "CAR@PHI": {
-      "away": "CAR",
-      "home": "PHI",
-      "line_move_pp": -4.13,
-      "mover_team": "PHI",
-      "open_odds": "-118",
-      "curr_odds": "+100",
-      "starts_at": "2026-10-18T17:00:00.000Z"
-    },
     "BUF@LV": {
       "away": "BUF",
       "home": "LV",
-      "line_move_pp": 2.9,
+      "line_move_pp": 3.71,
       "mover_team": "LV",
       "open_odds": "+225",
-      "curr_odds": "+197",
+      "curr_odds": "+190",
       "starts_at": "2026-10-18T20:25:00.000Z"
-    },
-    "SEA@DEN": {
-      "away": "SEA",
-      "home": "DEN",
-      "line_move_pp": 1.57,
-      "mover_team": "DEN",
-      "open_odds": "+130",
-      "curr_odds": "+122",
-      "starts_at": "2026-10-16T00:15:00.000Z"
     },
     "BAL@CLE": {
       "away": "BAL",
       "home": "CLE",
-      "line_move_pp": -1.39,
+      "line_move_pp": 1.64,
       "mover_team": "CLE",
       "open_odds": "+188",
-      "curr_odds": "+200",
-      "starts_at": "2026-10-18T17:00:00.000Z"
-    },
-    "NO@NYG": {
-      "away": "NO",
-      "home": "NYG",
-      "line_move_pp": -1.16,
-      "mover_team": "NYG",
-      "open_odds": "-110",
-      "curr_odds": "-105",
+      "curr_odds": "+175",
       "starts_at": "2026-10-18T17:00:00.000Z"
     },
     "DAL@GB": {
