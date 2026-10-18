@@ -1,62 +1,71 @@
 {
   "source": "https://cleatz.com/wp-json/nfl-odds-movers/v1/movers",
-  "fetched_at": "2026-10-17T16:06:19+00:00",
-  "upstream_fetched_at": "2026-10-17T15:08:22+00:00",
+  "fetched_at": "2026-10-18T16:19:29+00:00",
+  "upstream_fetched_at": "2026-10-18T16:08:43+00:00",
   "upstream_stale": true,
   "games": {
     "CAR@PHI": {
       "away": "CAR",
       "home": "PHI",
-      "line_move_pp": -13.31,
+      "line_move_pp": -12.46,
       "mover_team": "PHI",
       "open_odds": "-118",
-      "curr_odds": "+145",
+      "curr_odds": "+140",
       "starts_at": "2026-10-18T17:00:00.000Z"
     },
     "CHI@ATL": {
       "away": "CHI",
       "home": "ATL",
-      "line_move_pp": 11.22,
+      "line_move_pp": 10.74,
       "mover_team": "ATL",
       "open_odds": "+150",
-      "curr_odds": "-105",
+      "curr_odds": "-103",
       "starts_at": "2026-10-18T17:00:00.000Z"
     },
     "BAL@CLE": {
       "away": "BAL",
       "home": "CLE",
-      "line_move_pp": 6.43,
+      "line_move_pp": 6.09,
       "mover_team": "CLE",
       "open_odds": "+188",
-      "curr_odds": "+143",
+      "curr_odds": "+145",
+      "starts_at": "2026-10-18T17:00:00.000Z"
+    },
+    "PIT@TB": {
+      "away": "PIT",
+      "home": "TB",
+      "line_move_pp": 3.17,
+      "mover_team": "TB",
+      "open_odds": "+125",
+      "curr_odds": "+110",
       "starts_at": "2026-10-18T17:00:00.000Z"
     },
     "BUF@LV": {
       "away": "BUF",
       "home": "LV",
-      "line_move_pp": 3.6,
+      "line_move_pp": 3.13,
       "mover_team": "LV",
       "open_odds": "+225",
-      "curr_odds": "+191",
+      "curr_odds": "+195",
       "starts_at": "2026-10-18T20:25:00.000Z"
+    },
+    "TEN@IND": {
+      "away": "TEN",
+      "home": "IND",
+      "line_move_pp": -1.74,
+      "mover_team": "IND",
+      "open_odds": "-330",
+      "curr_odds": "-300",
+      "starts_at": "2026-10-18T17:00:00.000Z"
     },
     "LAC@KC": {
       "away": "LAC",
       "home": "KC",
-      "line_move_pp": -1.82,
+      "line_move_pp": -1.05,
       "mover_team": "KC",
       "open_odds": "-450",
-      "curr_odds": "-400",
+      "curr_odds": "-420",
       "starts_at": "2026-10-18T20:25:00.000Z"
-    },
-    "PIT@TB": {
-      "away": "PIT",
-      "home": "TB",
-      "line_move_pp": 1.01,
-      "mover_team": "TB",
-      "open_odds": "+125",
-      "curr_odds": "+120",
-      "starts_at": "2026-10-18T17:00:00.000Z"
     }
   },
   "error": null
