@@ -1,17 +1,17 @@
 {
   "source": "https://cleatz.com/wp-json/nfl-odds-movers/v1/movers",
-  "fetched_at": "2026-10-20T17:44:15+00:00",
-  "upstream_fetched_at": "2026-10-20T17:41:00+00:00",
+  "fetched_at": "2026-10-21T17:51:45+00:00",
+  "upstream_fetched_at": "2026-10-21T17:04:14+00:00",
   "upstream_stale": true,
   "games": {
-    "SF@ATL": {
-      "away": "SF",
-      "home": "ATL",
-      "line_move_pp": 2.26,
-      "mover_team": "ATL",
-      "open_odds": "+165",
-      "curr_odds": "+150",
-      "starts_at": "2026-10-25T17:00:00.000Z"
+    "KC@SEA": {
+      "away": "KC",
+      "home": "SEA",
+      "line_move_pp": 1.02,
+      "mover_team": "SEA",
+      "open_odds": "-139",
+      "curr_odds": "-145",
+      "starts_at": "2026-10-26T00:20:00.000Z"
     }
   },
   "error": null
