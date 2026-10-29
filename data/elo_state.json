@@ -9473,6 +9473,71 @@
       "season_type": 2,
       "year": 2026,
       "resolved": false
+    },
+    {
+      "date": "2026-10-29",
+      "home": "PIT",
+      "away": "CLE",
+      "side": "home",
+      "edge_pct": 3.3440241372246104,
+      "model_prob": 0.6539,
+      "score": 29.1,
+      "week": 8,
+      "season_type": 2,
+      "year": 2026,
+      "resolved": false
+    },
+    {
+      "date": "2026-10-29",
+      "home": "DET",
+      "away": "MIN",
+      "side": "away",
+      "edge_pct": 6.412685950413227,
+      "model_prob": 0.52265,
+      "score": 60.7,
+      "week": 8,
+      "season_type": 2,
+      "year": 2026,
+      "resolved": false
+    },
+    {
+      "date": "2026-10-29",
+      "home": "NYJ",
+      "away": "LV",
+      "side": "away",
+      "edge_pct": 4.394753900147219,
+      "model_prob": 0.4798,
+      "score": 38.2,
+      "week": 8,
+      "season_type": 2,
+      "year": 2026,
+      "resolved": false
+    },
+    {
+      "date": "2026-10-29",
+      "home": "DEN",
+      "away": "KC",
+      "side": "home",
+      "edge_pct": 3.112524311384901,
+      "model_prob": 0.526,
+      "score": 26.9,
+      "week": 8,
+      "season_type": 2,
+      "year": 2026,
+      "resolved": false
+    },
+    {
+      "date": "2026-10-29",
+      "home": "WAS",
+      "away": "PHI",
+      "side": "away",
+      "edge_pct": 16.116694915254236,
+      "model_prob": 0.49985,
+      "score": 100.0,
+      "week": 8,
+      "season_type": 2,
+      "year": 2026,
+      "resolved": false
     }
   ],
   "last_regression_key": "2026-2"
