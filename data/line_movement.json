@@ -1,16 +1,16 @@
 {
   "source": "https://cleatz.com/wp-json/nfl-odds-movers/v1/movers",
-  "fetched_at": "2026-10-29T18:46:04+00:00",
-  "upstream_fetched_at": "2026-10-29T18:03:36+00:00",
+  "fetched_at": "2026-10-30T18:23:05+00:00",
+  "upstream_fetched_at": "2026-10-30T18:03:30+00:00",
   "upstream_stale": true,
   "games": {
     "PHI@WAS": {
       "away": "PHI",
       "home": "WAS",
-      "line_move_pp": 5.0,
+      "line_move_pp": 4.69,
       "mover_team": "WAS",
       "open_odds": "-208",
-      "curr_odds": "-264",
+      "curr_odds": "-260",
       "starts_at": "2026-11-02T01:20:00.000Z"
     },
     "IND@JAX": {
@@ -22,23 +22,32 @@
       "curr_odds": "-500",
       "starts_at": "2026-11-01T18:00:00.000Z"
     },
+    "TEN@CIN": {
+      "away": "TEN",
+      "home": "CIN",
+      "line_move_pp": 2.54,
+      "mover_team": "CIN",
+      "open_odds": "-599",
+      "curr_odds": "-750",
+      "starts_at": "2026-11-01T18:00:00.000Z"
+    },
     "LV@NYJ": {
       "away": "LV",
       "home": "NYJ",
-      "line_move_pp": 3.17,
+      "line_move_pp": 2.37,
       "mover_team": "NYJ",
       "open_odds": "-110",
-      "curr_odds": "-125",
+      "curr_odds": "-121",
       "starts_at": "2026-11-01T18:00:00.000Z"
     },
-    "BAL@BUF": {
-      "away": "BAL",
-      "home": "BUF",
-      "line_move_pp": -2.16,
-      "mover_team": "BUF",
-      "open_odds": "-189",
-      "curr_odds": "-172",
-      "starts_at": "2026-11-01T18:00:00.000Z"
+    "NE@MIA": {
+      "away": "NE",
+      "home": "MIA",
+      "line_move_pp": 2.14,
+      "mover_team": "MIA",
+      "open_odds": "+290",
+      "curr_odds": "+260",
+      "starts_at": "2026-11-01T21:25:00.000Z"
     },
     "ARI@DAL": {
       "away": "ARI",
@@ -49,22 +58,13 @@
       "curr_odds": "-333",
       "starts_at": "2026-11-01T18:00:00.000Z"
     },
-    "NE@MIA": {
-      "away": "NE",
-      "home": "MIA",
-      "line_move_pp": 1.76,
-      "mover_team": "MIA",
-      "open_odds": "+290",
-      "curr_odds": "+265",
-      "starts_at": "2026-11-01T21:25:00.000Z"
-    },
-    "TEN@CIN": {
-      "away": "TEN",
-      "home": "CIN",
-      "line_move_pp": 1.27,
-      "mover_team": "CIN",
-      "open_odds": "-599",
-      "curr_odds": "-667",
+    "BAL@BUF": {
+      "away": "BAL",
+      "home": "BUF",
+      "line_move_pp": -1.76,
+      "mover_team": "BUF",
+      "open_odds": "-189",
+      "curr_odds": "-175",
       "starts_at": "2026-11-01T18:00:00.000Z"
     }
   },
