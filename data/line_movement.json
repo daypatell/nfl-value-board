@@ -1,17 +1,35 @@
 {
   "source": "https://cleatz.com/wp-json/nfl-odds-movers/v1/movers",
-  "fetched_at": "2026-10-31T17:29:31+00:00",
-  "upstream_fetched_at": "2026-10-31T17:08:25+00:00",
+  "fetched_at": "2026-11-01T18:14:10+00:00",
+  "upstream_fetched_at": "2026-11-01T17:13:56+00:00",
   "upstream_stale": true,
   "games": {
     "PHI@WAS": {
       "away": "PHI",
       "home": "WAS",
-      "line_move_pp": 4.92,
+      "line_move_pp": 5.44,
       "mover_team": "WAS",
       "open_odds": "-208",
-      "curr_odds": "-263",
+      "curr_odds": "-270",
       "starts_at": "2026-11-02T01:20:00.000Z"
+    },
+    "TEN@CIN": {
+      "away": "TEN",
+      "home": "CIN",
+      "line_move_pp": 4.78,
+      "mover_team": "CIN",
+      "open_odds": "-599",
+      "curr_odds": "-950",
+      "starts_at": "2026-11-01T18:00:00.000Z"
+    },
+    "LV@NYJ": {
+      "away": "LV",
+      "home": "NYJ",
+      "line_move_pp": 3.95,
+      "mover_team": "NYJ",
+      "open_odds": "-110",
+      "curr_odds": "-129",
+      "starts_at": "2026-11-01T18:00:00.000Z"
     },
     "IND@JAX": {
       "away": "IND",
@@ -22,31 +40,13 @@
       "curr_odds": "-500",
       "starts_at": "2026-11-01T18:00:00.000Z"
     },
-    "LV@NYJ": {
-      "away": "LV",
-      "home": "NYJ",
-      "line_move_pp": 2.57,
-      "mover_team": "NYJ",
-      "open_odds": "-110",
-      "curr_odds": "-122",
-      "starts_at": "2026-11-01T18:00:00.000Z"
-    },
-    "TEN@CIN": {
-      "away": "TEN",
-      "home": "CIN",
-      "line_move_pp": 2.54,
-      "mover_team": "CIN",
-      "open_odds": "-599",
-      "curr_odds": "-750",
-      "starts_at": "2026-11-01T18:00:00.000Z"
-    },
     "ARI@DAL": {
       "away": "ARI",
       "home": "DAL",
-      "line_move_pp": 1.91,
+      "line_move_pp": 2.78,
       "mover_team": "DAL",
       "open_odds": "-300",
-      "curr_odds": "-333",
+      "curr_odds": "-350",
       "starts_at": "2026-11-01T18:00:00.000Z"
     },
     "BAL@BUF": {
@@ -58,13 +58,13 @@
       "curr_odds": "-175",
       "starts_at": "2026-11-01T18:00:00.000Z"
     },
-    "NE@MIA": {
-      "away": "NE",
-      "home": "MIA",
-      "line_move_pp": 1.61,
-      "mover_team": "MIA",
-      "open_odds": "+290",
-      "curr_odds": "+267",
+    "KC@DEN": {
+      "away": "KC",
+      "home": "DEN",
+      "line_move_pp": 1.22,
+      "mover_team": "DEN",
+      "open_odds": "+100",
+      "curr_odds": "-105",
       "starts_at": "2026-11-01T21:25:00.000Z"
     }
   },
