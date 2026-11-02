@@ -1,72 +1,8 @@
 {
   "source": "https://cleatz.com/wp-json/nfl-odds-movers/v1/movers",
-  "fetched_at": "2026-11-01T18:14:10+00:00",
-  "upstream_fetched_at": "2026-11-01T17:13:56+00:00",
+  "fetched_at": "2026-11-02T22:04:55+00:00",
+  "upstream_fetched_at": "2026-11-02T21:08:20+00:00",
   "upstream_stale": true,
-  "games": {
-    "PHI@WAS": {
-      "away": "PHI",
-      "home": "WAS",
-      "line_move_pp": 5.44,
-      "mover_team": "WAS",
-      "open_odds": "-208",
-      "curr_odds": "-270",
-      "starts_at": "2026-11-02T01:20:00.000Z"
-    },
-    "TEN@CIN": {
-      "away": "TEN",
-      "home": "CIN",
-      "line_move_pp": 4.78,
-      "mover_team": "CIN",
-      "open_odds": "-599",
-      "curr_odds": "-950",
-      "starts_at": "2026-11-01T18:00:00.000Z"
-    },
-    "LV@NYJ": {
-      "away": "LV",
-      "home": "NYJ",
-      "line_move_pp": 3.95,
-      "mover_team": "NYJ",
-      "open_odds": "-110",
-      "curr_odds": "-129",
-      "starts_at": "2026-11-01T18:00:00.000Z"
-    },
-    "IND@JAX": {
-      "away": "IND",
-      "home": "JAX",
-      "line_move_pp": 3.33,
-      "mover_team": "JAX",
-      "open_odds": "-400",
-      "curr_odds": "-500",
-      "starts_at": "2026-11-01T18:00:00.000Z"
-    },
-    "ARI@DAL": {
-      "away": "ARI",
-      "home": "DAL",
-      "line_move_pp": 2.78,
-      "mover_team": "DAL",
-      "open_odds": "-300",
-      "curr_odds": "-350",
-      "starts_at": "2026-11-01T18:00:00.000Z"
-    },
-    "BAL@BUF": {
-      "away": "BAL",
-      "home": "BUF",
-      "line_move_pp": -1.76,
-      "mover_team": "BUF",
-      "open_odds": "-189",
-      "curr_odds": "-175",
-      "starts_at": "2026-11-01T18:00:00.000Z"
-    },
-    "KC@DEN": {
-      "away": "KC",
-      "home": "DEN",
-      "line_move_pp": 1.22,
-      "mover_team": "DEN",
-      "open_odds": "+100",
-      "curr_odds": "-105",
-      "starts_at": "2026-11-01T21:25:00.000Z"
-    }
-  },
+  "games": {},
   "error": null
 }
