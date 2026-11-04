@@ -1,26 +1,53 @@
 {
   "source": "https://cleatz.com/wp-json/nfl-odds-movers/v1/movers",
-  "fetched_at": "2026-11-03T19:56:16+00:00",
-  "upstream_fetched_at": "2026-11-03T19:08:49+00:00",
+  "fetched_at": "2026-11-04T20:14:31+00:00",
+  "upstream_fetched_at": "2026-11-04T20:03:27+00:00",
   "upstream_stale": true,
   "games": {
+    "ARI@SEA": {
+      "away": "ARI",
+      "home": "SEA",
+      "line_move_pp": -7.1,
+      "mover_team": "SEA",
+      "open_odds": "-675",
+      "curr_odds": "-400",
+      "starts_at": "2026-11-08T21:25:00.000Z"
+    },
     "CLE@NO": {
       "away": "CLE",
       "home": "NO",
-      "line_move_pp": -3.63,
+      "line_move_pp": 2.79,
       "mover_team": "NO",
       "open_odds": "-145",
-      "curr_odds": "-125",
+      "curr_odds": "-163",
       "starts_at": "2026-11-08T18:00:00.000Z"
     },
     "GB@NE": {
       "away": "GB",
       "home": "NE",
-      "line_move_pp": 1.76,
+      "line_move_pp": 2.04,
       "mover_team": "NE",
       "open_odds": "-155",
-      "curr_odds": "-167",
+      "curr_odds": "-169",
       "starts_at": "2026-11-08T21:25:00.000Z"
+    },
+    "JAX@BAL": {
+      "away": "JAX",
+      "home": "BAL",
+      "line_move_pp": -1.74,
+      "mover_team": "BAL",
+      "open_odds": "+360",
+      "curr_odds": "+400",
+      "starts_at": "2026-11-06T01:15:00.000Z"
+    },
+    "NYJ@KC": {
+      "away": "NYJ",
+      "home": "KC",
+      "line_move_pp": 1.49,
+      "mover_team": "KC",
+      "open_odds": "-476",
+      "curr_odds": "-530",
+      "starts_at": "2026-11-08T18:00:00.000Z"
     }
   },
   "error": null
