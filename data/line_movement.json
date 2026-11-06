@@ -1,7 +1,7 @@
 {
   "source": "https://cleatz.com/wp-json/nfl-odds-movers/v1/movers",
-  "fetched_at": "2026-11-05T20:27:12+00:00",
-  "upstream_fetched_at": "2026-11-05T20:08:32+00:00",
+  "fetched_at": "2026-11-06T19:49:28+00:00",
+  "upstream_fetched_at": "2026-11-06T19:04:24+00:00",
   "upstream_stale": true,
   "games": {
     "ARI@SEA": {
@@ -22,14 +22,32 @@
       "curr_odds": "-165",
       "starts_at": "2026-11-08T18:00:00.000Z"
     },
+    "HOU@LAC": {
+      "away": "HOU",
+      "home": "LAC",
+      "line_move_pp": -2.38,
+      "mover_team": "LAC",
+      "open_odds": "+180",
+      "curr_odds": "+200",
+      "starts_at": "2026-11-08T21:05:00.000Z"
+    },
     "GB@NE": {
       "away": "GB",
       "home": "NE",
-      "line_move_pp": 2.18,
+      "line_move_pp": 2.04,
       "mover_team": "NE",
       "open_odds": "-155",
-      "curr_odds": "-170",
+      "curr_odds": "-169",
       "starts_at": "2026-11-08T21:25:00.000Z"
+    },
+    "LAR@WAS": {
+      "away": "LAR",
+      "home": "WAS",
+      "line_move_pp": 2.0,
+      "mover_team": "WAS",
+      "open_odds": "+200",
+      "curr_odds": "+183",
+      "starts_at": "2026-11-08T18:00:00.000Z"
     },
     "NYJ@KC": {
       "away": "NYJ",
@@ -40,23 +58,23 @@
       "curr_odds": "-526",
       "starts_at": "2026-11-08T18:00:00.000Z"
     },
-    "LAR@WAS": {
-      "away": "LAR",
-      "home": "WAS",
-      "line_move_pp": 1.27,
-      "mover_team": "WAS",
-      "open_odds": "+200",
-      "curr_odds": "+189",
-      "starts_at": "2026-11-08T18:00:00.000Z"
+    "CIN@ATL": {
+      "away": "CIN",
+      "home": "ATL",
+      "line_move_pp": -1.38,
+      "mover_team": "ATL",
+      "open_odds": "+137",
+      "curr_odds": "+145",
+      "starts_at": "2026-11-08T14:30:00.000Z"
     },
-    "HOU@LAC": {
-      "away": "HOU",
-      "home": "LAC",
-      "line_move_pp": -1.23,
-      "mover_team": "LAC",
-      "open_odds": "+180",
-      "curr_odds": "+190",
-      "starts_at": "2026-11-08T21:05:00.000Z"
+    "DEN@CAR": {
+      "away": "DEN",
+      "home": "CAR",
+      "line_move_pp": 1.19,
+      "mover_team": "CAR",
+      "open_odds": "+128",
+      "curr_odds": "+122",
+      "starts_at": "2026-11-08T18:00:00.000Z"
     },
     "DAL@IND": {
       "away": "DAL",
