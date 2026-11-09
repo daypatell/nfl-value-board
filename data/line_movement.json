@@ -1,98 +1,17 @@
 {
   "source": "https://cleatz.com/wp-json/nfl-odds-movers/v1/movers",
-  "fetched_at": "2026-11-08T18:11:44+00:00",
-  "upstream_fetched_at": "2026-11-08T17:36:55+00:00",
+  "fetched_at": "2026-11-09T22:50:42+00:00",
+  "upstream_fetched_at": "2026-11-09T22:49:12+00:00",
   "upstream_stale": true,
   "games": {
-    "CLE@NO": {
-      "away": "CLE",
-      "home": "NO",
-      "line_move_pp": 11.23,
-      "mover_team": "NO",
-      "open_odds": "-145",
-      "curr_odds": "-238",
-      "starts_at": "2026-11-08T18:00:00.000Z"
-    },
-    "ARI@SEA": {
-      "away": "ARI",
-      "home": "SEA",
-      "line_move_pp": -5.79,
-      "mover_team": "SEA",
-      "open_odds": "-675",
-      "curr_odds": "-435",
-      "starts_at": "2026-11-08T21:25:00.000Z"
-    },
-    "DAL@IND": {
-      "away": "DAL",
-      "home": "IND",
-      "line_move_pp": 3.46,
-      "mover_team": "IND",
-      "open_odds": "+210",
-      "curr_odds": "+180",
-      "starts_at": "2026-11-08T18:00:00.000Z"
-    },
-    "NYG@PHI": {
-      "away": "NYG",
-      "home": "PHI",
-      "line_move_pp": 3.16,
-      "mover_team": "PHI",
-      "open_odds": "+148",
-      "curr_odds": "+130",
-      "starts_at": "2026-11-08T18:00:00.000Z"
-    },
-    "GB@NE": {
-      "away": "GB",
-      "home": "NE",
-      "line_move_pp": 2.85,
-      "mover_team": "NE",
-      "open_odds": "-155",
-      "curr_odds": "-175",
-      "starts_at": "2026-11-08T21:25:00.000Z"
-    },
-    "HOU@LAC": {
-      "away": "HOU",
-      "home": "LAC",
-      "line_move_pp": -1.82,
-      "mover_team": "LAC",
-      "open_odds": "+180",
-      "curr_odds": "+195",
-      "starts_at": "2026-11-08T21:05:00.000Z"
-    },
-    "DEN@CAR": {
-      "away": "DEN",
-      "home": "CAR",
-      "line_move_pp": -1.67,
-      "mover_team": "CAR",
-      "open_odds": "+128",
-      "curr_odds": "+137",
-      "starts_at": "2026-11-08T18:00:00.000Z"
-    },
-    "NYJ@KC": {
-      "away": "NYJ",
-      "home": "KC",
-      "line_move_pp": 1.18,
-      "mover_team": "KC",
-      "open_odds": "-476",
-      "curr_odds": "-518",
-      "starts_at": "2026-11-08T18:00:00.000Z"
-    },
-    "LAR@WAS": {
-      "away": "LAR",
-      "home": "WAS",
-      "line_move_pp": 1.15,
-      "mover_team": "WAS",
-      "open_odds": "+200",
-      "curr_odds": "+190",
-      "starts_at": "2026-11-08T18:00:00.000Z"
-    },
-    "LV@SF": {
-      "away": "LV",
-      "home": "SF",
-      "line_move_pp": -1.06,
-      "mover_team": "SF",
-      "open_odds": "-526",
-      "curr_odds": "-487",
-      "starts_at": "2026-11-08T21:25:00.000Z"
+    "BUF@MIN": {
+      "away": "BUF",
+      "home": "MIN",
+      "line_move_pp": -1.54,
+      "mover_team": "MIN",
+      "open_odds": "+150",
+      "curr_odds": "+160",
+      "starts_at": "2026-11-10T01:15:00.000Z"
     }
   },
   "error": null
