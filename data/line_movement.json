@@ -1,17 +1,26 @@
 {
   "source": "https://cleatz.com/wp-json/nfl-odds-movers/v1/movers",
-  "fetched_at": "2026-11-09T22:50:42+00:00",
-  "upstream_fetched_at": "2026-11-09T22:49:12+00:00",
+  "fetched_at": "2026-11-10T20:10:47+00:00",
+  "upstream_fetched_at": "2026-11-10T19:58:25+00:00",
   "upstream_stale": true,
   "games": {
-    "BUF@MIN": {
-      "away": "BUF",
-      "home": "MIN",
-      "line_move_pp": -1.54,
-      "mover_team": "MIN",
+    "SEA@LV": {
+      "away": "SEA",
+      "home": "LV",
+      "line_move_pp": -9.7,
+      "mover_team": "LV",
       "open_odds": "+150",
-      "curr_odds": "+160",
-      "starts_at": "2026-11-10T01:15:00.000Z"
+      "curr_odds": "+230",
+      "starts_at": "2026-11-15T21:05:00.000Z"
+    },
+    "MIN@GB": {
+      "away": "MIN",
+      "home": "GB",
+      "line_move_pp": -4.46,
+      "mover_team": "GB",
+      "open_odds": "-220",
+      "curr_odds": "-180",
+      "starts_at": "2026-11-15T18:00:00.000Z"
     }
   },
   "error": null
