@@ -1,7 +1,7 @@
 {
   "source": "https://cleatz.com/wp-json/nfl-odds-movers/v1/movers",
-  "fetched_at": "2026-11-11T19:58:54+00:00",
-  "upstream_fetched_at": "2026-11-11T19:03:47+00:00",
+  "fetched_at": "2026-11-12T20:37:18+00:00",
+  "upstream_fetched_at": "2026-11-12T20:09:19+00:00",
   "upstream_stale": true,
   "games": {
     "SEA@LV": {
@@ -16,38 +16,47 @@
     "MIA@IND": {
       "away": "MIA",
       "home": "IND",
-      "line_move_pp": 8.51,
+      "line_move_pp": 9.37,
       "mover_team": "IND",
       "open_odds": "-139",
-      "curr_odds": "-200",
+      "curr_odds": "-208",
       "starts_at": "2026-11-15T18:00:00.000Z"
     },
     "MIN@GB": {
       "away": "MIN",
       "home": "GB",
-      "line_move_pp": -4.46,
+      "line_move_pp": -7.21,
       "mover_team": "GB",
       "open_odds": "-220",
-      "curr_odds": "-180",
+      "curr_odds": "-160",
       "starts_at": "2026-11-15T18:00:00.000Z"
     },
     "CAR@NO": {
       "away": "CAR",
       "home": "NO",
-      "line_move_pp": 3.44,
+      "line_move_pp": 3.26,
       "mover_team": "NO",
       "open_odds": "-120",
-      "curr_odds": "-138",
+      "curr_odds": "-137",
       "starts_at": "2026-11-15T18:00:00.000Z"
     },
     "LAC@BAL": {
       "away": "LAC",
       "home": "BAL",
-      "line_move_pp": -1.9,
+      "line_move_pp": -1.69,
       "mover_team": "BAL",
       "open_odds": "-235",
-      "curr_odds": "-215",
+      "curr_odds": "-217",
       "starts_at": "2026-11-17T01:15:00.000Z"
+    },
+    "LAR@ARI": {
+      "away": "LAR",
+      "home": "ARI",
+      "line_move_pp": -1.33,
+      "mover_team": "ARI",
+      "open_odds": "+345",
+      "curr_odds": "+373",
+      "starts_at": "2026-11-15T21:05:00.000Z"
     }
   },
   "error": null
