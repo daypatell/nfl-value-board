@@ -1,7 +1,7 @@
 {
   "source": "https://cleatz.com/wp-json/nfl-odds-movers/v1/movers",
-  "fetched_at": "2026-11-13T20:16:19+00:00",
-  "upstream_fetched_at": "2026-11-13T19:53:22+00:00",
+  "fetched_at": "2026-11-14T18:37:48+00:00",
+  "upstream_fetched_at": "2026-11-14T18:03:45+00:00",
   "upstream_stale": true,
   "games": {
     "SEA@LV": {
@@ -16,19 +16,19 @@
     "MIA@IND": {
       "away": "MIA",
       "home": "IND",
-      "line_move_pp": 9.05,
+      "line_move_pp": 9.69,
       "mover_team": "IND",
       "open_odds": "-139",
-      "curr_odds": "-205",
+      "curr_odds": "-211",
       "starts_at": "2026-11-15T18:00:00.000Z"
     },
     "MIN@GB": {
       "away": "MIN",
       "home": "GB",
-      "line_move_pp": -7.36,
+      "line_move_pp": -8.28,
       "mover_team": "GB",
       "open_odds": "-220",
-      "curr_odds": "-159",
+      "curr_odds": "-153",
       "starts_at": "2026-11-15T18:00:00.000Z"
     },
     "CAR@NO": {
@@ -38,6 +38,15 @@
       "mover_team": "NO",
       "open_odds": "-120",
       "curr_odds": "-139",
+      "starts_at": "2026-11-15T18:00:00.000Z"
+    },
+    "KC@ATL": {
+      "away": "KC",
+      "home": "ATL",
+      "line_move_pp": 1.45,
+      "mover_team": "ATL",
+      "open_odds": "+154",
+      "curr_odds": "+145",
       "starts_at": "2026-11-15T18:00:00.000Z"
     },
     "JAX@TEN": {
