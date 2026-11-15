@@ -1,71 +1,26 @@
 {
   "source": "https://cleatz.com/wp-json/nfl-odds-movers/v1/movers",
-  "fetched_at": "2026-11-14T18:37:48+00:00",
-  "upstream_fetched_at": "2026-11-14T18:03:45+00:00",
+  "fetched_at": "2026-11-15T19:13:09+00:00",
+  "upstream_fetched_at": "2026-11-15T19:08:25+00:00",
   "upstream_stale": true,
   "games": {
     "SEA@LV": {
       "away": "SEA",
       "home": "LV",
-      "line_move_pp": -10.59,
+      "line_move_pp": -10.24,
       "mover_team": "LV",
       "open_odds": "+150",
-      "curr_odds": "+240",
+      "curr_odds": "+236",
       "starts_at": "2026-11-15T21:05:00.000Z"
     },
-    "MIA@IND": {
-      "away": "MIA",
-      "home": "IND",
-      "line_move_pp": 9.69,
-      "mover_team": "IND",
-      "open_odds": "-139",
-      "curr_odds": "-211",
-      "starts_at": "2026-11-15T18:00:00.000Z"
-    },
-    "MIN@GB": {
-      "away": "MIN",
-      "home": "GB",
-      "line_move_pp": -8.28,
-      "mover_team": "GB",
-      "open_odds": "-220",
-      "curr_odds": "-153",
-      "starts_at": "2026-11-15T18:00:00.000Z"
-    },
-    "CAR@NO": {
-      "away": "CAR",
-      "home": "NO",
-      "line_move_pp": 3.61,
-      "mover_team": "NO",
-      "open_odds": "-120",
-      "curr_odds": "-139",
-      "starts_at": "2026-11-15T18:00:00.000Z"
-    },
-    "KC@ATL": {
-      "away": "KC",
-      "home": "ATL",
-      "line_move_pp": 1.45,
-      "mover_team": "ATL",
-      "open_odds": "+154",
-      "curr_odds": "+145",
-      "starts_at": "2026-11-15T18:00:00.000Z"
-    },
-    "JAX@TEN": {
-      "away": "JAX",
-      "home": "TEN",
-      "line_move_pp": -1.43,
-      "mover_team": "TEN",
-      "open_odds": "+410",
-      "curr_odds": "+450",
-      "starts_at": "2026-11-15T18:00:00.000Z"
-    },
-    "LAC@BAL": {
-      "away": "LAC",
-      "home": "BAL",
-      "line_move_pp": -1.4,
-      "mover_team": "BAL",
-      "open_odds": "-235",
-      "curr_odds": "-220",
-      "starts_at": "2026-11-17T01:15:00.000Z"
+    "LAR@ARI": {
+      "away": "LAR",
+      "home": "ARI",
+      "line_move_pp": -1.64,
+      "mover_team": "ARI",
+      "open_odds": "+345",
+      "curr_odds": "+380",
+      "starts_at": "2026-11-15T21:05:00.000Z"
     }
   },
   "error": null
