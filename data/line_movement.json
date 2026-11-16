@@ -1,27 +1,8 @@
 {
   "source": "https://cleatz.com/wp-json/nfl-odds-movers/v1/movers",
-  "fetched_at": "2026-11-15T19:13:09+00:00",
-  "upstream_fetched_at": "2026-11-15T19:08:25+00:00",
+  "fetched_at": "2026-11-16T22:42:46+00:00",
+  "upstream_fetched_at": "2026-11-16T22:08:35+00:00",
   "upstream_stale": true,
-  "games": {
-    "SEA@LV": {
-      "away": "SEA",
-      "home": "LV",
-      "line_move_pp": -10.24,
-      "mover_team": "LV",
-      "open_odds": "+150",
-      "curr_odds": "+236",
-      "starts_at": "2026-11-15T21:05:00.000Z"
-    },
-    "LAR@ARI": {
-      "away": "LAR",
-      "home": "ARI",
-      "line_move_pp": -1.64,
-      "mover_team": "ARI",
-      "open_odds": "+345",
-      "curr_odds": "+380",
-      "starts_at": "2026-11-15T21:05:00.000Z"
-    }
-  },
+  "games": {},
   "error": null
 }
