@@ -1,17 +1,17 @@
 {
   "source": "https://cleatz.com/wp-json/nfl-odds-movers/v1/movers",
-  "fetched_at": "2026-11-17T21:28:47+00:00",
-  "upstream_fetched_at": "2026-11-17T21:08:19+00:00",
+  "fetched_at": "2026-11-18T21:03:52+00:00",
+  "upstream_fetched_at": "2026-11-18T20:08:22+00:00",
   "upstream_stale": true,
   "games": {
-    "NYJ@LAC": {
-      "away": "NYJ",
-      "home": "LAC",
-      "line_move_pp": 2.13,
-      "mover_team": "LAC",
-      "open_odds": "-166",
-      "curr_odds": "-182",
-      "starts_at": "2026-11-22T21:05:00.000Z"
+    "TB@DET": {
+      "away": "TB",
+      "home": "DET",
+      "line_move_pp": 3.22,
+      "mover_team": "DET",
+      "open_odds": "-280",
+      "curr_odds": "-333",
+      "starts_at": "2026-11-22T18:00:00.000Z"
     }
   },
   "error": null
