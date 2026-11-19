@@ -10972,6 +10972,45 @@
       "season_type": 2,
       "year": 2026,
       "resolved": false
+    },
+    {
+      "date": "2026-11-19",
+      "home": "HOU",
+      "away": "IND",
+      "side": "away",
+      "edge_pct": 15.347591973244146,
+      "model_prob": 0.6793,
+      "score": 100.0,
+      "week": 11,
+      "season_type": 2,
+      "year": 2026,
+      "resolved": false
+    },
+    {
+      "date": "2026-11-19",
+      "home": "KC",
+      "away": "ARI",
+      "side": "away",
+      "edge_pct": 5.906702127659573,
+      "model_prob": 0.83455,
+      "score": 64.5,
+      "week": 11,
+      "season_type": 2,
+      "year": 2026,
+      "resolved": false
+    },
+    {
+      "date": "2026-11-19",
+      "home": "DEN",
+      "away": "LV",
+      "side": "away",
+      "edge_pct": 9.529667931688806,
+      "model_prob": 0.71495,
+      "score": 85.6,
+      "week": 11,
+      "season_type": 2,
+      "year": 2026,
+      "resolved": false
     }
   ],
   "last_regression_key": "2026-2"
