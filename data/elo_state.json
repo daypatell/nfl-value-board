@@ -10,7 +10,7 @@
     "LAC": 1419.2,
     "NE": 1526.9,
     "DEN": 1604.5,
-    "HOU": 1467.4,
+    "HOU": 1484.5,
     "CIN": 1645.2,
     "SF": 1650.8,
     "PHI": 1405.9,
@@ -25,7 +25,7 @@
     "WAS": 1444.4,
     "ATL": 1438.4,
     "CAR": 1470.9,
-    "IND": 1358.5,
+    "IND": 1341.4,
     "LV": 1459.1,
     "NYG": 1450.7,
     "TEN": 1329.3,
@@ -219,7 +219,8 @@
     "401873061",
     "401873063",
     "401873064",
-    "401873065"
+    "401873065",
+    "401873066"
   ],
   "bet_log": [
     {
@@ -11007,6 +11008,45 @@
       "edge_pct": 9.529667931688806,
       "model_prob": 0.71495,
       "score": 85.6,
+      "week": 11,
+      "season_type": 2,
+      "year": 2026,
+      "resolved": false
+    },
+    {
+      "date": "2026-11-20",
+      "home": "KC",
+      "away": "ARI",
+      "side": "away",
+      "edge_pct": 6.741078431372547,
+      "model_prob": 0.83455,
+      "score": 69.3,
+      "week": 11,
+      "season_type": 2,
+      "year": 2026,
+      "resolved": false
+    },
+    {
+      "date": "2026-11-20",
+      "home": "DEN",
+      "away": "LV",
+      "side": "away",
+      "edge_pct": 10.189981684981689,
+      "model_prob": 0.71495,
+      "score": 89.4,
+      "week": 11,
+      "season_type": 2,
+      "year": 2026,
+      "resolved": false
+    },
+    {
+      "date": "2026-11-20",
+      "home": "WAS",
+      "away": "CIN",
+      "side": "home",
+      "edge_pct": 3.0132352941176443,
+      "model_prob": 0.32425,
+      "score": 32.9,
       "week": 11,
       "season_type": 2,
       "year": 2026,

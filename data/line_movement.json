@@ -1,9 +1,18 @@
 {
   "source": "https://cleatz.com/wp-json/nfl-odds-movers/v1/movers",
-  "fetched_at": "2026-11-19T21:08:55+00:00",
-  "upstream_fetched_at": "2026-11-19T21:04:25+00:00",
+  "fetched_at": "2026-11-20T20:54:02+00:00",
+  "upstream_fetched_at": "2026-11-20T20:03:25+00:00",
   "upstream_stale": true,
   "games": {
+    "TB@DET": {
+      "away": "TB",
+      "home": "DET",
+      "line_move_pp": -2.67,
+      "mover_team": "DET",
+      "open_odds": "-280",
+      "curr_odds": "-245",
+      "starts_at": "2026-11-22T18:00:00.000Z"
+    },
     "BAL@CAR": {
       "away": "BAL",
       "home": "CAR",
@@ -12,6 +21,15 @@
       "open_odds": "-138",
       "curr_odds": "-150",
       "starts_at": "2026-11-22T18:00:00.000Z"
+    },
+    "MIN@SF": {
+      "away": "MIN",
+      "home": "SF",
+      "line_move_pp": 1.24,
+      "mover_team": "SF",
+      "open_odds": "-165",
+      "curr_odds": "-174",
+      "starts_at": "2026-11-23T01:20:00.000Z"
     }
   },
   "error": null
