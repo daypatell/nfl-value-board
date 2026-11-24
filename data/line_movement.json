@@ -1,17 +1,17 @@
 {
   "source": "https://cleatz.com/wp-json/nfl-odds-movers/v1/movers",
-  "fetched_at": "2026-11-24T00:33:30+00:00",
-  "upstream_fetched_at": "2026-11-24T00:28:18+00:00",
+  "fetched_at": "2026-11-24T22:53:21+00:00",
+  "upstream_fetched_at": "2026-11-24T22:08:24+00:00",
   "upstream_stale": true,
   "games": {
-    "CIN@WAS": {
-      "away": "CIN",
-      "home": "WAS",
-      "line_move_pp": -1.32,
-      "mover_team": "WAS",
-      "open_odds": "+230",
-      "curr_odds": "+245",
-      "starts_at": "2026-11-24T01:15:00.000Z"
+    "CHI@DET": {
+      "away": "CHI",
+      "home": "DET",
+      "line_move_pp": 1.06,
+      "mover_team": "DET",
+      "open_odds": "+120",
+      "curr_odds": "+115",
+      "starts_at": "2026-11-26T18:00:00.000Z"
     }
   },
   "error": null
