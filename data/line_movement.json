@@ -1,17 +1,71 @@
 {
   "source": "https://cleatz.com/wp-json/nfl-odds-movers/v1/movers",
-  "fetched_at": "2026-11-24T22:53:21+00:00",
-  "upstream_fetched_at": "2026-11-24T22:08:24+00:00",
+  "fetched_at": "2026-11-25T22:06:34+00:00",
+  "upstream_fetched_at": "2026-11-25T22:03:37+00:00",
   "upstream_stale": true,
   "games": {
+    "DEN@PIT": {
+      "away": "DEN",
+      "home": "PIT",
+      "line_move_pp": -6.42,
+      "mover_team": "PIT",
+      "open_odds": "+125",
+      "curr_odds": "+163",
+      "starts_at": "2026-11-27T20:00:00.000Z"
+    },
+    "SEA@SF": {
+      "away": "SEA",
+      "home": "SF",
+      "line_move_pp": -4.72,
+      "mover_team": "SF",
+      "open_odds": "-177",
+      "curr_odds": "-145",
+      "starts_at": "2026-11-29T21:25:00.000Z"
+    },
     "CHI@DET": {
       "away": "CHI",
       "home": "DET",
-      "line_move_pp": 1.06,
+      "line_move_pp": 4.55,
       "mover_team": "DET",
       "open_odds": "+120",
-      "curr_odds": "+115",
+      "curr_odds": "+100",
       "starts_at": "2026-11-26T18:00:00.000Z"
+    },
+    "NE@LAC": {
+      "away": "NE",
+      "home": "LAC",
+      "line_move_pp": -2.46,
+      "mover_team": "LAC",
+      "open_odds": "-117",
+      "curr_odds": "-106",
+      "starts_at": "2026-11-29T21:05:00.000Z"
+    },
+    "NYJ@MIA": {
+      "away": "NYJ",
+      "home": "MIA",
+      "line_move_pp": -1.07,
+      "mover_team": "MIA",
+      "open_odds": "+170",
+      "curr_odds": "+178",
+      "starts_at": "2026-11-29T18:00:00.000Z"
+    },
+    "CAR@TB": {
+      "away": "CAR",
+      "home": "TB",
+      "line_move_pp": 1.06,
+      "mover_team": "TB",
+      "open_odds": "-154",
+      "curr_odds": "-161",
+      "starts_at": "2026-12-01T01:15:00.000Z"
+    },
+    "NYG@IND": {
+      "away": "NYG",
+      "home": "IND",
+      "line_move_pp": 1.0,
+      "mover_team": "IND",
+      "open_odds": "+252",
+      "curr_odds": "+240",
+      "starts_at": "2026-11-29T18:00:00.000Z"
     }
   },
   "error": null
