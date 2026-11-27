@@ -1,34 +1,25 @@
 {
   "source": "https://cleatz.com/wp-json/nfl-odds-movers/v1/movers",
-  "fetched_at": "2026-11-26T22:05:10+00:00",
-  "upstream_fetched_at": "2026-11-26T22:03:31+00:00",
+  "fetched_at": "2026-11-27T21:47:32+00:00",
+  "upstream_fetched_at": "2026-11-27T21:43:23+00:00",
   "upstream_stale": true,
   "games": {
-    "DEN@PIT": {
-      "away": "DEN",
-      "home": "PIT",
-      "line_move_pp": -10.43,
-      "mover_team": "PIT",
-      "open_odds": "+125",
-      "curr_odds": "+194",
-      "starts_at": "2026-11-27T20:00:00.000Z"
-    },
     "NE@LAC": {
       "away": "NE",
       "home": "LAC",
-      "line_move_pp": -6.3,
+      "line_move_pp": -7.41,
       "mover_team": "LAC",
       "open_odds": "-117",
-      "curr_odds": "+110",
+      "curr_odds": "+115",
       "starts_at": "2026-11-29T21:05:00.000Z"
     },
     "SEA@SF": {
       "away": "SEA",
       "home": "SF",
-      "line_move_pp": -3.9,
+      "line_move_pp": -5.05,
       "mover_team": "SF",
       "open_odds": "-177",
-      "curr_odds": "-150",
+      "curr_odds": "-143",
       "starts_at": "2026-11-29T21:25:00.000Z"
     },
     "NYJ@MIA": {
@@ -43,10 +34,10 @@
     "NYG@IND": {
       "away": "NYG",
       "home": "IND",
-      "line_move_pp": 1.89,
+      "line_move_pp": 2.84,
       "mover_team": "IND",
       "open_odds": "+252",
-      "curr_odds": "+230",
+      "curr_odds": "+220",
       "starts_at": "2026-11-29T18:00:00.000Z"
     },
     "WAS@ARI": {
@@ -58,22 +49,13 @@
       "curr_odds": "+270",
       "starts_at": "2026-11-29T21:25:00.000Z"
     },
-    "KC@BUF": {
-      "away": "KC",
-      "home": "BUF",
-      "line_move_pp": 1.21,
-      "mover_team": "BUF",
-      "open_odds": "-153",
-      "curr_odds": "-161",
-      "starts_at": "2026-11-27T01:20:00.000Z"
-    },
     "CAR@TB": {
       "away": "CAR",
       "home": "TB",
-      "line_move_pp": 1.06,
+      "line_move_pp": 1.2,
       "mover_team": "TB",
       "open_odds": "-154",
-      "curr_odds": "-161",
+      "curr_odds": "-162",
       "starts_at": "2026-12-01T01:15:00.000Z"
     }
   },
